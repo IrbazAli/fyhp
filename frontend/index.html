@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urdu Ledger OCR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#00FFA3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="#00FFA3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="#00FFA3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h1>Ledger<span>Vision</span></h1>
+            </div>
+            <p>High-Precision Hybrid OCR for Urdu Financial Records</p>
+        </header>
+
+        <main>
+            <section class="upload-section" id="upload-section">
+                <div class="upload-card" id="drop-zone">
+                    <div class="upload-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17 8L12 3L7 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h2>Upload Ledger Image</h2>
+                    <p>Drag and drop or click to browse files</p>
+                    <input type="file" id="file-input" accept="image/*" hidden>
+                    <button class="btn-primary" onclick="document.getElementById('file-input').click()">Select Image</button>
+                </div>
+            </section>
+
+            <section class="progress-section hidden" id="progress-section">
+                <div class="progress-card glass">
+                    <h2>Processing Pipeline</h2>
+                    <div class="steps-container">
+                        <div class="step" id="step-1">
+                            <div class="step-indicator">1</div>
+                            <div class="step-content">
+                                <h3>Grid Extraction</h3>
+                                <p>Detecting ledger structure and cells via OpenCV</p>
+                            </div>
+                            <div class="step-status">Pending</div>
+                        </div>
+                        <div class="step" id="step-2">
+                            <div class="step-indicator">2</div>
+                            <div class="step-content">
+                                <h3>Image Preprocessing</h3>
+                                <p>Binarization and TrOCR padding adjustments</p>
+                            </div>
+                            <div class="step-status">Pending</div>
+                        </div>
+                        <div class="step" id="step-3">
+                            <div class="step-indicator">3</div>
+                            <div class="step-content">
+                                <h3>Hybrid OCR Inference</h3>
+                                <p>UTRNet (Urdu) & TrOCR (Digits)</p>
+                            </div>
+                            <div class="step-status">Pending</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="results-section hidden" id="results-section">
+                <div class="results-header">
+                    <h2>Extracted Data</h2>
+                    <button class="btn-secondary" onclick="resetApp()">Process Another</button>
+                </div>
+                
+                <div class="grid-visualization glass hidden" id="grid-visualization">
+                    <h3>Grid Extraction Overlay</h3>
+                    <img id="grid-img-display" src="" alt="Grid Visualization" style="max-width: 100%; border-radius: 8px; margin-top: 10px; border: 1px solid rgba(0,255,163,0.3);">
+                </div>
+                <br>
+                
+                <div class="table-container glass">
+                    <table id="results-table" class="urdu-text">
+                        <thead>
+                            <tr>
+                                <th>C1 (RTL 6): Rem Amount</th>
+                                <th>C2 (RTL 5): Sign (Urdu)</th>
+                                <th>C3 (RTL 4): Amt Added</th>
+                                <th>C4 (RTL 3): Amt Given</th>
+                                <th>C5 (RTL 2): Page</th>
+                                <th>C6 (RTL 1): Name (Urdu)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-body">
+                            <!-- Rows will be populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
