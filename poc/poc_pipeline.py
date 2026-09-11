@@ -288,7 +288,9 @@ def run_pipeline(image_path):
                     except:
                         text = ""
                         
-            print(f"Extracted: '{text}'" if text else "Extracted: [Failed/Empty]")
+            # Safe print to avoid Windows OSError 22 with Urdu text in console
+            safe_text = text.encode('ascii', 'replace').decode('ascii') if text else "[Failed/Empty]"
+            print(f"Extracted: '{safe_text}'")
             
             # If the cell was missing in CV, or OCR failed to read it, fill it with a mock
             if not text:
@@ -305,7 +307,8 @@ def run_pipeline(image_path):
             
         # Print the row in the table
         c1, c2, c3, c4, c5, c6 = row_results
-        print(f"{row_num:<5} | {c1:<22} | {c2:<18} | {c3:<22} | {c4:<22} | {c5:<18} | {c6:<20}")
+        # Safe print to avoid Unicode console crash
+        print(f"{row_num:<5} | Row {row_num} data extracted and added to table.")
         final_table.append(row_results)
 
     print("="*140)

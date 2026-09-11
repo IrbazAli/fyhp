@@ -43,10 +43,8 @@ def upload_file():
             # result is a dict with "table" and "grid_image"
             return jsonify(result)
         except Exception as e:
-            import traceback
-            print("Pipeline Error:")
-            traceback.print_exc()
-            return jsonify({"error": str(e)}), 500
+            error_msg = str(e)
+            return jsonify({"error": error_msg}), 500
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000)
