@@ -1,0 +1,223 @@
+[
+  {
+    "image": "dataset/word_crops/2_crop_001_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/2_crop_002_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/2_crop_003_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/2_crop_004_مونگ_پھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مونگ پھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/2_crop_005_عبد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/2_crop_006_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/2_crop_007_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/2_crop_008_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/2_crop_009_عبد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/2_crop_010_ملک.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/2_crop_011_سلطان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "سلطان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/2_crop_012_امیر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "امیر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/2_crop_013_اینڈ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اینڈ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/2_crop_014_کو.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کو"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/2_crop_015_بل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/2_crop_016_مونگ_پھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مونگ پھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/2.jpeg",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nExtract all ledger transactions into structured JSON. Capture Nastaliq product words, rates, line totals, and grand total."
+      },
+      {
+        "role": "assistant",
+        "content": "{\n  \"document_type\": \"روزنامچہ (Daily Ledger / Cash Book)\",\n  \"date\": \"07-03-2018 / 11-03-2018\",\n  \"entries\": [\n    {\n      \"date\": \"07-03-2018\",\n      \"description\": \"کیش\",\n      \"folio\": \"\",\n      \"amount\": 6344.0,\n      \"type\": \"credit\"\n    },\n    {\n      \"date\": \"07-03-2018\",\n      \"description\": \"ملک سلطان امیر اینڈ کو بل ڈنڈل\",\n      \"folio\": \"11\",\n      \"amount\": 22377.0,\n      \"type\": \"credit\"\n    },\n    {\n      \"date\": \"07-03-2018\",\n      \"description\": \"میزان / کل آمدن\",\n      \"folio\": \"\",\n      \"amount\": 28721.0,\n      \"type\": \"subtotal\"\n    },\n    {\n      \"date\": \"07-03-2018\",\n      \"description\": \"نام بنام خرچ / کٹوتی\",\n      \"folio\": \"\",\n      \"amount\": 24697.0,\n      \"type\": \"deduction\"\n    },\n    {\n      \"date\": \"07-03-2018\",\n      \"description\": \"بقیہ رقم / کیش بقیہ\",\n      \"folio\": \"\",\n      \"amount\": 4024.0,\n      \"type\": \"balance\"\n    },\n    {\n      \"date\": \"11-03-2018\",\n      \"description\": \"کیش (سابقہ بقیہ)\",\n      \"folio\": \"\",\n      \"amount\": 4024.0,\n      \"type\": \"credit\"\n    },\n    {\n      \"date\": \"11-03-2018\",\n      \"description\": \"مونگ پھلی 77-5\",\n      \"folio\": \"40\",\n      \"amount\": 11745.0,\n      \"type\": \"credit\"\n    },\n    {\n      \"date\": \"11-03-2018\",\n      \"description\": \"مونگ پھلی 82\",\n      \"folio\": \"40\",\n      \"amount\": 12420.0,\n      \"type\": \"credit\"\n    },\n    {\n      \"date\": \"11-03-2018\",\n      \"description\": \"کمیشن\",\n      \"folio\": \"20\",\n      \"amount\": 479.0,\n      \"type\": \"credit\"\n    },\n    {\n      \"date\": \"12-03-2018\",\n      \"description\": \"عبد المتین ڈھلی\",\n      \"folio\": \"200\",\n      \"amount\": 48000.0,\n      \"type\": \"credit\"\n    },\n    {\n      \"date\": \"12-03-2018\",\n      \"description\": \"عبد المتین ڈھلی\",\n      \"folio\": \"200\",\n      \"amount\": 165000.0,\n      \"type\": \"credit\"\n    },\n    {\n      \"date\": \"12-03-2018\",\n      \"description\": \"عبد المتین ڈھلی (// //)\",\n      \"folio\": \"200\",\n      \"amount\": 8000.0,\n      \"type\": \"credit\"\n    },\n    {\n      \"date\": \"12-03-2018\",\n      \"description\": \"میزان آمدن\",\n      \"folio\": \"\",\n      \"amount\": 249668.0,\n      \"type\": \"subtotal\"\n    },\n    {\n      \"date\": \"12-03-2018\",\n      \"description\": \"نام بنام خرچ\",\n      \"folio\": \"\",\n      \"amount\": 104397.0,\n      \"type\": \"deduction\"\n    },\n    {\n      \"date\": \"12-03-2018\",\n      \"description\": \"میزان بقیہ کیش\",\n      \"folio\": \"\",\n      \"amount\": 145271.0,\n      \"type\": \"balance\"\n    }\n  ],\n  \"grand_total\": 145271.0\n}"
+      }
+    ]
+  }
+]

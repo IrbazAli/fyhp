@@ -11,8 +11,9 @@ Optimized specifically for 10 GB VRAM:
 - Per-device batch size = 1, gradient accumulation steps = 8.
 """
 
-import torch_patch
 import os
+os.environ["PYTORCH_CUDA_ALLOC_CONF"] = "expandable_segments:True"
+import torch_patch
 import json
 import argparse
 from typing import Dict, Any, List
@@ -37,7 +38,7 @@ from qwen_vl_utils import process_vision_info
 
 
 class LocalLedgerDataset(Dataset):
-    def __init__(self, json_path: str, processor, max_pixels: int = 602112):
+    def __init__(self, json_path: str, processor, max_pixels: int = 200704):
         self.processor = processor
         self.max_pixels = max_pixels
         with open(json_path, "r", encoding="utf-8") as f:
@@ -106,8 +107,8 @@ class LocalLedgerDataset(Dataset):
         return {
             "input_ids": input_ids,
             "labels": labels,
-            "pixel_values": inputs.get("pixel_values", [None])[0],
-            "image_grid_thw": inputs.get("image_grid_thw", [None])[0]
+            "pixel_values": inputs.get("pixel_values", None),
+            "image_grid_thw": inputs.get("image_grid_thw", None)
         }
 
 
@@ -129,9 +130,9 @@ def collate_fn(batch):
     }
 
     if "pixel_values" in batch[0] and batch[0]["pixel_values"] is not None:
-        batch_out["pixel_values"] = torch.cat([b["pixel_values"] for b in batch], dim=0)
+        batch_out["pixel_values"] = torch.cat([b["pixel_values"] for b in batch if b["pixel_values"] is not None], dim=0)
     if "image_grid_thw" in batch[0] and batch[0]["image_grid_thw"] is not None:
-        batch_out["image_grid_thw"] = torch.cat([b["image_grid_thw"] for b in batch], dim=0)
+        batch_out["image_grid_thw"] = torch.cat([b["image_grid_thw"] for b in batch if b["image_grid_thw"] is not None], dim=0)
 
     return batch_out
 
@@ -139,7 +140,7 @@ def collate_fn(batch):
 def run_training():
     parser = argparse.ArgumentParser()
     parser.add_argument("--model_path", type=str, default="./qwen2.5-vl-7b")
-    parser.add_argument("--train_json", type=str, default="dataset/train.json")
+    parser.add_argument("--train_json", type=str, default="dataset/train_words.json")
     parser.add_argument("--output_dir", type=str, default="./local_adapter")
     parser.add_argument("--epochs", type=int, default=5)
     parser.add_argument("--lr", type=float, default=2e-4)
@@ -168,12 +169,13 @@ def run_training():
 
     model = prepare_model_for_kbit_training(model)
     model.enable_input_require_grads()
+    model.config.use_cache = False
 
     lora_config = LoraConfig(
         r=8,
         lora_alpha=16,
         lora_dropout=0.05,
-        target_modules=["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"],
+        target_modules=["q_proj", "k_proj", "v_proj", "o_proj"],
         bias="none",
         task_type="CAUSAL_LM"
     )
@@ -187,10 +189,10 @@ def run_training():
         output_dir=args.output_dir,
         num_train_epochs=args.epochs,
         per_device_train_batch_size=1,
-        gradient_accumulation_steps=8,
+        gradient_accumulation_steps=2,
         learning_rate=args.lr,
         lr_scheduler_type="cosine",
-        warmup_ratio=0.05,
+        warmup_steps=2,
         logging_steps=1,
         save_strategy="epoch",
         bf16=True,

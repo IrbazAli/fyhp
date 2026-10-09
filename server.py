@@ -81,6 +81,14 @@ def get_vlm():
             device_map="auto"
         )
         vlm_processor = AutoProcessor.from_pretrained(MODEL_PATH)
+        if os.path.exists("./local_adapter/adapter_model.safetensors"):
+            try:
+                from peft import PeftModel
+                print("Applying fine-tuned LoRA adapter from ./local_adapter...")
+                vlm_model = PeftModel.from_pretrained(vlm_model, "./local_adapter")
+                print("LoRA adapter loaded successfully.")
+            except Exception as e:
+                print(f"Warning: Failed to load local adapter: {e}")
         print("Model loaded successfully.")
     return vlm_model, vlm_processor
 
@@ -92,25 +100,50 @@ def run_vlm_on_image(image_path: str):
     model, processor = get_vlm()
 
     prompt = (
-        "Extract all information from this ledger image into structured JSON format matching the exact printed columns and rows.\n\n"
-        "Instructions for column & field extraction:\n"
-        "1. Identify the printed column headings in Urdu as written in the ledger:\n"
-        "   - 'تاریخ (Date)' for date entries\n"
-        "   - 'تفصیل آمدن (Description / Particulars)' for particulars/descriptions/merchant names\n"
-        "   - 'صفحہ (Folio)' for page/folio numbers\n"
-        "   - 'رقم روپیہ (Amount Rs)' for monetary amounts\n"
-        "2. Keep the data in the original language as written:\n"
-        "   - Numbers, amounts, dates, and page numbers in western numerals (e.g., '11-03-018', '40', '11745/-').\n"
-        "   - Descriptions in authentic handwritten Urdu Nastaliq (e.g., 'کیش', 'مونگ پھلی', 'عبد المتین ڈھلی', 'کمیشن').\n"
-        "3. Output valid JSON only with this structure:\n"
+        "You are an expert handwritten Urdu ledger transcription system.\n"
+        "Extract EVERY transaction row from this ledger page into structured JSON format matching the exact printed columns and rows.\n\n"
+        "CRITICAL RULES FOR ROW EXTRACTION:\n"
+        "1. Every individual transaction row written under 'رقم روپیہ' (Amount) MUST be an INDEPENDENT object in the 'entries' list. DO NOT combine or concatenate multiple rows into one.\n"
+        "2. Even if the date (e.g., 11-03-018) is written once for several items, repeat that date for each row.\n"
+        "3. Transcribe each item description in authentic handwritten Urdu Nastaliq (e.g., کیش, مونگ پھلی, کمیشن, عبد المتین ڈھلی).\n"
+        "4. Output valid JSON only with this structure:\n"
         "{\n"
-        "  \"detected_fields\": [\"تاریخ (Date)\", \"تفصیل آمدن (Description / Particulars)\", \"صفحہ (Folio)\", \"رقم روپیہ (Amount Rs)\"],\n"
         "  \"entries\": [\n"
         "    {\n"
-        "      \"تاریخ (Date)\": \"...\",\n"
-        "      \"تفصیل آمدن (Description / Particulars)\": \"...\",\n"
-        "      \"صفحہ (Folio)\": \"...\",\n"
-        "      \"رقم روپیہ (Amount Rs)\": \"...\"\n"
+        "      \"تاریخ (Date)\": \"7-03-018\",\n"
+        "      \"تفصیل آمدن (Description / Particulars)\": \"کیش\",\n"
+        "      \"صفحہ (Folio)\": \"\",\n"
+        "      \"رقم روپیہ (Amount Rs)\": \"6344/-\"\n"
+        "    },\n"
+        "    {\n"
+        "      \"تاریخ (Date)\": \"7-03-018\",\n"
+        "      \"تفصیل آمدن (Description / Particulars)\": \"ملک سلطان امیر اینڈ کو بل ڈنڈل\",\n"
+        "      \"صفحہ (Folio)\": \"11\",\n"
+        "      \"رقم روپیہ (Amount Rs)\": \"22377/-\"\n"
+        "    },\n"
+        "    {\n"
+        "      \"تاریخ (Date)\": \"11-03-018\",\n"
+        "      \"تفصیل آمدن (Description / Particulars)\": \"کیش\",\n"
+        "      \"صفحہ (Folio)\": \"\",\n"
+        "      \"رقم روپیہ (Amount Rs)\": \"4024/-\"\n"
+        "    },\n"
+        "    {\n"
+        "      \"تاریخ (Date)\": \"11-03-018\",\n"
+        "      \"تفصیل آمدن (Description / Particulars)\": \"مونگ پھلی\",\n"
+        "      \"صفحہ (Folio)\": \"40\",\n"
+        "      \"رقم روپیہ (Amount Rs)\": \"11745/-\"\n"
+        "    },\n"
+        "    {\n"
+        "      \"تاریخ (Date)\": \"11-03-018\",\n"
+        "      \"تفصیل آمدن (Description / Particulars)\": \"کمیشن\",\n"
+        "      \"صفحہ (Folio)\": \"20\",\n"
+        "      \"رقم روپیہ (Amount Rs)\": \"479/-\"\n"
+        "    },\n"
+        "    {\n"
+        "      \"تاریخ (Date)\": \"12-03-018\",\n"
+        "      \"تفصیل آمدن (Description / Particulars)\": \"عبد المتین ڈھلی\",\n"
+        "      \"صفحہ (Folio)\": \"200\",\n"
+        "      \"رقم روپیہ (Amount Rs)\": \"48000/-\"\n"
         "    }\n"
         "  ]\n"
         "}\n"
