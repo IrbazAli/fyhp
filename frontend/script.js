@@ -4,11 +4,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const uploadSection = document.getElementById('upload-section');
     const progressSection = document.getElementById('progress-section');
     const resultsSection = document.getElementById('results-section');
+    const errorBanner = document.getElementById('error-banner');
+    const errorBannerText = document.getElementById('error-banner-text');
     const imageDisplay = document.getElementById('image-display');
     const thead = document.getElementById('results-thead');
     const tbody = document.getElementById('results-body');
     const rawJsonDisplay = document.getElementById('raw-json-display');
     const statsSpan = document.getElementById('detected-stats');
+
+    // Auto-detect backend: if opened from file:// or external port, route to local GPU port 5000
+    const isPort5000 = (window.location.protocol.startsWith('http') && window.location.port === '5000');
+    const BACKEND_BASE = isPort5000 ? '' : 'http://localhost:5000';
 
     let currentTableData = { columns: [], rows: [] };
 
@@ -47,24 +53,41 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function showError(msg) {
+        if (errorBanner && errorBannerText) {
+            errorBannerText.textContent = msg;
+            errorBanner.classList.remove('hidden');
+        } else {
+            alert(msg);
+        }
+    }
+
+    function hideError() {
+        if (errorBanner) {
+            errorBanner.classList.add('hidden');
+        }
+    }
+
     async function parseJsonResponse(response) {
         const rawText = await response.text();
         let parsed;
         try {
             parsed = JSON.parse(rawText);
         } catch (e) {
+            let snippet = rawText.trim().replace(/<[^>]*>?/gm, ' ').slice(0, 120);
             if (!response.ok) {
-                throw new Error(`Server Error (${response.status} ${response.statusText}): ${rawText.slice(0, 150)}`);
+                throw new Error(`Server returned HTTP ${response.status} (${response.statusText}): ${snippet}`);
             }
-            throw new Error(`Server returned non-JSON response: ${rawText.slice(0, 150)}`);
+            throw new Error(`Invalid non-JSON response from ${response.url}: ${snippet}`);
         }
         if (!response.ok) {
-            throw new Error(parsed.error || `HTTP ${response.status}: Server error`);
+            throw new Error(parsed.error || `HTTP ${response.status} Error`);
         }
         return parsed;
     }
 
     window.loadSample = async function(sampleName) {
+        hideError();
         startPipelineUI();
         updateStep(1, 'active');
 
@@ -72,7 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
             updateStep(1, 'completed');
             updateStep(2, 'active');
 
-            const response = await fetch(`/api/sample?name=${encodeURIComponent(sampleName)}`);
+            const url = `${BACKEND_BASE}/api/sample?name=${encodeURIComponent(sampleName)}`;
+            const response = await fetch(url);
             const data = await parseJsonResponse(response);
 
             updateStep(2, 'completed');
@@ -83,12 +107,13 @@ document.addEventListener('DOMContentLoaded', () => {
             showResults(data);
         } catch (err) {
             console.error(err);
-            alert("Error processing image: " + err.message);
+            showError("Failed to process ledger sample: " + err.message);
             resetApp();
         }
     };
 
     async function startUpload(file) {
+        hideError();
         startPipelineUI();
         updateStep(1, 'active');
 
@@ -99,7 +124,8 @@ document.addEventListener('DOMContentLoaded', () => {
             updateStep(1, 'completed');
             updateStep(2, 'active');
 
-            const response = await fetch('/upload', {
+            const url = `${BACKEND_BASE}/upload`;
+            const response = await fetch(url, {
                 method: 'POST',
                 body: formData
             });
@@ -114,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showResults(data);
         } catch (error) {
             console.error('Pipeline Error:', error);
-            alert("Error processing image: " + error.message);
+            showError("Failed to transcribe uploaded ledger: " + error.message);
             resetApp();
         }
     }
@@ -176,7 +202,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Display image
         if (data.image_url) {
-            imageDisplay.src = data.image_url + "?t=" + new Date().getTime();
+            const imgUrl = (data.image_url.startsWith('http')) 
+                ? data.image_url 
+                : (BACKEND_BASE + data.image_url);
+            imageDisplay.src = imgUrl + "?t=" + new Date().getTime();
         }
 
         const columns = data.columns || [];
