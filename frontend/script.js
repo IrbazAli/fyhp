@@ -4,8 +4,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const uploadSection = document.getElementById('upload-section');
     const progressSection = document.getElementById('progress-section');
     const resultsSection = document.getElementById('results-section');
-    
-    // Drag and drop events
+    const imageDisplay = document.getElementById('image-display');
+    const thead = document.getElementById('results-thead');
+    const tbody = document.getElementById('results-body');
+    const rawJsonDisplay = document.getElementById('raw-json-display');
+    const statsSpan = document.getElementById('detected-stats');
+
+    let currentTableData = { columns: [], rows: [] };
+
+    // Drag and Drop listeners
     ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
         dropZone.addEventListener(eventName, preventDefaults, false);
     });
@@ -16,20 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     ['dragenter', 'dragover'].forEach(eventName => {
-        dropZone.addEventListener(eventName, highlight, false);
+        dropZone.addEventListener(eventName, () => dropZone.classList.add('dragover'), false);
     });
 
     ['dragleave', 'drop'].forEach(eventName => {
-        dropZone.addEventListener(eventName, unhighlight, false);
+        dropZone.addEventListener(eventName, () => dropZone.classList.remove('dragover'), false);
     });
-
-    function highlight(e) {
-        dropZone.classList.add('dragover');
-    }
-
-    function unhighlight(e) {
-        dropZone.classList.remove('dragover');
-    }
 
     dropZone.addEventListener('drop', handleDrop, false);
     fileInput.addEventListener('change', handleFileSelect, false);
@@ -37,40 +36,56 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleDrop(e) {
         const dt = e.dataTransfer;
         const files = dt.files;
-        handleFiles(files);
-    }
-
-    function handleFileSelect(e) {
-        const files = e.target.files;
-        handleFiles(files);
-    }
-
-    function handleFiles(files) {
-        if (files.length > 0) {
-            const file = files[0];
-            if (file.type.startsWith('image/')) {
-                startPipeline(file);
-            } else {
-                alert('Please upload an image file.');
-            }
+        if (files.length > 0 && files[0].type.startsWith('image/')) {
+            startUpload(files[0]);
         }
     }
 
-    async function startPipeline(file) {
-        // Hide upload, show progress
-        uploadSection.classList.add('hidden');
-        progressSection.classList.remove('hidden');
-        progressSection.classList.add('fade-in');
+    function handleFileSelect(e) {
+        if (e.target.files.length > 0) {
+            startUpload(e.target.files[0]);
+        }
+    }
 
-        // Simulate step 1
+    window.loadSample = async function(sampleName) {
+        startPipelineUI();
         updateStep(1, 'active');
-        
-        // Prepare form data
+
+        try {
+            updateStep(1, 'completed');
+            updateStep(2, 'active');
+
+            const response = await fetch(`/api/sample?name=${encodeURIComponent(sampleName)}`);
+            if (!response.ok) {
+                const err = await response.json();
+                throw new Error(err.error || 'Failed to process sample');
+            }
+
+            const data = await response.json();
+            updateStep(2, 'completed');
+            updateStep(3, 'active');
+            await sleep(400);
+            updateStep(3, 'completed');
+
+            showResults(data);
+        } catch (err) {
+            console.error(err);
+            alert("Error: " + err.message);
+            resetApp();
+        }
+    };
+
+    async function startUpload(file) {
+        startPipelineUI();
+        updateStep(1, 'active');
+
         const formData = new FormData();
         formData.append('image', file);
 
         try {
-            // Send to Flask Backend using relative URL to avoid CORS issues
+            updateStep(1, 'completed');
+            updateStep(2, 'active');
+
             const response = await fetch('/upload', {
                 method: 'POST',
                 body: formData
@@ -78,25 +93,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (!response.ok) {
                 const err = await response.json();
-                throw new Error(err.error || 'Backend failed');
+                throw new Error(err.error || 'VLM Processing failed');
             }
-            
-            // Show step 1 completed once the server responds
-            updateStep(1, 'completed');
-            updateStep(2, 'active');
-            await sleep(500); // Visual pause
 
             const data = await response.json();
-            
             updateStep(2, 'completed');
             updateStep(3, 'active');
-            await sleep(500); // Visual pause
-            
+            await sleep(400);
             updateStep(3, 'completed');
-            
-            // Show the results
-            showResults(data.table, data.grid_image);
 
+            showResults(data);
         } catch (error) {
             console.error('Pipeline Error:', error);
             alert("Error processing image: " + error.message);
@@ -104,74 +110,126 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function startPipelineUI() {
+        uploadSection.classList.add('hidden');
+        resultsSection.classList.add('hidden');
+        progressSection.classList.remove('hidden');
+        progressSection.classList.add('fade-in');
+        resetSteps();
+    }
+
     function updateStep(stepNum, status) {
         const step = document.getElementById(`step-${stepNum}`);
+        if (!step) return;
         const statusText = step.querySelector('.step-status');
-        
-        // Remove existing classes
         step.classList.remove('active', 'completed');
-        
+
         if (status === 'active') {
             step.classList.add('active');
-            statusText.textContent = 'In Progress...';
+            statusText.textContent = 'Running...';
         } else if (status === 'completed') {
             step.classList.add('completed');
             statusText.textContent = 'Completed';
             step.querySelector('.step-indicator').innerHTML = `
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#00FFA3" stroke-width="2.5">
                     <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
             `;
         }
     }
 
-    function showResults(tableData, gridImageSrc) {
-        progressSection.classList.add('hidden');
-        resultsSection.classList.remove('hidden');
-        resultsSection.classList.add('fade-in');
-
-        // Display the grid image
-        const gridContainer = document.getElementById('grid-visualization');
-        const gridImg = document.getElementById('grid-img-display');
-        if (gridImageSrc) {
-            // Append a timestamp to bypass browser caching for the same filename
-            gridImg.src = gridImageSrc + "?t=" + new Date().getTime();
-            gridContainer.classList.remove('hidden');
-        } else {
-            gridContainer.classList.add('hidden');
-        }
-
-        const tbody = document.getElementById('results-body');
-        tbody.innerHTML = '';
-
-        tableData.forEach(row => {
-            const tr = document.createElement('tr');
-            row.forEach(cell => {
-                const td = document.createElement('td');
-                td.textContent = cell;
-                tr.appendChild(td);
-            });
-            tbody.appendChild(tr);
-        });
-    }
-
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
-
-    // Expose reset globally
-    window.resetApp = function() {
-        resultsSection.classList.add('hidden');
-        uploadSection.classList.remove('hidden');
-        uploadSection.classList.add('fade-in');
-        fileInput.value = '';
-        
-        // Reset steps
+    function resetSteps() {
         [1, 2, 3].forEach(i => {
             const step = document.getElementById(`step-${i}`);
             step.classList.remove('active', 'completed');
             step.querySelector('.step-status').textContent = 'Pending';
             step.querySelector('.step-indicator').textContent = i;
         });
+    }
+
+    function showResults(data) {
+        progressSection.classList.add('hidden');
+        resultsSection.classList.remove('hidden');
+        resultsSection.classList.add('fade-in');
+
+        // Display image
+        if (data.image_url) {
+            imageDisplay.src = data.image_url + "?t=" + new Date().getTime();
+        }
+
+        // Columns and rows
+        const columns = data.columns || [];
+        const rows = data.table || [];
+        currentTableData = { columns, rows };
+
+        statsSpan.textContent = `(${columns.length} Columns, ${rows.length} Rows detected)`;
+
+        // Build Table Header
+        thead.innerHTML = '';
+        const headerTr = document.createElement('tr');
+        columns.forEach(colName => {
+            const th = document.createElement('th');
+            th.textContent = colName;
+            headerTr.appendChild(th);
+        });
+        thead.appendChild(headerTr);
+
+        // Build Table Body
+        tbody.innerHTML = '';
+        rows.forEach(rowCells => {
+            const tr = document.createElement('tr');
+            rowCells.forEach(cellText => {
+                const td = document.createElement('td');
+                td.textContent = (cellText !== null && cellText !== undefined && cellText !== '') ? cellText : '—';
+                tr.appendChild(td);
+            });
+            tbody.appendChild(tr);
+        });
+
+        // Store raw JSON
+        if (data.raw_json) {
+            rawJsonDisplay.textContent = JSON.stringify(data.raw_json, null, 2);
+        } else {
+            rawJsonDisplay.textContent = JSON.stringify(data, null, 2);
+        }
+    }
+
+    window.toggleRawJson = function() {
+        rawJsonDisplay.classList.toggle('hidden');
     };
+
+    window.exportCSV = function() {
+        if (!currentTableData.rows || currentTableData.rows.length === 0) {
+            alert("No table data to export.");
+            return;
+        }
+
+        let csvContent = "data:text/csv;charset=utf-8,\uFEFF";
+        csvContent += currentTableData.columns.map(c => `"${c.replace(/"/g, '""')}"`).join(",") + "\r\n";
+
+        currentTableData.rows.forEach(row => {
+            csvContent += row.map(cell => `"${String(cell || '').replace(/"/g, '""')}"`).join(",") + "\r\n";
+        });
+
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "ledger_extracted.csv");
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
+
+    window.resetApp = function() {
+        resultsSection.classList.add('hidden');
+        progressSection.classList.add('hidden');
+        uploadSection.classList.remove('hidden');
+        uploadSection.classList.add('fade-in');
+        fileInput.value = '';
+        resetSteps();
+    };
+
+    function sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+    }
 });

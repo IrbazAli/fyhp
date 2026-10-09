@@ -1,12 +1,12 @@
 :root {
-    --bg-dark: #0f172a;
-    --bg-card: rgba(30, 41, 59, 0.7);
+    --bg-dark: #0b0f19;
+    --bg-card: rgba(18, 24, 38, 0.75);
     --text-main: #f8fafc;
     --text-muted: #94a3b8;
     --accent: #00FFA3;
     --accent-hover: #00e693;
     --border: rgba(255, 255, 255, 0.1);
-    --glass-blur: 12px;
+    --glass-blur: 16px;
 }
 
 * {
@@ -21,23 +21,23 @@ body {
     color: var(--text-main);
     min-height: 100vh;
     background-image: 
-        radial-gradient(circle at 15% 50%, rgba(0, 255, 163, 0.05), transparent 25%),
-        radial-gradient(circle at 85% 30%, rgba(0, 255, 163, 0.05), transparent 25%);
+        radial-gradient(circle at 15% 30%, rgba(0, 255, 163, 0.07), transparent 35%),
+        radial-gradient(circle at 85% 70%, rgba(0, 255, 163, 0.05), transparent 35%);
 }
 
 .urdu-text {
-    font-family: 'Noto Nastaliq Urdu', serif;
+    font-family: 'Noto Nastaliq Urdu', serif !important;
 }
 
 .app-container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 2rem;
 }
 
 header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     animation: fadeInDown 0.8s ease-out;
 }
 
@@ -50,8 +50,8 @@ header {
 }
 
 .logo h1 {
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-size: 2.75rem;
+    font-weight: 700;
     letter-spacing: -1px;
 }
 
@@ -61,7 +61,30 @@ header {
 
 header p {
     color: var(--text-muted);
-    font-size: 1.1rem;
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+}
+
+.gpu-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 255, 163, 0.1);
+    border: 1px solid rgba(0, 255, 163, 0.3);
+    color: var(--accent);
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--accent);
+    animation: pulse 2s infinite;
 }
 
 .glass {
@@ -70,20 +93,19 @@ header p {
     -webkit-backdrop-filter: blur(var(--glass-blur));
     border: 1px solid var(--border);
     border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 
 /* Upload Section */
 .upload-section {
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
 }
 
 .upload-card {
-    background: rgba(30, 41, 59, 0.4);
     border: 2px dashed var(--border);
-    border-radius: 16px;
-    padding: 4rem 2rem;
+    border-radius: 20px;
+    padding: 3.5rem 2rem;
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -95,18 +117,55 @@ header p {
 }
 
 .upload-icon {
-    color: var(--accent);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 
 .upload-card h2 {
     margin-bottom: 0.5rem;
     font-weight: 600;
+    font-size: 1.6rem;
 }
 
 .upload-card p {
     color: var(--text-muted);
-    margin-bottom: 2rem;
+    margin-bottom: 1.75rem;
+}
+
+.sample-picker {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+}
+
+.sample-picker span {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+.sample-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn-sample {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border);
+    color: var(--text-main);
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-family: 'Noto Nastaliq Urdu', 'Outfit', sans-serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-sample:hover {
+    background: rgba(0, 255, 163, 0.15);
+    border-color: var(--accent);
+    color: var(--accent);
 }
 
 .btn-primary, .btn-secondary {
@@ -128,11 +187,11 @@ header p {
 .btn-primary:hover {
     background: var(--accent-hover);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 255, 163, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 255, 163, 0.35);
 }
 
 .btn-secondary {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
     color: var(--text-main);
     border: 1px solid var(--border);
 }
@@ -182,8 +241,8 @@ header p {
 }
 
 .step-indicator {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     border-radius: 50%;
     border: 2px solid var(--text-muted);
     display: flex;
@@ -206,7 +265,7 @@ header p {
 }
 
 .step-content h3 {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     margin-bottom: 0.25rem;
 }
 
@@ -238,42 +297,121 @@ header p {
     margin-bottom: 2rem;
 }
 
+.detected-stats {
+    display: inline-block;
+    margin-left: 10px;
+    color: var(--accent);
+    font-size: 0.95rem;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+.results-content-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 1.75rem;
+    align-items: start;
+}
+
+@media (max-width: 992px) {
+    .results-content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.preview-card, .table-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+}
+
+.preview-card h3, .table-card h3 {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.75rem;
+}
+
+.img-wrapper {
+    max-height: 650px;
+    overflow: auto;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: #000;
+}
+
+.img-wrapper img {
+    width: 100%;
+    display: block;
+    object-fit: contain;
+}
+
 .table-container {
     overflow-x: auto;
-    padding: 1px; /* for border */
+    max-height: 600px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
 }
 
-table {
+.urdu-table {
     width: 100%;
     border-collapse: collapse;
+    direction: rtl;
     text-align: right;
+    font-family: 'Noto Nastaliq Urdu', 'Outfit', serif;
 }
 
-th, td {
-    padding: 1.25rem 1.5rem;
+.urdu-table th, .urdu-table td {
+    padding: 1.1rem 1.4rem;
     border-bottom: 1px solid var(--border);
+    line-height: 1.8;
 }
 
-th {
-    background: rgba(255, 255, 255, 0.05);
-    font-family: 'Outfit', sans-serif;
-    font-weight: 600;
-    color: var(--text-muted);
-    text-transform: uppercase;
+.urdu-table th {
+    background: rgba(255, 255, 255, 0.07);
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.1rem;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.urdu-table td {
+    font-size: 1.15rem;
+}
+
+.urdu-table tr:hover td {
+    background: rgba(0, 255, 163, 0.03);
+}
+
+.raw-json-container {
+    margin-top: 1.5rem;
+}
+
+.btn-toggle-json {
+    background: transparent;
+    border: none;
+    color: var(--accent);
+    cursor: pointer;
+    font-size: 0.95rem;
+    text-decoration: underline;
+    margin-bottom: 0.75rem;
+}
+
+#raw-json-display {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: monospace;
     font-size: 0.85rem;
-    letter-spacing: 0.5px;
-}
-
-tr:last-child td {
-    border-bottom: none;
-}
-
-tbody tr {
-    transition: background 0.2s ease;
-}
-
-tbody tr:hover {
-    background: rgba(255, 255, 255, 0.03);
+    color: #a5f3fc;
+    overflow-x: auto;
+    max-height: 300px;
 }
 
 .hidden {
@@ -282,14 +420,8 @@ tbody tr:hover {
 
 /* Animations */
 @keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulse {
@@ -299,7 +431,7 @@ tbody tr:hover {
 }
 
 .fade-in {
-    animation: fadeIn 0.5s ease-out forwards;
+    animation: fadeIn 0.4s ease-out forwards;
 }
 
 @keyframes fadeIn {

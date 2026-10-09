@@ -1,17 +1,23 @@
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Model Checkpoints (Downloaded from HF)
+qwen2.5-vl-7b/
+*.safetensors
+*.bin
+*.pt
+local_adapter/
+aasaan_khata_adapter/
+
+# Uploads & Temporary files
 temp_uploads/
+results/
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-.env
-.venv
-ENV/
-env.bak/
-venv.bak/
+
+# IDE / System
 .vscode/
-test_13
-UTRNet/saved_models/
-debug_crop_*.jpg
+.idea/
+.DS_Store

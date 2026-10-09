@@ -1,0 +1,20 @@
+[
+  {
+    "image": "dataset/2.jpeg",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nExtract all ledger transactions into structured JSON. Capture Nastaliq product words, rates, line totals, and grand total."
+      },
+      {
+        "role": "assistant",
+        "content": "{\n  \"document_type\": \"روزنامچہ (Daily Ledger / Cash Book)\",\n  \"date\": \"07-03-2018 / 11-03-2018\",\n  \"entries\": [\n    {\n      \"date\": \"07-03-2018\",\n      \"description\": \"کیش\",\n      \"folio\": \"\",\n      \"amount\": 6344.0,\n      \"type\": \"credit\"\n    },\n    {\n      \"date\": \"07-03-2018\",\n      \"description\": \"ملک سلطان امیر اینڈ کو بل ڈنڈل\",\n      \"folio\": \"11\",\n      \"amount\": 22377.0,\n      \"type\": \"credit\"\n    },\n    {\n      \"date\": \"07-03-2018\",\n      \"description\": \"میزان / کل آمدن\",\n      \"folio\": \"\",\n      \"amount\": 28721.0,\n      \"type\": \"subtotal\"\n    },\n    {\n      \"date\": \"07-03-2018\",\n      \"description\": \"نام بنام خرچ / کٹوتی\",\n      \"folio\": \"\",\n      \"amount\": 24697.0,\n      \"type\": \"deduction\"\n    },\n    {\n      \"date\": \"07-03-2018\",\n      \"description\": \"بقیہ رقم / کیش بقیہ\",\n      \"folio\": \"\",\n      \"amount\": 4024.0,\n      \"type\": \"balance\"\n    },\n    {\n      \"date\": \"11-03-2018\",\n      \"description\": \"کیش (سابقہ بقیہ)\",\n      \"folio\": \"\",\n      \"amount\": 4024.0,\n      \"type\": \"credit\"\n    },\n    {\n      \"date\": \"11-03-2018\",\n      \"description\": \"مونگ پھلی 77-5\",\n      \"folio\": \"40\",\n      \"amount\": 11745.0,\n      \"type\": \"credit\"\n    },\n    {\n      \"date\": \"11-03-2018\",\n      \"description\": \"مونگ پھلی 82\",\n      \"folio\": \"40\",\n      \"amount\": 12420.0,\n      \"type\": \"credit\"\n    },\n    {\n      \"date\": \"11-03-2018\",\n      \"description\": \"کمیشن\",\n      \"folio\": \"20\",\n      \"amount\": 479.0,\n      \"type\": \"credit\"\n    },\n    {\n      \"date\": \"12-03-2018\",\n      \"description\": \"عبد المتین ڈھلی\",\n      \"folio\": \"200\",\n      \"amount\": 48000.0,\n      \"type\": \"credit\"\n    },\n    {\n      \"date\": \"12-03-2018\",\n      \"description\": \"عبد المتین ڈھلی\",\n      \"folio\": \"200\",\n      \"amount\": 165000.0,\n      \"type\": \"credit\"\n    },\n    {\n      \"date\": \"12-03-2018\",\n      \"description\": \"عبد المتین ڈھلی (// //)\",\n      \"folio\": \"200\",\n      \"amount\": 8000.0,\n      \"type\": \"credit\"\n    },\n    {\n      \"date\": \"12-03-2018\",\n      \"description\": \"میزان آمدن\",\n      \"folio\": \"\",\n      \"amount\": 249668.0,\n      \"type\": \"subtotal\"\n    },\n    {\n      \"date\": \"12-03-2018\",\n      \"description\": \"نام بنام خرچ\",\n      \"folio\": \"\",\n      \"amount\": 104397.0,\n      \"type\": \"deduction\"\n    },\n    {\n      \"date\": \"12-03-2018\",\n      \"description\": \"میزان بقیہ کیش\",\n      \"folio\": \"\",\n      \"amount\": 145271.0,\n      \"type\": \"balance\"\n    }\n  ],\n  \"grand_total\": 145271.0\n}"
+      }
+    ],
+    "metadata": {
+      "validated": false,
+      "item_count": 0,
+      "grand_total": 145271.0
+    }
+  }
+]
