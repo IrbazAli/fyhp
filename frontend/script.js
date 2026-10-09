@@ -147,6 +147,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function formatAmount(raw) {
+        if (!raw) return '<span class="empty-dash">—</span>';
+        let s = String(raw).trim();
+        if (s === '' || s === '-' || s === '—') return '<span class="empty-dash">—</span>';
+        // Clean trailing slashes or hyphens
+        let hasSlash = s.endsWith('-') || s.endsWith('/-') || s.endsWith('/=');
+        let numStr = s.replace(/[\/\-=]/g, '').replace(/,/g, '').trim();
+        let num = parseFloat(numStr);
+        if (!isNaN(num)) {
+            let formatted = num.toLocaleString('en-US');
+            return `<span class="amount-val">${formatted}/-</span>`;
+        }
+        return `<span class="amount-val">${s}</span>`;
+    }
+
     function showResults(data) {
         progressSection.classList.add('hidden');
         resultsSection.classList.remove('hidden');
@@ -157,12 +172,11 @@ document.addEventListener('DOMContentLoaded', () => {
             imageDisplay.src = data.image_url + "?t=" + new Date().getTime();
         }
 
-        // Columns and rows
         const columns = data.columns || [];
         const rows = data.table || [];
         currentTableData = { columns, rows };
 
-        statsSpan.textContent = `(${columns.length} Columns, ${rows.length} Rows detected)`;
+        statsSpan.textContent = `(${columns.length} Columns, ${rows.length} Rows)`;
 
         // Build Table Header
         thead.innerHTML = '';
@@ -178,9 +192,39 @@ document.addEventListener('DOMContentLoaded', () => {
         tbody.innerHTML = '';
         rows.forEach(rowCells => {
             const tr = document.createElement('tr');
-            rowCells.forEach(cellText => {
+            rowCells.forEach((cellText, colIdx) => {
                 const td = document.createElement('td');
-                td.textContent = (cellText !== null && cellText !== undefined && cellText !== '') ? cellText : '—';
+                const colName = columns[colIdx] || '';
+                const val = (cellText !== null && cellText !== undefined) ? String(cellText).trim() : '';
+
+                if (colName.includes('تاریخ') || colName.includes('Date')) {
+                    td.className = 'col-date';
+                    if (val && val !== '—' && val !== '-') {
+                        td.innerHTML = `<span class="cell-badge date-badge">${val}</span>`;
+                    } else {
+                        td.innerHTML = `<span class="empty-dash">—</span>`;
+                    }
+                } else if (colName.includes('آمدن') || colName.includes('تفصیل') || colName.includes('Description') || colName.includes('Particulars')) {
+                    td.className = 'col-desc';
+                    if (val && val !== '—') {
+                        td.innerHTML = `<span class="urdu-desc">${val}</span>`;
+                    } else {
+                        td.innerHTML = `<span class="empty-dash">—</span>`;
+                    }
+                } else if (colName.includes('صفحہ') || colName.includes('صفحه') || colName.includes('Folio') || colName.includes('Page')) {
+                    td.className = 'col-folio';
+                    if (val && val !== '—' && val !== '-') {
+                        td.innerHTML = `<span class="cell-badge folio-badge">${val}</span>`;
+                    } else {
+                        td.innerHTML = `<span class="empty-dash">—</span>`;
+                    }
+                } else if (colName.includes('رقم') || colName.includes('Amount')) {
+                    td.className = 'col-amount';
+                    td.innerHTML = formatAmount(val);
+                } else {
+                    td.textContent = (val !== '') ? val : '—';
+                }
+
                 tr.appendChild(td);
             });
             tbody.appendChild(tr);

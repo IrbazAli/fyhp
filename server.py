@@ -3,8 +3,9 @@ server.py
 =============================================================================
 Aasaan Khata - Production Flask Server (Qwen2.5-VL-7B Offline Backend)
 =============================================================================
-Connects the dark-mode glassmorphism web frontend directly to the local
-4-bit Qwen2.5-VL-7B Vision-Language Model running on NVIDIA RTX 3080.
+Connects the dark-mode web frontend directly to the local 4-bit Qwen2.5-VL-7B
+model running on NVIDIA RTX 3080.
+Outputs dynamic tabular data with Urdu headings and original data languages.
 """
 
 import torch_patch
@@ -56,23 +57,34 @@ def get_vlm():
 
 def run_vlm_on_image(image_path: str):
     """
-    Runs Qwen2.5-VL forward pass and parses table rows & columns.
+    Runs Qwen2.5-VL forward pass and extracts ledger in native Urdu/numeric format.
     """
     model, processor = get_vlm()
 
     prompt = (
-        "Extract all information from this handwritten ledger image into structured tabular JSON format.\n\n"
-        "Instructions:\n"
-        "1. Dynamically identify all columns/fields that exist in the image (e.g., date, description, folio/page, amount, particulars, etc.).\n"
-        "2. Extract every line/row from top to bottom into 'entries'.\n"
-        "3. Output format:\n"
+        "Extract all information from this ledger image into structured JSON format matching the exact printed columns and rows.\n\n"
+        "Instructions for column & field extraction:\n"
+        "1. Identify the printed column headings in Urdu as written in the ledger:\n"
+        "   - 'تاریخ (Date)' for date entries\n"
+        "   - 'تفصیل آمدن (Description / Particulars)' for particulars/descriptions/merchant names\n"
+        "   - 'صفحہ (Folio)' for page/folio numbers\n"
+        "   - 'رقم روپیہ (Amount Rs)' for monetary amounts\n"
+        "2. Keep the data in the original language as written:\n"
+        "   - Numbers, amounts, dates, and page numbers in western numerals (e.g., '11-03-018', '40', '11745/-').\n"
+        "   - Descriptions in authentic handwritten Urdu Nastaliq (e.g., 'کیش', 'مونگ پھلی', 'عبد المتین ڈھلی', 'کمیشن').\n"
+        "3. Output valid JSON only with this structure:\n"
         "{\n"
-        "  \"detected_fields\": [\"field1\", \"field2\", ...],\n"
+        "  \"detected_fields\": [\"تاریخ (Date)\", \"تفصیل آمدن (Description / Particulars)\", \"صفحہ (Folio)\", \"رقم روپیہ (Amount Rs)\"],\n"
         "  \"entries\": [\n"
-        "    {\"field1\": \"...\", \"field2\": \"...\"}\n"
+        "    {\n"
+        "      \"تاریخ (Date)\": \"...\",\n"
+        "      \"تفصیل آمدن (Description / Particulars)\": \"...\",\n"
+        "      \"صفحہ (Folio)\": \"...\",\n"
+        "      \"رقم روپیہ (Amount Rs)\": \"...\"\n"
+        "    }\n"
         "  ]\n"
         "}\n"
-        "Output valid JSON only."
+        "Output valid JSON only without markdown explanation."
     )
 
     messages = [
@@ -103,7 +115,7 @@ def run_vlm_on_image(image_path: str):
     ).to("cuda")
 
     with torch.inference_mode():
-        generated_ids = model.generate(**inputs, max_new_tokens=1280)
+        generated_ids = model.generate(**inputs, max_new_tokens=1536)
 
     generated_ids_trimmed = [
         out_ids[len(in_ids):] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
@@ -117,45 +129,68 @@ def run_vlm_on_image(image_path: str):
     match = re.search(r'```(?:json)?\s*([\s\S]*?)\s*```', cleaned)
     if match:
         cleaned = match.group(1).strip()
-    
+
     first_brace = cleaned.find('{')
     last_brace = cleaned.rfind('}')
     if first_brace != -1 and last_brace != -1:
         cleaned = cleaned[first_brace:last_brace+1]
 
+    parsed_json = None
     try:
         parsed_json = json.loads(cleaned)
     except Exception:
-        # Fallback regex trailing commas
         cleaned_fix = re.sub(r',\s*([}\]])', r'\1', cleaned)
         try:
             parsed_json = json.loads(cleaned_fix)
         except Exception:
-            parsed_json = {"detected_fields": ["Raw Output"], "entries": [{"Raw Output": raw_output}]}
+            pass
 
-    # Convert parsed JSON into dynamic columns & rows
-    columns = parsed_json.get("detected_fields", [])
-    entries = parsed_json.get("entries", [])
+    if not parsed_json or "entries" not in parsed_json:
+        # Fallback to direct field parsing
+        parsed_json = {
+            "detected_fields": ["تاریخ (Date)", "تفصیل آمدن (Description / Particulars)", "صفحہ (Folio)", "رقم روپیہ (Amount Rs)"],
+            "entries": []
+        }
 
-    # If detected_fields wasn't explicitly populated, infer from entry keys
-    if not columns and entries and isinstance(entries[0], dict):
-        keys_set = []
-        for entry in entries:
-            for k in entry.keys():
-                if k not in keys_set:
-                    keys_set.append(k)
-        columns = keys_set
+    raw_fields = parsed_json.get("detected_fields", [])
+    raw_entries = parsed_json.get("entries", [])
 
-    # Build rows matrix
+    # Standardize column headers to exact Urdu + English format
+    standard_columns = ["تاریخ (Date)", "تفصیل آمدن (Description / Particulars)", "صفحہ (Folio)", "رقم روپیہ (Amount Rs)"]
+    
+    # Map any variant keys
+    def map_key_to_standard(k):
+        k_lower = k.lower()
+        if "تاریخ" in k or "date" in k_lower:
+            return "تاریخ (Date)"
+        if "آمدن" in k or "تفصیل" in k or "توضیحات" in k or "تخصیص" in k or "desc" in k_lower or "particular" in k_lower or "name" in k_lower:
+            return "تفصیل آمدن (Description / Particulars)"
+        if "صفحہ" in k or "صفحه" in k or "folio" in k_lower or "page" in k_lower:
+            return "صفحہ (Folio)"
+        if "رقم" in k or "amount" in k_lower or "price" in k_lower or "total" in k_lower:
+            return "رقم روپیہ (Amount Rs)"
+        return k
+
     table_rows = []
-    for entry in entries:
+    for entry in raw_entries:
         if isinstance(entry, dict):
-            row_cells = [str(entry.get(col, "")) for col in columns]
+            # Create a mapped entry
+            mapped_row = {}
+            for k, v in entry.items():
+                std_k = map_key_to_standard(k)
+                mapped_row[std_k] = str(v).strip()
+
+            row_cells = [
+                mapped_row.get("تاریخ (Date)", ""),
+                mapped_row.get("تفصیل آمدن (Description / Particulars)", ""),
+                mapped_row.get("صفحہ (Folio)", ""),
+                mapped_row.get("رقم روپیہ (Amount Rs)", "")
+            ]
             table_rows.append(row_cells)
         elif isinstance(entry, list):
-            table_rows.append([str(c) for c in entry])
+            table_rows.append([str(c).strip() for c in entry])
 
-    return columns, table_rows, parsed_json
+    return standard_columns, table_rows, parsed_json
 
 
 @app.route('/')
@@ -225,6 +260,6 @@ def process_sample():
 
 if __name__ == '__main__':
     print("=" * 65)
-    print("Aasaan Khata Web App starting on http://localhost:5000")
+    print("Aasaan Khata Web App running at http://localhost:5000")
     print("=" * 65)
     app.run(host='0.0.0.0', port=5000, debug=False)
