@@ -47,6 +47,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    async function parseJsonResponse(response) {
+        const rawText = await response.text();
+        let parsed;
+        try {
+            parsed = JSON.parse(rawText);
+        } catch (e) {
+            if (!response.ok) {
+                throw new Error(`Server Error (${response.status} ${response.statusText}): ${rawText.slice(0, 150)}`);
+            }
+            throw new Error(`Server returned non-JSON response: ${rawText.slice(0, 150)}`);
+        }
+        if (!response.ok) {
+            throw new Error(parsed.error || `HTTP ${response.status}: Server error`);
+        }
+        return parsed;
+    }
+
     window.loadSample = async function(sampleName) {
         startPipelineUI();
         updateStep(1, 'active');
@@ -56,12 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
             updateStep(2, 'active');
 
             const response = await fetch(`/api/sample?name=${encodeURIComponent(sampleName)}`);
-            if (!response.ok) {
-                const err = await response.json();
-                throw new Error(err.error || 'Failed to process sample');
-            }
+            const data = await parseJsonResponse(response);
 
-            const data = await response.json();
             updateStep(2, 'completed');
             updateStep(3, 'active');
             await sleep(400);
@@ -70,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showResults(data);
         } catch (err) {
             console.error(err);
-            alert("Error: " + err.message);
+            alert("Error processing image: " + err.message);
             resetApp();
         }
     };
@@ -91,12 +104,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: formData
             });
 
-            if (!response.ok) {
-                const err = await response.json();
-                throw new Error(err.error || 'VLM Processing failed');
-            }
+            const data = await parseJsonResponse(response);
 
-            const data = await response.json();
             updateStep(2, 'completed');
             updateStep(3, 'active');
             await sleep(400);
@@ -151,8 +160,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!raw) return '<span class="empty-dash">—</span>';
         let s = String(raw).trim();
         if (s === '' || s === '-' || s === '—') return '<span class="empty-dash">—</span>';
-        // Clean trailing slashes or hyphens
-        let hasSlash = s.endsWith('-') || s.endsWith('/-') || s.endsWith('/=');
         let numStr = s.replace(/[\/\-=]/g, '').replace(/,/g, '').trim();
         let num = parseFloat(numStr);
         if (!isNaN(num)) {

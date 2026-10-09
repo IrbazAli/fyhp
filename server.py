@@ -13,6 +13,7 @@ import os
 import sys
 import json
 import re
+import uuid
 from flask import Flask, request, jsonify, send_from_directory
 from werkzeug.utils import secure_filename
 from PIL import Image
@@ -22,6 +23,7 @@ from transformers import Qwen2_5_VLForConditionalGeneration, AutoProcessor, Bits
 from qwen_vl_utils import process_vision_info
 
 app = Flask(__name__, static_folder='frontend', static_url_path='')
+app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50 MB max upload
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "qwen2.5-vl-7b")
@@ -32,6 +34,34 @@ os.makedirs(UPLOADS_DIR, exist_ok=True)
 # Global model state
 vlm_model = None
 vlm_processor = None
+
+
+@app.after_request
+def add_cors_headers(response):
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
+    return response
+
+
+@app.errorhandler(400)
+def bad_request(e):
+    return jsonify({"error": str(getattr(e, 'description', e))}), 400
+
+
+@app.errorhandler(404)
+def not_found(e):
+    return jsonify({"error": "Resource not found (404)"}), 404
+
+
+@app.errorhandler(413)
+def request_entity_too_large(e):
+    return jsonify({"error": "File size exceeds 50MB limit"}), 413
+
+
+@app.errorhandler(500)
+def internal_error(e):
+    return jsonify({"error": "Internal server error occurred during processing"}), 500
 
 
 def get_vlm():
@@ -146,7 +176,6 @@ def run_vlm_on_image(image_path: str):
             pass
 
     if not parsed_json or "entries" not in parsed_json:
-        # Fallback to direct field parsing
         parsed_json = {
             "detected_fields": ["تاریخ (Date)", "تفصیل آمدن (Description / Particulars)", "صفحہ (Folio)", "رقم روپیہ (Amount Rs)"],
             "entries": []
@@ -157,8 +186,7 @@ def run_vlm_on_image(image_path: str):
 
     # Standardize column headers to exact Urdu + English format
     standard_columns = ["تاریخ (Date)", "تفصیل آمدن (Description / Particulars)", "صفحہ (Folio)", "رقم روپیہ (Amount Rs)"]
-    
-    # Map any variant keys
+
     def map_key_to_standard(k):
         k_lower = k.lower()
         if "تاریخ" in k or "date" in k_lower:
@@ -174,7 +202,6 @@ def run_vlm_on_image(image_path: str):
     table_rows = []
     for entry in raw_entries:
         if isinstance(entry, dict):
-            # Create a mapped entry
             mapped_row = {}
             for k, v in entry.items():
                 std_k = map_key_to_standard(k)
@@ -217,7 +244,8 @@ def upload_file():
     if not file or file.filename == '':
         return jsonify({"error": "No file selected"}), 400
 
-    filename = secure_filename(file.filename) or "uploaded_ledger.jpg"
+    ext = os.path.splitext(file.filename)[1].lower() or ".jpg"
+    filename = f"upload_{uuid.uuid4().hex[:8]}{ext}"
     dest_path = os.path.join(UPLOADS_DIR, filename)
     file.save(dest_path)
 
@@ -262,4 +290,6 @@ if __name__ == '__main__':
     print("=" * 65)
     print("Aasaan Khata Web App running at http://localhost:5000")
     print("=" * 65)
+    # Pre-warm model in memory so first user request is instant
+    get_vlm()
     app.run(host='0.0.0.0', port=5000, debug=False)
