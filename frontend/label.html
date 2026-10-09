@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="ur" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aasaan Khata - Visual Word Labeling Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-dark: #0B0F19;
+            --panel-bg: #111827;
+            --panel-border: rgba(255, 255, 255, 0.08);
+            --accent: #00FFA3;
+            --accent-glow: rgba(0, 255, 163, 0.25);
+            --accent-amber: #FFB800;
+            --text-main: #F9FAFB;
+            --text-muted: #9CA3AF;
+            --danger: #EF4444;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Top Navigation Header */
+        header {
+            background: rgba(17, 24, 39, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--panel-border);
+            padding: 12px 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 100;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-icon {
+            font-size: 1.6rem;
+            color: var(--accent);
+        }
+
+        .brand-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .brand-badge {
+            background: rgba(0, 255, 163, 0.12);
+            color: var(--accent);
+            border: 1px solid rgba(0, 255, 163, 0.3);
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 999px;
+            text-transform: uppercase;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .image-select {
+            background: #1F2937;
+            color: var(--text-main);
+            border: 1px solid var(--panel-border);
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            outline: none;
+            cursor: pointer;
+        }
+
+        .btn {
+            background: #1F2937;
+            color: var(--text-main);
+            border: 1px solid var(--panel-border);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #052E16;
+            border-color: var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: #00e08f;
+            color: #052E16;
+            box-shadow: 0 0 16px var(--accent-glow);
+        }
+
+        /* Workspace Layout */
+        .workspace {
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+        }
+
+        /* Left/Center Canvas Viewport */
+        .viewport {
+            flex: 1;
+            position: relative;
+            background: #060911;
+            overflow: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .canvas-stage {
+            position: relative;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+            cursor: crosshair;
+        }
+
+        #image-canvas {
+            display: block;
+        }
+
+        #overlay-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: auto;
+        }
+
+        /* Floating Zoom Controls */
+        .zoom-toolbar {
+            position: absolute;
+            bottom: 24px;
+            left: 24px;
+            background: rgba(17, 24, 39, 0.9);
+            border: 1px solid var(--panel-border);
+            backdrop-filter: blur(8px);
+            padding: 6px 10px;
+            border-radius: 10px;
+            display: flex;
+            gap: 8px;
+            z-index: 50;
+        }
+
+        .zoom-btn {
+            background: #1F2937;
+            border: none;
+            color: var(--text-main);
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .zoom-btn:hover {
+            background: var(--accent);
+            color: #052E16;
+        }
+
+        /* Right Inspector Sidebar */
+        .sidebar {
+            width: 380px;
+            background: var(--panel-bg);
+            border-left: 1px solid var(--panel-border);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .sidebar-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--panel-border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sidebar-title {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .badge-count {
+            background: rgba(0, 255, 163, 0.15);
+            color: var(--accent);
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Active Editor Card */
+        .active-box-card {
+            padding: 18px 20px;
+            border-bottom: 1px solid var(--panel-border);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .crop-preview-wrapper {
+            background: #000;
+            border: 1px solid var(--panel-border);
+            border-radius: 8px;
+            padding: 8px;
+            min-height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+
+        #crop-preview {
+            max-width: 100%;
+            max-height: 100px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .input-group {
+            margin-bottom: 12px;
+        }
+
+        .input-label {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .urdu-input {
+            width: 100%;
+            background: #1F2937;
+            border: 1px solid var(--panel-border);
+            color: var(--text-main);
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 1.25rem;
+            font-family: 'Noto Nastaliq Urdu', serif;
+            direction: rtl;
+            text-align: right;
+            outline: none;
+            transition: border 0.2s;
+        }
+
+        .urdu-input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 10px var(--accent-glow);
+        }
+
+        /* Quick Nastaliq Chips */
+        .chips-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+
+        .chip {
+            background: #1F2937;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: #E5E7EB;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-family: 'Noto Nastaliq Urdu', serif;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .chip:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: rgba(0, 255, 163, 0.1);
+        }
+
+        .action-btns {
+            display: flex;
+            gap: 8px;
+        }
+
+        /* Labels List */
+        .labels-list {
+            flex: 1;
+            overflow-y: auto;
+            padding: 14px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .label-item {
+            background: #182234;
+            border: 1px solid var(--panel-border);
+            border-radius: 8px;
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+
+        .label-item:hover, .label-item.selected {
+            border-color: var(--accent);
+            background: #1C2B42;
+        }
+
+        .label-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .label-index {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 0.85rem;
+            min-width: 22px;
+        }
+
+        .label-text {
+            font-family: 'Noto Nastaliq Urdu', serif;
+            font-size: 1.15rem;
+            color: #fff;
+            direction: rtl;
+        }
+
+        .label-delete-btn {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 4px;
+        }
+
+        .label-delete-btn:hover {
+            color: var(--danger);
+        }
+
+        /* Bottom Footer in Sidebar */
+        .sidebar-footer {
+            padding: 16px 20px;
+            border-top: 1px solid var(--panel-border);
+            background: rgba(17, 24, 39, 0.95);
+        }
+
+        .save-btn {
+            width: 100%;
+            justify-content: center;
+            padding: 12px;
+            font-size: 0.95rem;
+        }
+
+        /* Toast notification */
+        .toast {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            background: #064E3B;
+            color: #34D399;
+            border: 1px solid #059669;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 1000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="brand">
+            <span class="brand-icon">✏️</span>
+            <div class="brand-title">Aasaan Khata</div>
+            <span class="brand-badge">Visual Word Studio</span>
+        </div>
+
+        <div class="header-actions">
+            <label for="image-selector" style="font-size: 0.85rem; color: var(--text-muted);">Ledger Image:</label>
+            <select id="image-selector" class="image-select"></select>
+
+            <a href="/" class="btn">
+                <span>📊</span> Ledger Digitize UI
+            </a>
+            <a href="http://localhost:8501" target="_blank" class="btn">
+                <span>📜</span> Streamlit Studio
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Workspace -->
+    <div class="workspace">
+        <!-- Canvas Viewport -->
+        <div class="viewport" id="viewport">
+            <div class="canvas-stage" id="stage">
+                <canvas id="image-canvas"></canvas>
+                <canvas id="overlay-canvas"></canvas>
+            </div>
+
+            <!-- Zoom toolbar -->
+            <div class="zoom-toolbar">
+                <button class="zoom-btn" id="btn-zoom-in" title="Zoom In">+</button>
+                <button class="zoom-btn" id="btn-zoom-out" title="Zoom Out">-</button>
+                <button class="zoom-btn" id="btn-zoom-fit" title="Fit Screen">⛶</button>
+                <button class="zoom-btn" id="btn-zoom-reset" title="Original (100%)">1:1</button>
+            </div>
+        </div>
+
+        <!-- Right Labeling Inspector Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <span class="sidebar-title">Word Inspector</span>
+                <span class="badge-count" id="count-badge">0 Words</span>
+            </div>
+
+            <!-- Active Word Editor Card -->
+            <div class="active-box-card" id="editor-card">
+                <div class="crop-preview-wrapper">
+                    <img id="crop-preview" alt="Draw a box on image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='30' viewBox='0 0 100 30'%3E%3Ctext x='50' y='18' text-anchor='middle' fill='%236B7280' font-size='11' font-family='sans-serif'%3EDraw Box with Mouse%3C/text%3E%3C/svg%3E">
+                </div>
+
+                <div class="input-group">
+                    <span class="input-label">Word Transcription / اردو لفظ یا عدد:</span>
+                    <input type="text" id="word-input" class="urdu-input" placeholder="یہاں لفظ لکھیں..." autocomplete="off">
+                </div>
+
+                <span class="input-label">Quick Suggestions (کلک کریں):</span>
+                <div class="chips-container" id="chips-container">
+                    <button class="chip" data-text="کیش">کیش</button>
+                    <button class="chip" data-text="مونگ پھلی">مونگ پھلی</button>
+                    <button class="chip" data-text="کمیشن">کمیشن</button>
+                    <button class="chip" data-text="عبد المتین">عبد المتین</button>
+                    <button class="chip" data-text="ڈھلی">ڈھلی</button>
+                    <button class="chip" data-text="مال سلطان">مال سلطان</button>
+                    <button class="chip" data-text="عوامی کمیشن">عوامی کمیشن</button>
+                    <button class="chip" data-text="میزان">میزان</button>
+                    <button class="chip" data-text="نام بنام">نام بنام</button>
+                    <button class="chip" data-text="بقیہ">بقیہ</button>
+                    <button class="chip" data-text="40">40</button>
+                    <button class="chip" data-text="76">76</button>
+                    <button class="chip" data-text="200">200</button>
+                    <button class="chip" data-text="11745/-">11745/-</button>
+                    <button class="chip" data-text="4024/-">4024/-</button>
+                </div>
+
+                <div class="action-btns">
+                    <button id="btn-save-box" class="btn btn-primary" style="flex: 2;">✓ Set Word (Enter)</button>
+                    <button id="btn-delete-box" class="btn" style="flex: 1; color: var(--danger); border-color: rgba(239, 68, 68, 0.3);">🗑️ Delete</button>
+                </div>
+            </div>
+
+            <!-- All Labeled Boxes on this Image -->
+            <div class="labels-list" id="labels-list"></div>
+
+            <!-- Footer Save -->
+            <div class="sidebar-footer">
+                <button id="btn-save-dataset" class="btn btn-primary save-btn">
+                    💾 Save All Word Labels to Dataset
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">Saved Successfully!</div>
+
+    <script>
+        // State variables
+        let currentImage = null;
+        let imgWidth = 0;
+        let imgHeight = 0;
+        let zoom = 1.0;
+        let boxes = []; // Array of { id, x1, y1, x2, y2, text } in original image coordinates
+        let selectedBoxIndex = -1;
+        let isDrawing = false;
+        let startX = 0;
+        let startY = 0;
+        let currentX = 0;
+        let currentY = 0;
+
+        const imgCanvas = document.getElementById('image-canvas');
+        const imgCtx = imgCanvas.getContext('2d');
+        const overlayCanvas = document.getElementById('overlay-canvas');
+        const overlayCtx = overlayCanvas.getContext('2d');
+        const stage = document.getElementById('stage');
+        const cropImg = document.getElementById('crop-preview');
+        const wordInput = document.getElementById('word-input');
+        const imageSelector = document.getElementById('image-selector');
+        const labelsList = document.getElementById('labels-list');
+        const countBadge = document.getElementById('count-badge');
+        const toast = document.getElementById('toast');
+
+        // 1. Fetch available images from backend
+        async function loadAvailableImages() {
+            try {
+                const res = await fetch('/api/images');
+                const data = await res.json();
+                const images = data.images || ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg"];
+                
+                imageSelector.innerHTML = '';
+                images.forEach(imgName => {
+                    const opt = document.createElement('option');
+                    opt.value = imgName;
+                    opt.textContent = imgName;
+                    imageSelector.appendChild(opt);
+                });
+
+                imageSelector.value = "2.jpeg";
+                loadImage(imageSelector.value);
+            } catch (err) {
+                console.error(err);
+                loadImage("2.jpeg");
+            }
+        }
+
+        // 2. Load selected image and its saved word annotations
+        function loadImage(imgName) {
+            currentImage = new Image();
+            currentImage.crossOrigin = "anonymous";
+            currentImage.src = `/dataset/${imgName}?t=` + new Date().getTime();
+
+            currentImage.onload = () => {
+                imgWidth = currentImage.naturalWidth;
+                imgHeight = currentImage.naturalHeight;
+
+                imgCanvas.width = imgWidth;
+                imgCanvas.height = imgHeight;
+                overlayCanvas.width = imgWidth;
+                overlayCanvas.height = imgHeight;
+
+                imgCtx.drawImage(currentImage, 0, 0);
+
+                // Auto fit scale initially
+                fitToViewport();
+                loadSavedBoxes(imgName);
+            };
+        }
+
+        async function loadSavedBoxes(imgName) {
+            boxes = [];
+            selectedBoxIndex = -1;
+            try {
+                const res = await fetch(`/api/annotations/words?image=${encodeURIComponent(imgName)}`);
+                const data = await res.json();
+                if (data.boxes && Array.isArray(data.boxes)) {
+                    boxes = data.boxes;
+                }
+            } catch (err) {
+                console.warn('Could not load existing boxes:', err);
+            }
+            renderOverlay();
+            renderLabelsList();
+        }
+
+        function fitToViewport() {
+            const vp = document.getElementById('viewport');
+            const availableW = vp.clientWidth - 80;
+            const availableH = vp.clientHeight - 80;
+            const scaleX = availableW / imgWidth;
+            const scaleY = availableH / imgHeight;
+            zoom = Math.min(scaleX, scaleY, 1.0);
+            applyZoom();
+        }
+
+        function applyZoom() {
+            stage.style.width = (imgWidth * zoom) + 'px';
+            stage.style.height = (imgHeight * zoom) + 'px';
+            imgCanvas.style.width = '100%';
+            imgCanvas.style.height = '100%';
+            overlayCanvas.style.width = '100%';
+            overlayCanvas.style.height = '100%';
+        }
+
+        // Zoom toolbar events
+        document.getElementById('btn-zoom-in').onclick = () => { zoom = Math.min(zoom * 1.25, 3.0); applyZoom(); };
+        document.getElementById('btn-zoom-out').onclick = () => { zoom = Math.max(zoom / 1.25, 0.2); applyZoom(); };
+        document.getElementById('btn-zoom-fit').onclick = () => fitToViewport();
+        document.getElementById('btn-zoom-reset').onclick = () => { zoom = 1.0; applyZoom(); };
+
+        imageSelector.onchange = (e) => loadImage(e.target.value);
+
+        // 3. Mouse drawing on overlay canvas
+        function getCanvasCoords(e) {
+            const rect = overlayCanvas.getBoundingClientRect();
+            const clientX = e.clientX - rect.left;
+            const clientY = e.clientY - rect.top;
+            const x = (clientX / rect.width) * imgWidth;
+            const y = (clientY / rect.height) * imgHeight;
+            return { x: Math.max(0, Math.min(x, imgWidth)), y: Math.max(0, Math.min(y, imgHeight)) };
+        }
+
+        overlayCanvas.addEventListener('mousedown', (e) => {
+            if (e.button !== 0) return; // Left click only
+            const pos = getCanvasCoords(e);
+
+            // Check if clicking existing box
+            const clickedIdx = findBoxAt(pos.x, pos.y);
+            if (clickedIdx !== -1) {
+                selectBox(clickedIdx);
+                renderOverlay();
+                return;
+            }
+
+            isDrawing = true;
+            startX = pos.x;
+            startY = pos.y;
+            currentX = pos.x;
+            currentY = pos.y;
+        });
+
+        overlayCanvas.addEventListener('mousemove', (e) => {
+            if (!isDrawing) return;
+            const pos = getCanvasCoords(e);
+            currentX = pos.x;
+            currentY = pos.y;
+            renderOverlay();
+        });
+
+        overlayCanvas.addEventListener('mouseup', (e) => {
+            if (!isDrawing) return;
+            isDrawing = false;
+
+            const x1 = Math.round(Math.min(startX, currentX));
+            const y1 = Math.round(Math.min(startY, currentY));
+            const x2 = Math.round(Math.max(startX, currentX));
+            const y2 = Math.round(Math.max(startY, currentY));
+
+            const w = x2 - x1;
+            const h = y2 - y1;
+
+            if (w > 10 && h > 10) {
+                const newBox = {
+                    id: Date.now(),
+                    x1, y1, x2, y2,
+                    text: ""
+                };
+                boxes.push(newBox);
+                selectBox(boxes.length - 1);
+            }
+            renderOverlay();
+        });
+
+        function findBoxAt(x, y) {
+            for (let i = boxes.length - 1; i >= 0; i--) {
+                const b = boxes[i];
+                if (x >= b.x1 && x <= b.x2 && y >= b.y1 && y <= b.y2) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        function selectBox(idx) {
+            selectedBoxIndex = idx;
+            const b = boxes[idx];
+            if (!b) return;
+
+            wordInput.value = b.text || "";
+            wordInput.focus();
+
+            // Generate thumbnail crop preview
+            const w = b.x2 - b.x1;
+            const h = b.y2 - b.y1;
+            const offCanvas = document.createElement('canvas');
+            offCanvas.width = w;
+            offCanvas.height = h;
+            const offCtx = offCanvas.getContext('2d');
+            offCtx.drawImage(currentImage, b.x1, b.y1, w, h, 0, 0, w, h);
+            cropImg.src = offCanvas.toDataURL();
+
+            renderLabelsList();
+            renderOverlay();
+        }
+
+        // 4. Render overlay bounding boxes
+        function renderOverlay() {
+            overlayCtx.clearRect(0, 0, overlayCanvas.width, overlayCanvas.height);
+
+            // Draw finalized boxes
+            boxes.forEach((b, idx) => {
+                const isSelected = (idx === selectedBoxIndex);
+                const w = b.x2 - b.x1;
+                const h = b.y2 - b.y1;
+
+                // Box fill
+                overlayCtx.fillStyle = isSelected ? "rgba(255, 184, 0, 0.28)" : "rgba(0, 255, 163, 0.2)";
+                overlayCtx.fillRect(b.x1, b.y1, w, h);
+
+                // Box border
+                overlayCtx.lineWidth = Math.max(2, Math.round(imgWidth / 600));
+                overlayCtx.strokeStyle = isSelected ? "#FFB800" : "#00FFA3";
+                overlayCtx.strokeRect(b.x1, b.y1, w, h);
+
+                // Badge label pill
+                const labelText = b.text ? `${idx + 1}. ${b.text}` : `#${idx + 1}`;
+                overlayCtx.font = "bold 18px 'Noto Nastaliq Urdu', sans-serif";
+                overlayCtx.textBaseline = "bottom";
+                const textWidth = overlayCtx.measureText(labelText).width;
+
+                const badgeH = 26;
+                const badgeY = Math.max(badgeH, b.y1 - 4);
+
+                overlayCtx.fillStyle = isSelected ? "#FFB800" : "#00FFA3";
+                overlayCtx.fillRect(b.x1, badgeY - badgeH, textWidth + 14, badgeH);
+
+                overlayCtx.fillStyle = "#052E16";
+                overlayCtx.fillText(labelText, b.x1 + 6, badgeY - 4);
+            });
+
+            // Draw current in-progress drag box
+            if (isDrawing) {
+                const x = Math.min(startX, currentX);
+                const y = Math.min(startY, currentY);
+                const w = Math.abs(currentX - startX);
+                const h = Math.abs(currentY - startY);
+
+                overlayCtx.fillStyle = "rgba(0, 255, 163, 0.3)";
+                overlayCtx.fillRect(x, y, w, h);
+                overlayCtx.lineWidth = 2;
+                overlayCtx.setLineDash([6, 4]);
+                overlayCtx.strokeStyle = "#00FFA3";
+                overlayCtx.strokeRect(x, y, w, h);
+                overlayCtx.setLineDash([]);
+            }
+        }
+
+        // 5. Render sidebar labels list
+        function renderLabelsList() {
+            countBadge.textContent = `${boxes.length} Words`;
+            labelsList.innerHTML = '';
+
+            boxes.forEach((b, idx) => {
+                const item = document.createElement('div');
+                item.className = 'label-item' + (idx === selectedBoxIndex ? ' selected' : '');
+
+                item.innerHTML = `
+                    <div class="label-left">
+                        <span class="label-index">#${idx + 1}</span>
+                        <span class="label-text">${b.text || '<i style="color:#6B7280;font-size:0.8rem">Unlabeled</i>'}</span>
+                    </div>
+                    <button class="label-delete-btn" title="Delete Box">&times;</button>
+                `;
+
+                item.querySelector('.label-left').onclick = () => selectBox(idx);
+                item.querySelector('.label-delete-btn').onclick = (e) => {
+                    e.stopPropagation();
+                    deleteBox(idx);
+                };
+
+                labelsList.appendChild(item);
+            });
+        }
+
+        // 6. Action handlers
+        function commitActiveWord() {
+            if (selectedBoxIndex >= 0 && selectedBoxIndex < boxes.length) {
+                boxes[selectedBoxIndex].text = wordInput.value.trim();
+                renderLabelsList();
+                renderOverlay();
+                showToast("Word assigned!");
+            }
+        }
+
+        function deleteBox(idx) {
+            if (idx >= 0 && idx < boxes.length) {
+                boxes.splice(idx, 1);
+                selectedBoxIndex = -1;
+                wordInput.value = '';
+                cropImg.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='30' viewBox='0 0 100 30'%3E%3Ctext x='50' y='18' text-anchor='middle' fill='%236B7280' font-size='11' font-family='sans-serif'%3EDraw Box with Mouse%3C/text%3E%3C/svg%3E";
+                renderLabelsList();
+                renderOverlay();
+            }
+        }
+
+        document.getElementById('btn-save-box').onclick = commitActiveWord;
+        document.getElementById('btn-delete-box').onclick = () => deleteBox(selectedBoxIndex);
+
+        wordInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                commitActiveWord();
+            }
+        });
+
+        // Quick Urdu chip clicks
+        document.querySelectorAll('.chip').forEach(chip => {
+            chip.onclick = () => {
+                const text = chip.getAttribute('data-text');
+                wordInput.value = text;
+                commitActiveWord();
+            };
+        });
+
+        // 7. Save all annotations to backend
+        document.getElementById('btn-save-dataset').onclick = async () => {
+            const imgName = imageSelector.value;
+            try {
+                const res = await fetch('/api/annotations/words', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        image: imgName,
+                        boxes: boxes
+                    })
+                });
+                const result = await res.json();
+                if (result.status === 'success') {
+                    showToast(`Saved ${boxes.length} word labels to dataset!`);
+                } else {
+                    alert('Error saving labels: ' + (result.error || 'Unknown error'));
+                }
+            } catch (err) {
+                console.error(err);
+                alert('Save failed: ' + err.message);
+            }
+        };
+
+        function showToast(msg) {
+            toast.textContent = msg;
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 2200);
+        }
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', loadAvailableImages);
+    </script>
+</body>
+</html>

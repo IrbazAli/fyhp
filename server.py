@@ -286,6 +286,56 @@ def process_sample():
         return jsonify({"error": str(e)}), 500
 
 
+@app.route('/api/images', methods=['GET'])
+def get_dataset_images():
+    valid_exts = ('.jpeg', '.jpg', '.png', '.webp')
+    files = [f for f in sorted(os.listdir(DATASET_DIR)) if f.lower().endswith(valid_exts)]
+    return jsonify({"images": files})
+
+
+WORD_ANNOTATIONS_PATH = os.path.join(DATASET_DIR, "word_annotations.json")
+
+
+@app.route('/api/annotations/words', methods=['GET'])
+def get_word_annotations():
+    image_name = request.args.get('image', '')
+    safe_name = secure_filename(image_name) if image_name else ''
+    if not os.path.exists(WORD_ANNOTATIONS_PATH):
+        return jsonify({"image": safe_name, "boxes": []})
+    try:
+        with open(WORD_ANNOTATIONS_PATH, 'r', encoding='utf-8') as f:
+            all_ann = json.load(f)
+        return jsonify({
+            "image": safe_name,
+            "boxes": all_ann.get(safe_name, [])
+        })
+    except Exception as e:
+        return jsonify({"error": str(e), "boxes": []}), 500
+
+
+@app.route('/api/annotations/words', methods=['POST'])
+def save_word_annotations():
+    data = request.get_json(force=True)
+    if not data or 'image' not in data:
+        return jsonify({"error": "Missing image filename"}), 400
+    safe_name = secure_filename(data['image'])
+    boxes = data.get('boxes', [])
+
+    all_ann = {}
+    if os.path.exists(WORD_ANNOTATIONS_PATH):
+        try:
+            with open(WORD_ANNOTATIONS_PATH, 'r', encoding='utf-8') as f:
+                all_ann = json.load(f)
+        except Exception:
+            all_ann = {}
+
+    all_ann[safe_name] = boxes
+    with open(WORD_ANNOTATIONS_PATH, 'w', encoding='utf-8') as f:
+        json.dump(all_ann, f, ensure_ascii=False, indent=2)
+
+    return jsonify({"status": "success", "saved_count": len(boxes), "image": safe_name})
+
+
 if __name__ == '__main__':
     print("=" * 65)
     print("Aasaan Khata Web App running at http://localhost:5000")

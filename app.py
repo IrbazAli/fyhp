@@ -124,11 +124,20 @@ st.sidebar.caption("Offline VLM & Deterministic Math Engine for Nastaliq Ledgers
 gpu_device = "NVIDIA RTX 3080 (10 GB)"
 st.sidebar.info(f"🖥️ **Hardware Engine:** {gpu_device}\n\n🤖 **Model:** Qwen2.5-VL-7B (4-bit NF4)")
 
+st.sidebar.markdown(
+    """<a href="http://localhost:5000/label.html" target="_blank" style="text-decoration:none;">
+    <div style="background:rgba(0,255,163,0.12); border:1px solid #00FFA3; border-radius:8px; padding:10px; text-align:center; color:#00FFA3; font-weight:700; margin-bottom:12px;">
+    ✏️ Fullscreen Visual Labeler ↗
+    </div></a>""",
+    unsafe_allow_html=True
+)
+
 app_mode = st.sidebar.radio(
     "Select Workflow Mode:",
     [
-        "🤖 AI VLM Transcribe & HITL Audit",
+        "✏️ Visual Mouse Box Labeler (Canvas Studio)",
         "✍️ Manual Ground Truth Studio",
+        "🤖 AI VLM Transcribe & HITL Audit",
         "📊 Dataset Explorer & Split Export"
     ]
 )
@@ -140,9 +149,19 @@ for term in WHOLESALE_COMMODITIES[:6]:
 
 
 # =============================================================================
+# MODE 0: Interactive Visual Mouse Box Labeler (Canvas Studio)
+# =============================================================================
+if app_mode == "✏️ Visual Mouse Box Labeler (Canvas Studio)":
+    st.title("✏️ Interactive Mouse Word Labeling Studio")
+    st.markdown("Draw bounding boxes directly around words with your mouse, view the cropped word, and transcribe Nastaliq labels.")
+    import streamlit.components.v1 as components
+    components.iframe("http://localhost:5000/label.html", height=840, scrolling=True)
+
+
+# =============================================================================
 # MODE 1: AI VLM Transcribe & HITL Audit
 # =============================================================================
-if app_mode == "🤖 AI VLM Transcribe & HITL Audit":
+elif app_mode == "🤖 AI VLM Transcribe & HITL Audit":
     st.title("🤖 Offline VLM Transcription & HITL Audit")
     st.markdown("Run local 4-bit `Qwen2.5-VL-7B` inference and pass outputs through the **Deterministic Math Validation Layer**.")
 
