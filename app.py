@@ -281,105 +281,252 @@ if app_mode == "🤖 AI VLM Transcribe & HITL Audit":
 # =============================================================================
 elif app_mode == "✍️ Manual Ground Truth Studio":
     st.title("✍️ Nastaliq Ground Truth Annotation Studio")
-    st.markdown("Create high-precision training annotations with RTL Urdu typography, commodity chips, and live math.")
+    st.markdown("Create high-precision training annotations with RTL Urdu typography, interactive table editing, and live math validation.")
 
-    available_images = st.session_state.dataset_mgr.get_available_images()
-    selected_img = st.selectbox("Select Image to Annotate:", available_images)
+    mgr = st.session_state.dataset_mgr
+    available_images = mgr.get_available_images()
+    
+    # Build list of images with labeling status
+    image_options = []
+    for img_name in available_images:
+        existing = mgr.get_annotation_for_image(img_name)
+        if existing:
+            try:
+                content = json.loads(existing["conversations"][1]["content"])
+                entries_count = len(content.get("entries", content.get("items", [])))
+                image_options.append(f"{img_name}  [✅ Labeled - {entries_count} rows]")
+            except Exception:
+                image_options.append(f"{img_name}  [✅ Labeled]")
+        else:
+            image_options.append(f"{img_name}  [⚪ Unlabeled]")
 
-    if selected_img:
+    col_pick, col_up = st.columns([1.5, 1])
+    with col_pick:
+        selected_display = st.selectbox("Select Image to Annotate:", image_options if image_options else ["No images found"])
+        selected_img = selected_display.split(" ")[0] if selected_display != "No images found" else None
+    with col_up:
+        uploaded_ann_img = st.file_uploader("Or add new ledger image to dataset:", type=["jpg", "jpeg", "png"])
+        if uploaded_ann_img is not None:
+            save_name = uploaded_ann_img.name
+            target_path = os.path.join("dataset", save_name)
+            if not os.path.exists(target_path):
+                img_obj = Image.open(uploaded_ann_img).convert("RGB")
+                img_obj.save(target_path)
+                st.success(f"Added `{save_name}` to dataset directory! Refreshing...")
+                st.rerun()
+
+    if selected_img and selected_img != "No images found":
         img_path = os.path.join("dataset", selected_img)
         img = Image.open(img_path)
 
-        col1, col2 = st.columns([1, 1.2])
+        col1, col2 = st.columns([1, 1.4])
         with col1:
-            st.image(img, use_container_width=True, caption=selected_img)
+            st.image(img, use_container_width=True, caption=f"Selected: {selected_img}")
+            st.caption("💡 Zoom or view in fullscreen to inspect faint handwritten Nastaliq cursive lines.")
 
         with col2:
-            st.markdown("#### Document Header")
-            existing_ann = st.session_state.dataset_mgr.get_annotation_for_image(selected_img)
+            st.markdown("### 📝 Annotation Metadata")
+            existing_ann = mgr.get_annotation_for_image(selected_img)
             
-            init_date = "2024-03-15"
-            init_holder = "حاجی محمد اکرم گلہ منڈی"
+            init_date = "11-03-2018"
+            init_holder = "روزنامچہ دکان"
+            init_doc_type = "روزنامچہ (Daily Ledger / Cash Book)"
+            existing_content = None
+
             if existing_ann:
                 try:
-                    loaded_json = json.loads(existing_ann["conversations"][1]["content"])
-                    init_date = loaded_json.get("date", init_date)
-                    init_holder = loaded_json.get("khata_holder", init_holder)
+                    existing_content = json.loads(existing_ann["conversations"][1]["content"])
+                    init_date = existing_content.get("date", init_date)
+                    init_holder = existing_content.get("khata_holder", existing_content.get("customer_name", init_holder))
+                    init_doc_type = existing_content.get("document_type", init_doc_type)
                 except Exception:
                     pass
 
-            doc_date = st.text_input("Date (تاریخ):", value=init_date)
-            doc_holder = st.text_input("Customer / Merchant Name (کھاتہ دار / دکان):", value=init_holder)
+            meta_c1, meta_c2, meta_c3 = st.columns([1.2, 1.2, 1.2])
+            with meta_c1:
+                doc_type = st.selectbox(
+                    "Document Type:", 
+                    ["روزنامچہ (Daily Ledger / Cash Book)", "بل کھاتہ (Invoice / Bill)", "کھاتہ دار حساب (Account Ledger)"],
+                    index=0 if "روزنامچہ" in init_doc_type else (1 if "بل" in init_doc_type else 2)
+                )
+            with meta_c2:
+                doc_date = st.text_input("Date (تاریخ):", value=init_date)
+            with meta_c3:
+                doc_holder = st.text_input("Account / Shop (کھاتہ دار / دکان):", value=init_holder)
 
-            st.markdown("#### Wholesale Commodities Quick Select")
-            chip_cols = st.columns(5)
-            for idx, commodity in enumerate(WHOLESALE_COMMODITIES[:10]):
-                with chip_cols[idx % 5]:
-                    if st.button(commodity, key=f"chip_{commodity}_{idx}"):
-                        st.session_state.current_items.append({
-                            "item": commodity,
-                            "quantity": 10.0,
-                            "unit": "من",
-                            "rate": 3000.0,
-                            "line_total": 30000.0
+            # Choose schema template
+            schema_type = st.radio(
+                "Table Schema Format:",
+                ["📜 Ledger Grid (تاریخ، تفصیل آمدن، صفحہ، رقم روپیہ)", "📦 Commodity Bill (جنس، تعداد، اکائی، نرخ، رقم)"],
+                horizontal=True
+            )
+
+            st.markdown("#### ⚡ Quick Urdu Nastaliq Keywords (Click to copy / reference)")
+            quick_terms = [
+                "کیش", "مونگ پھلی", "کمیشن", "عبد المتین ڈھلی", 
+                "مال سلطان", "عوامی کمیشن", "میزان", "نام بنام خرچ", 
+                "بقیہ", "77-5", "82", "شریف بلخی", "کشت"
+            ]
+            chip_cols = st.columns(6)
+            for idx, term in enumerate(quick_terms):
+                with chip_cols[idx % 6]:
+                    st.code(term)
+
+            st.markdown("### 📋 Interactive Transaction Grid Editor")
+            st.caption("Edit directly in the table below. Use Tab to move cells, press Enter to confirm, or click '➕ Add row'.")
+
+            # Prepare dataframe based on existing content or schema
+            if "Ledger Grid" in schema_type:
+                initial_rows = []
+                if existing_content and "entries" in existing_content:
+                    for e in existing_content["entries"]:
+                        initial_rows.append({
+                            "تاریخ (Date)": str(e.get("date", "")),
+                            "تفصیل آمدن (Description / Particulars)": str(e.get("description", "")),
+                            "صفحہ (Folio)": str(e.get("folio", "")),
+                            "رقم روپیہ (Amount Rs)": float(e.get("amount", 0.0) or 0.0),
+                            "نوعیت (Type)": str(e.get("type", "credit"))
                         })
-                        st.rerun()
+                elif existing_content and "items" in existing_content:
+                    for item in existing_content["items"]:
+                        initial_rows.append({
+                            "تاریخ (Date)": doc_date,
+                            "تفصیل آمدن (Description / Particulars)": str(item.get("item", "")),
+                            "صفحہ (Folio)": "",
+                            "رقم روپیہ (Amount Rs)": float(item.get("line_total", 0.0) or 0.0),
+                            "نوعیت (Type)": "credit"
+                        })
+                else:
+                    initial_rows = [
+                        {"تاریخ (Date)": doc_date, "تفصیل آمدن (Description / Particulars)": "کیش", "صفحہ (Folio)": "", "رقم روپیہ (Amount Rs)": 0.0, "نوعیت (Type)": "credit"},
+                        {"تاریخ (Date)": doc_date, "تفصیل آمدن (Description / Particulars)": "", "صفحہ (Folio)": "", "رقم روپیہ (Amount Rs)": 0.0, "نوعیت (Type)": "credit"}
+                    ]
 
-            st.markdown("#### Line Items (Transcribing Entries)")
-            items_to_save = []
-            running_grand_total = 0.0
+                df_template = pd.DataFrame(initial_rows)
+                edited_df = st.data_editor(
+                    df_template,
+                    num_rows="dynamic",
+                    use_container_width=True,
+                    column_config={
+                        "تاریخ (Date)": st.column_config.TextColumn("تاریخ (Date)", required=False),
+                        "تفصیل آمدن (Description / Particulars)": st.column_config.TextColumn("تفصیل آمدن (Description / Particulars)", required=True),
+                        "صفحہ (Folio)": st.column_config.TextColumn("صفحہ (Folio)", required=False),
+                        "رقم روپیہ (Amount Rs)": st.column_config.NumberColumn("رقم روپیہ (Amount Rs)", format="Rs. %.1f", required=True),
+                        "نوعیت (Type)": st.column_config.SelectboxColumn("نوعیت (Type)", options=["credit", "subtotal", "deduction", "balance"])
+                    },
+                    key=f"editor_ledger_{selected_img}"
+                )
 
-            for i, item_data in enumerate(st.session_state.current_items):
-                with st.container():
-                    c_del, c_name, c_qty, c_unit, c_rate, c_total = st.columns([0.5, 2, 1, 1, 1.2, 1.5])
-                    with c_del:
-                        if st.button("🗑️", key=f"del_{i}"):
-                            st.session_state.current_items.pop(i)
-                            st.rerun()
-                    with c_name:
-                        name_val = st.text_input("Item Name (جنس)", value=item_data["item"], key=f"item_{i}")
-                    with c_qty:
-                        qty_val = st.number_input("Qty", value=float(item_data["quantity"]), min_value=0.0, step=1.0, key=f"qty_{i}")
-                    with c_unit:
-                        unit_val = st.selectbox("Unit", WHOLESALE_UNITS, index=WHOLESALE_UNITS.index(item_data.get("unit", "من")) if item_data.get("unit") in WHOLESALE_UNITS else 0, key=f"unit_{i}")
-                    with c_rate:
-                        rate_val = st.number_input("Rate (نرخ)", value=float(item_data["rate"]), min_value=0.0, step=50.0, key=f"rate_{i}")
-                    with c_total:
-                        # Live deterministic calculation
-                        calc_tot = round(qty_val * rate_val, 2)
-                        st.markdown(f"**Calculated Total:**\n\n`Rs. {calc_tot:,.1f}`")
+                # Compute live totals
+                calc_grand_total = 0.0
+                if not edited_df.empty and "رقم روپیہ (Amount Rs)" in edited_df.columns:
+                    calc_grand_total = float(edited_df["رقم روپیہ (Amount Rs)"].sum())
 
-                    items_to_save.append({
-                        "item": name_val,
-                        "quantity": qty_val,
-                        "unit": unit_val,
-                        "rate": rate_val,
-                        "line_total": calc_tot
-                    })
-                    running_grand_total += calc_tot
+                tot_c1, tot_c2 = st.columns(2)
+                with tot_c1:
+                    st.metric("Total Rows", len(edited_df))
+                with tot_c2:
+                    st.metric("Sum of Amounts (میزان)", f"Rs. {calc_grand_total:,.2f}")
 
-            if st.button("➕ Add Transaction Line", use_container_width=True):
-                st.session_state.current_items.append({
-                    "item": "چینی",
-                    "quantity": 5.0,
-                    "unit": "بوری",
-                    "rate": 140.0,
-                    "line_total": 700.0
-                })
-                st.rerun()
+                # Save button
+                if st.button("💾 Save Ground Truth to dataset/annotations.json", type="primary", use_container_width=True):
+                    entries_to_save = []
+                    for _, row in edited_df.iterrows():
+                        desc = str(row.get("تفصیل آمدن (Description / Particulars)", "")).strip()
+                        amt = float(row.get("رقم روپیہ (Amount Rs)", 0.0) or 0.0)
+                        if desc or amt > 0:
+                            entries_to_save.append({
+                                "date": str(row.get("تاریخ (Date)", "")).strip(),
+                                "description": desc,
+                                "folio": str(row.get("صفحہ (Folio)", "")).strip(),
+                                "amount": amt,
+                                "type": str(row.get("نوعیت (Type)", "credit")).strip()
+                            })
 
-            st.divider()
-            st.metric("Deterministic Grand Total (میزان)", f"Rs. {running_grand_total:,.2f}")
+                    structured_doc = {
+                        "document_type": doc_type,
+                        "date": doc_date,
+                        "khata_holder": doc_holder,
+                        "entries": entries_to_save,
+                        "grand_total": calc_grand_total
+                    }
+                    mgr.upsert_annotation(selected_img, structured_doc)
+                    st.success(f"✅ Successfully saved {len(entries_to_save)} rows for `{selected_img}` to `dataset/annotations.json`!")
+                    st.rerun()
 
-            if st.button("💾 Save Annotation to Training Set", type="primary", use_container_width=True):
-                structured_doc = {
-                    "date": doc_date,
-                    "khata_holder": doc_holder,
-                    "items": items_to_save,
-                    "grand_total": running_grand_total
-                }
-                st.session_state.dataset_mgr.upsert_annotation(selected_img, structured_doc)
-                st.success(f"Saved verified ground truth for {selected_img}!")
+            else:
+                # Commodity bill format
+                initial_items = []
+                if existing_content and "items" in existing_content:
+                    for it in existing_content["items"]:
+                        initial_items.append({
+                            "جنس (Item)": str(it.get("item", "")),
+                            "تعداد (Qty)": float(it.get("quantity", 1.0)),
+                            "اکائی (Unit)": str(it.get("unit", "من")),
+                            "نرخ (Rate)": float(it.get("rate", 0.0)),
+                            "کل رقم (Total)": float(it.get("line_total", 0.0))
+                        })
+                else:
+                    initial_items = [
+                        {"جنس (Item)": "چاول باسمتی", "تعداد (Qty)": 10.0, "اکائی (Unit)": "من", "نرخ (Rate)": 3500.0, "کل رقم (Total)": 35000.0}
+                    ]
+
+                df_items = pd.DataFrame(initial_items)
+                edited_items = st.data_editor(
+                    df_items,
+                    num_rows="dynamic",
+                    use_container_width=True,
+                    column_config={
+                        "جنس (Item)": st.column_config.TextColumn("جنس (Item)", required=True),
+                        "تعداد (Qty)": st.column_config.NumberColumn("تعداد (Qty)", min_value=0.0, step=1.0),
+                        "اکائی (Unit)": st.column_config.SelectboxColumn("اکائی (Unit)", options=WHOLESALE_UNITS),
+                        "نرخ (Rate)": st.column_config.NumberColumn("نرخ (Rate)", min_value=0.0, step=50.0),
+                        "کل رقم (Total)": st.column_config.NumberColumn("کل رقم (Total)", format="Rs. %.1f")
+                    },
+                    key=f"editor_items_{selected_img}"
+                )
+
+                # Compute live line totals
+                calc_items_total = 0.0
+                if not edited_items.empty and "کل رقم (Total)" in edited_items.columns:
+                    calc_items_total = float(edited_items["کل رقم (Total)"].sum())
+
+                it_c1, it_c2 = st.columns(2)
+                with it_c1:
+                    st.metric("Total Items", len(edited_items))
+                with it_c2:
+                    st.metric("Grand Total (میزان)", f"Rs. {calc_items_total:,.2f}")
+
+                if st.button("💾 Save Commodity Ground Truth", type="primary", use_container_width=True):
+                    items_to_save = []
+                    for _, row in edited_items.iterrows():
+                        item_name = str(row.get("جنس (Item)", "")).strip()
+                        if item_name:
+                            q = float(row.get("تعداد (Qty)", 0.0) or 0.0)
+                            r = float(row.get("نرخ (Rate)", 0.0) or 0.0)
+                            tot = float(row.get("کل رقم (Total)", q * r) or (q * r))
+                            items_to_save.append({
+                                "item": item_name,
+                                "quantity": q,
+                                "unit": str(row.get("اکائی (Unit)", "من")),
+                                "rate": r,
+                                "line_total": tot
+                            })
+
+                    structured_doc = {
+                        "document_type": doc_type,
+                        "date": doc_date,
+                        "khata_holder": doc_holder,
+                        "items": items_to_save,
+                        "grand_total": calc_items_total
+                    }
+                    mgr.upsert_annotation(selected_img, structured_doc)
+                    st.success(f"✅ Successfully saved {len(items_to_save)} commodities for `{selected_img}`!")
+                    st.rerun()
+
+            if existing_content:
+                with st.expander("🔍 View Active Saved Ground Truth JSON"):
+                    st.json(existing_content)
 
 
 # =============================================================================

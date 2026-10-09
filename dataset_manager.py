@@ -91,7 +91,7 @@ class DatasetManager:
             ],
             "metadata": {
                 "validated": self.math_validator.validate_document(structured_ledger).is_valid,
-                "item_count": len(structured_ledger.get("items", [])),
+                "item_count": len(structured_ledger.get("items", structured_ledger.get("entries", []))),
                 "grand_total": structured_ledger.get("grand_total")
             }
         }
