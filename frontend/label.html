@@ -435,6 +435,11 @@
             <label for="image-selector" style="font-size: 0.85rem; color: var(--text-muted);">Ledger Image:</label>
             <select id="image-selector" class="image-select"></select>
 
+            <button id="btn-upload-local" class="btn" title="Open an image file from your computer to label">
+                <span>📁</span> Open Local Image
+            </button>
+            <input type="file" id="local-image-input" accept="image/*" style="display: none;" />
+
             <a href="/" class="btn">
                 <span>📊</span> Ledger Digitize UI
             </a>
@@ -509,10 +514,19 @@
             <div class="labels-list" id="labels-list"></div>
 
             <!-- Footer Save -->
-            <div class="sidebar-footer">
+            <div class="sidebar-footer" style="display: flex; flex-direction: column; gap: 8px;">
                 <button id="btn-save-dataset" class="btn btn-primary save-btn">
-                    💾 Save All Word Labels to Dataset
+                    💾 Save & Download JSON
                 </button>
+                <div style="display: flex; gap: 8px;">
+                    <button id="btn-export-all" class="btn" style="flex: 1; font-size: 0.78rem; justify-content: center; padding: 8px 4px;" title="Export all labeled images saved in your browser">
+                        📦 Export All (.json)
+                    </button>
+                    <button id="btn-import-json" class="btn" style="flex: 1; font-size: 0.78rem; justify-content: center; padding: 8px 4px;" title="Import previously exported JSON labels">
+                        📤 Import JSON
+                    </button>
+                </div>
+                <input type="file" id="import-file-input" accept=".json" style="display: none;" />
             </div>
         </div>
     </div>
@@ -545,34 +559,89 @@
         const countBadge = document.getElementById('count-badge');
         const toast = document.getElementById('toast');
 
-        // 1. Fetch available images from backend
-        async function loadAvailableImages() {
-            try {
-                const res = await fetch('/api/images');
-                const data = await res.json();
-                const images = data.images || ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg"];
-                
-                imageSelector.innerHTML = '';
-                images.forEach(imgName => {
-                    const opt = document.createElement('option');
-                    opt.value = imgName;
-                    opt.textContent = imgName;
-                    imageSelector.appendChild(opt);
-                });
+        // Auto-save helpers using browser localStorage
+        function autoSaveCurrentState() {
+            const imgName = imageSelector.value;
+            if (!imgName) return;
+            const localKey = 'word_boxes_' + imgName;
+            localStorage.setItem(localKey, JSON.stringify(boxes));
 
-                imageSelector.value = "2.jpeg";
-                loadImage(imageSelector.value);
+            // Also keep master dictionary of all images
+            let allMap = {};
+            try {
+                const savedAll = localStorage.getItem('all_word_annotations');
+                if (savedAll) allMap = JSON.parse(savedAll);
+            } catch(e) {}
+            allMap[imgName] = boxes;
+            localStorage.setItem('all_word_annotations', JSON.stringify(allMap));
+        }
+
+        // 1. Fetch available images from backend or static images.json
+        async function loadAvailableImages() {
+            let images = ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg"];
+            try {
+                // Try backend API first
+                const res = await fetch('/api/images');
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.images && data.images.length > 0) images = data.images;
+                } else {
+                    const staticRes = await fetch('/dataset/images.json?t=' + Date.now());
+                    if (staticRes.ok) {
+                        const staticList = await staticRes.json();
+                        if (Array.isArray(staticList) && staticList.length > 0) images = staticList;
+                    }
+                }
             } catch (err) {
-                console.error(err);
-                loadImage("2.jpeg");
+                try {
+                    const staticRes = await fetch('/dataset/images.json?t=' + Date.now());
+                    if (staticRes.ok) {
+                        const staticList = await staticRes.json();
+                        if (Array.isArray(staticList) && staticList.length > 0) images = staticList;
+                    }
+                } catch(e) {}
             }
+
+            imageSelector.innerHTML = '';
+            images.forEach(imgName => {
+                const opt = document.createElement('option');
+                opt.value = imgName;
+                opt.textContent = imgName;
+                imageSelector.appendChild(opt);
+            });
+
+            // Include any locally uploaded/cached images in localStorage
+            try {
+                const savedAll = localStorage.getItem('all_word_annotations');
+                if (savedAll) {
+                    const allMap = JSON.parse(savedAll);
+                    Object.keys(allMap).forEach(key => {
+                        if (!images.includes(key)) {
+                            const opt = document.createElement('option');
+                            opt.value = key;
+                            opt.textContent = key + " (custom)";
+                            imageSelector.appendChild(opt);
+                        }
+                    });
+                }
+            } catch(e) {}
+
+            imageSelector.value = images.includes("2.jpeg") ? "2.jpeg" : (images[0] || "");
+            loadImage(imageSelector.value);
         }
 
         // 2. Load selected image and its saved word annotations
         function loadImage(imgName) {
+            if (!imgName) return;
             currentImage = new Image();
             currentImage.crossOrigin = "anonymous";
-            currentImage.src = `/dataset/${imgName}?t=` + new Date().getTime();
+
+            let customSrc = null;
+            try {
+                customSrc = localStorage.getItem('custom_img_' + imgName);
+            } catch(e) {}
+
+            currentImage.src = customSrc || (`/dataset/${imgName}?t=` + new Date().getTime());
 
             currentImage.onload = () => {
                 imgWidth = currentImage.naturalWidth;
@@ -585,24 +654,61 @@
 
                 imgCtx.drawImage(currentImage, 0, 0);
 
-                // Auto fit scale initially
                 fitToViewport();
                 loadSavedBoxes(imgName);
+            };
+
+            currentImage.onerror = () => {
+                showToast("Could not load image file: " + imgName);
             };
         }
 
         async function loadSavedBoxes(imgName) {
             boxes = [];
             selectedBoxIndex = -1;
+
+            // 1. Check browser localStorage first
+            const localKey = 'word_boxes_' + imgName;
+            const savedLocal = localStorage.getItem(localKey);
+            if (savedLocal) {
+                try {
+                    const parsed = JSON.parse(savedLocal);
+                    if (Array.isArray(parsed) && parsed.length > 0) {
+                        boxes = parsed;
+                        renderOverlay();
+                        renderLabelsList();
+                        return;
+                    }
+                } catch(e) {}
+            }
+
+            // 2. Check backend API if available
             try {
                 const res = await fetch(`/api/annotations/words?image=${encodeURIComponent(imgName)}`);
-                const data = await res.json();
-                if (data.boxes && Array.isArray(data.boxes)) {
-                    boxes = data.boxes;
+                if (res.ok) {
+                    const data = await res.json();
+                    if (data.boxes && Array.isArray(data.boxes) && data.boxes.length > 0) {
+                        boxes = data.boxes;
+                        autoSaveCurrentState();
+                        renderOverlay();
+                        renderLabelsList();
+                        return;
+                    }
                 }
-            } catch (err) {
-                console.warn('Could not load existing boxes:', err);
-            }
+            } catch (err) {}
+
+            // 3. Fallback to static word_annotations.json
+            try {
+                const res = await fetch(`/dataset/word_annotations.json?t=` + new Date().getTime());
+                if (res.ok) {
+                    const allData = await res.json();
+                    if (allData[imgName] && Array.isArray(allData[imgName])) {
+                        boxes = allData[imgName];
+                        autoSaveCurrentState();
+                    }
+                }
+            } catch (err) {}
+
             renderOverlay();
             renderLabelsList();
         }
@@ -690,6 +796,7 @@
                     text: ""
                 };
                 boxes.push(newBox);
+                autoSaveCurrentState();
                 selectBox(boxes.length - 1);
             }
             renderOverlay();
@@ -810,9 +917,10 @@
         function commitActiveWord() {
             if (selectedBoxIndex >= 0 && selectedBoxIndex < boxes.length) {
                 boxes[selectedBoxIndex].text = wordInput.value.trim();
+                autoSaveCurrentState();
                 renderLabelsList();
                 renderOverlay();
-                showToast("Word assigned!");
+                showToast("Word assigned & cached!");
             }
         }
 
@@ -822,6 +930,7 @@
                 selectedBoxIndex = -1;
                 wordInput.value = '';
                 cropImg.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='30' viewBox='0 0 100 30'%3E%3Ctext x='50' y='18' text-anchor='middle' fill='%236B7280' font-size='11' font-family='sans-serif'%3EDraw Box with Mouse%3C/text%3E%3C/svg%3E";
+                autoSaveCurrentState();
                 renderLabelsList();
                 renderOverlay();
             }
@@ -846,9 +955,26 @@
             };
         });
 
-        // 7. Save all annotations to backend
+        // 7. Save / Export / Import handlers
+        function downloadJSON(filename, dataObj) {
+            const jsonStr = JSON.stringify(dataObj, null, 2);
+            const blob = new Blob([jsonStr], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
         document.getElementById('btn-save-dataset').onclick = async () => {
-            const imgName = imageSelector.value;
+            const imgName = imageSelector.value || 'ledger.jpeg';
+            autoSaveCurrentState();
+
+            // Attempt backend save if backend server is accessible
+            let backendSaved = false;
             try {
                 const res = await fetch('/api/annotations/words', {
                     method: 'POST',
@@ -858,16 +984,142 @@
                         boxes: boxes
                     })
                 });
-                const result = await res.json();
-                if (result.status === 'success') {
-                    showToast(`Saved ${boxes.length} word labels to dataset!`);
-                } else {
-                    alert('Error saving labels: ' + (result.error || 'Unknown error'));
+                if (res.ok) {
+                    const result = await res.json();
+                    if (result.status === 'success') backendSaved = true;
                 }
-            } catch (err) {
-                console.error(err);
-                alert('Save failed: ' + err.message);
-            }
+            } catch (err) {}
+
+            // Trigger immediate JSON download matching dataset/word_annotations.json schema
+            const payload = {};
+            payload[imgName] = boxes;
+            const safeName = imgName.replace(/\.[^/.]+$/, "");
+            downloadJSON(`word_annotations_${safeName}.json`, payload);
+
+            showToast(backendSaved ? `Saved & Downloaded ${boxes.length} labels!` : `Downloaded ${boxes.length} word labels!`);
+        };
+
+        // Export all cached annotations across all images
+        document.getElementById('btn-export-all').onclick = () => {
+            autoSaveCurrentState();
+            let allMap = {};
+            try {
+                const savedAll = localStorage.getItem('all_word_annotations');
+                if (savedAll) allMap = JSON.parse(savedAll);
+            } catch(e) {}
+
+            const curImg = imageSelector.value;
+            if (curImg) allMap[curImg] = boxes;
+
+            const totalBoxes = Object.values(allMap).reduce((acc, arr) => acc + (Array.isArray(arr) ? arr.length : 0), 0);
+            downloadJSON(`word_annotations_all.json`, allMap);
+            showToast(`Exported all ${totalBoxes} boxes across ${Object.keys(allMap).length} images!`);
+        };
+
+        // Import JSON file
+        document.getElementById('btn-import-json').onclick = () => {
+            document.getElementById('import-file-input').click();
+        };
+
+        document.getElementById('import-file-input').onchange = (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                try {
+                    const parsed = JSON.parse(event.target.result);
+                    let count = 0;
+                    if (Array.isArray(parsed)) {
+                        boxes = parsed;
+                        count = boxes.length;
+                        autoSaveCurrentState();
+                    } else if (typeof parsed === 'object') {
+                        let allMap = {};
+                        try {
+                            const saved = localStorage.getItem('all_word_annotations');
+                            if (saved) allMap = JSON.parse(saved);
+                        } catch(e) {}
+                        Object.assign(allMap, parsed);
+                        localStorage.setItem('all_word_annotations', JSON.stringify(allMap));
+
+                        const cur = imageSelector.value;
+                        if (parsed[cur]) {
+                            boxes = parsed[cur];
+                            count = boxes.length;
+                            autoSaveCurrentState();
+                        } else {
+                            const firstKey = Object.keys(parsed)[0];
+                            if (firstKey) {
+                                if (!Array.from(imageSelector.options).some(o => o.value === firstKey)) {
+                                    const opt = document.createElement('option');
+                                    opt.value = firstKey;
+                                    opt.textContent = firstKey;
+                                    imageSelector.appendChild(opt);
+                                }
+                                imageSelector.value = firstKey;
+                                boxes = parsed[firstKey];
+                                count = boxes.length;
+                                autoSaveCurrentState();
+                                loadImage(firstKey);
+                            }
+                        }
+                    }
+                    renderOverlay();
+                    renderLabelsList();
+                    showToast(`Imported ${count} word boxes successfully!`);
+                } catch(err) {
+                    alert('Invalid JSON file: ' + err.message);
+                }
+            };
+            reader.readAsText(file);
+            e.target.value = '';
+        };
+
+        // Open local image from computer
+        document.getElementById('btn-upload-local').onclick = () => {
+            document.getElementById('local-image-input').click();
+        };
+
+        document.getElementById('local-image-input').onchange = (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                const imgDataUrl = event.target.result;
+                const imgName = file.name;
+
+                try {
+                    localStorage.setItem('custom_img_' + imgName, imgDataUrl);
+                } catch(e) {
+                    console.warn('Image too large for localStorage cache, will keep in session memory');
+                }
+
+                if (!Array.from(imageSelector.options).some(o => o.value === imgName)) {
+                    const opt = document.createElement('option');
+                    opt.value = imgName;
+                    opt.textContent = imgName + " (local)";
+                    imageSelector.appendChild(opt);
+                }
+                imageSelector.value = imgName;
+
+                currentImage = new Image();
+                currentImage.src = imgDataUrl;
+                currentImage.onload = () => {
+                    imgWidth = currentImage.naturalWidth;
+                    imgHeight = currentImage.naturalHeight;
+
+                    imgCanvas.width = imgWidth;
+                    imgCanvas.height = imgHeight;
+                    overlayCanvas.width = imgWidth;
+                    overlayCanvas.height = imgHeight;
+
+                    imgCtx.drawImage(currentImage, 0, 0);
+                    fitToViewport();
+                    loadSavedBoxes(imgName);
+                };
+            };
+            reader.readAsDataURL(file);
+            e.target.value = '';
         };
 
         function showToast(msg) {
