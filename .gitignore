@@ -21,3 +21,7 @@ __pycache__/
 .vscode/
 .idea/
 .DS_Store
+
+# Private / Excluded images
+dataset/Khata imgs/
+Khata imgs/
