@@ -579,20 +579,17 @@
         // 1. Fetch available images from backend or static images.json
         async function loadAvailableImages() {
             let images = ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg"];
-            try {
-                // Try backend API first
-                const res = await fetch('/api/images');
-                if (res.ok) {
-                    const data = await res.json();
-                    if (data.images && data.images.length > 0) images = data.images;
-                } else {
-                    const staticRes = await fetch('/dataset/images.json?t=' + Date.now());
-                    if (staticRes.ok) {
-                        const staticList = await staticRes.json();
-                        if (Array.isArray(staticList) && staticList.length > 0) images = staticList;
+            const isLocal = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+
+            if (isLocal) {
+                try {
+                    const res = await fetch('/api/images');
+                    if (res.ok) {
+                        const data = await res.json();
+                        if (data.images && data.images.length > 0) images = data.images;
                     }
-                }
-            } catch (err) {
+                } catch (e) {}
+            } else {
                 try {
                     const staticRes = await fetch('/dataset/images.json?t=' + Date.now());
                     if (staticRes.ok) {
@@ -683,19 +680,22 @@
             }
 
             // 2. Check backend API if available
-            try {
-                const res = await fetch(`/api/annotations/words?image=${encodeURIComponent(imgName)}`);
-                if (res.ok) {
-                    const data = await res.json();
-                    if (data.boxes && Array.isArray(data.boxes) && data.boxes.length > 0) {
-                        boxes = data.boxes;
-                        autoSaveCurrentState();
-                        renderOverlay();
-                        renderLabelsList();
-                        return;
+            const isLocal = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
+            if (isLocal) {
+                try {
+                    const res = await fetch(`/api/annotations/words?image=${encodeURIComponent(imgName)}`);
+                    if (res.ok) {
+                        const data = await res.json();
+                        if (data.boxes && Array.isArray(data.boxes) && data.boxes.length > 0) {
+                            boxes = data.boxes;
+                            autoSaveCurrentState();
+                            renderOverlay();
+                            renderLabelsList();
+                            return;
+                        }
                     }
-                }
-            } catch (err) {}
+                } catch (err) {}
+            }
 
             // 3. Fallback to static word_annotations.json
             try {
@@ -973,22 +973,25 @@
             const imgName = imageSelector.value || 'ledger.jpeg';
             autoSaveCurrentState();
 
-            // Attempt backend save if backend server is accessible
+            // Attempt backend save only if backend server is accessible locally
+            const isLocal = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1');
             let backendSaved = false;
-            try {
-                const res = await fetch('/api/annotations/words', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        image: imgName,
-                        boxes: boxes
-                    })
-                });
-                if (res.ok) {
-                    const result = await res.json();
-                    if (result.status === 'success') backendSaved = true;
-                }
-            } catch (err) {}
+            if (isLocal) {
+                try {
+                    const res = await fetch('/api/annotations/words', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            image: imgName,
+                            boxes: boxes
+                        })
+                    });
+                    if (res.ok) {
+                        const result = await res.json();
+                        if (result.status === 'success') backendSaved = true;
+                    }
+                } catch (err) {}
+            }
 
             // Trigger immediate JSON download matching dataset/word_annotations.json schema
             const payload = {};
