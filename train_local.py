@@ -38,7 +38,7 @@ from qwen_vl_utils import process_vision_info
 
 
 class LocalLedgerDataset(Dataset):
-    def __init__(self, json_path: str, processor, max_pixels: int = 200704):
+    def __init__(self, json_path: str, processor, max_pixels: int = 50176):
         self.processor = processor
         self.max_pixels = max_pixels
         with open(json_path, "r", encoding="utf-8") as f:
@@ -167,9 +167,11 @@ def run_training():
         torch_dtype=torch.bfloat16
     )
 
-    model = prepare_model_for_kbit_training(model)
+    for param in model.parameters():
+        param.requires_grad = False
     model.enable_input_require_grads()
     model.config.use_cache = False
+    model.gradient_checkpointing_enable()
 
     lora_config = LoraConfig(
         r=8,
@@ -193,7 +195,7 @@ def run_training():
         learning_rate=args.lr,
         lr_scheduler_type="cosine",
         warmup_steps=2,
-        logging_steps=1,
+        logging_steps=10,
         save_strategy="epoch",
         bf16=True,
         gradient_checkpointing=True,

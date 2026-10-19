@@ -433,7 +433,12 @@
 
         <div class="header-actions">
             <label for="image-selector" style="font-size: 0.85rem; color: var(--text-muted);">Ledger Image:</label>
-            <select id="image-selector" class="image-select"></select>
+            <div style="display: flex; align-items: center; gap: 4px;">
+                <button id="btn-prev-img" class="btn" title="Previous Image" style="padding: 6px 10px; cursor: pointer;">◀</button>
+                <select id="image-selector" class="image-select"></select>
+                <button id="btn-next-img" class="btn" title="Next Image" style="padding: 6px 10px; cursor: pointer;">▶</button>
+            </div>
+
 
             <a href="/" class="btn">
                 <span>📊</span> Ledger Digitize UI
@@ -550,7 +555,7 @@
             try {
                 const res = await fetch('/api/images');
                 const data = await res.json();
-                const images = data.images || ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg"];
+                const images = data.images && data.images.length > 0 ? data.images : ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg"];
                 
                 imageSelector.innerHTML = '';
                 images.forEach(imgName => {
@@ -560,13 +565,30 @@
                     imageSelector.appendChild(opt);
                 });
 
-                imageSelector.value = "2.jpeg";
+                // Choose image: URL param > localStorage > 42.png > 2.jpeg > first image
+                const urlParams = new URLSearchParams(window.location.search);
+                const urlImg = urlParams.get('image');
+                const savedImg = localStorage.getItem('selected_label_image');
+
+                if (urlImg && images.includes(urlImg)) {
+                    imageSelector.value = urlImg;
+                } else if (savedImg && images.includes(savedImg)) {
+                    imageSelector.value = savedImg;
+                } else if (images.includes("42.png")) {
+                    imageSelector.value = "42.png";
+                } else if (images.includes("2.jpeg")) {
+                    imageSelector.value = "2.jpeg";
+                } else if (images.length > 0) {
+                    imageSelector.value = images[0];
+                }
+
                 loadImage(imageSelector.value);
             } catch (err) {
                 console.error(err);
                 loadImage("2.jpeg");
             }
         }
+
 
         // 2. Load selected image and its saved word annotations
         function loadImage(imgName) {
@@ -632,7 +654,30 @@
         document.getElementById('btn-zoom-fit').onclick = () => fitToViewport();
         document.getElementById('btn-zoom-reset').onclick = () => { zoom = 1.0; applyZoom(); };
 
-        imageSelector.onchange = (e) => loadImage(e.target.value);
+        imageSelector.onchange = (e) => {
+            localStorage.setItem('selected_label_image', e.target.value);
+            loadImage(e.target.value);
+        };
+
+        const btnPrev = document.getElementById('btn-prev-img');
+        const btnNext = document.getElementById('btn-next-img');
+        if (btnPrev) {
+            btnPrev.onclick = () => {
+                if (imageSelector.selectedIndex > 0) {
+                    imageSelector.selectedIndex--;
+                    imageSelector.dispatchEvent(new Event('change'));
+                }
+            };
+        }
+        if (btnNext) {
+            btnNext.onclick = () => {
+                if (imageSelector.selectedIndex < imageSelector.options.length - 1) {
+                    imageSelector.selectedIndex++;
+                    imageSelector.dispatchEvent(new Event('change'));
+                }
+            };
+        }
+
 
         // 3. Mouse drawing on overlay canvas
         function getCanvasCoords(e) {

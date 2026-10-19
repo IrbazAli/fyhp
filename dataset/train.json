@@ -1,5 +1,161 @@
 [
   {
+    "image": "dataset/word_crops/1_crop_001_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/1_crop_002_عوامی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عوامی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/1_crop_003_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/1_crop_004_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/1_crop_005_بل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/1_crop_006_گندم.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "گندم"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/1_crop_007_بدست.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بدست"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/1_crop_009_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/1_crop_010_پنجاب.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "پنجاب"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/1_crop_011_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/1_crop_012_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/1_crop_013_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
     "image": "dataset/word_crops/2_crop_001_کیش.png",
     "conversations": [
       {
@@ -204,6 +360,7793 @@
       {
         "role": "assistant",
         "content": "مونگ پھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_001_عثمان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عثمان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_002_اینڈ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اینڈ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_003_کمپنی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمپنی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_004_بل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_005_مونگ_پھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مونگ پھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_006_خرم.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "خرم"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_007_ولد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ولد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_008_غلام.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "غلام"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_009_عباس.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عباس"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_010_قوم.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "قوم"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_011_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_012_قوم.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "قوم"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_013_شمیال.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "شمیال"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_014_شمیال.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "شمیال"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_015_مہر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مہر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_016_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_017_طاہر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "طاہر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_018_ولد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ولد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_019_خان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "خان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_020_اعجاز.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اعجاز"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_021_مزدور.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مزدور"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_022_عبدالصمد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبدالصمد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_023_نقد_خود.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد خود"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_024_کرنل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کرنل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_025_عبدالقدوس.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبدالقدوس"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_026_ماما.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماما"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_027_خادم.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "خادم"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_028_اخرجات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخرجات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_029_اخرجات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخرجات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_030_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_031_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_032_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_033_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_034_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_035_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_036_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_037_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_038_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_039_زکات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_040_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_041_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_042_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_043_بل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/3_crop_044_مونگ_پھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مونگ پھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/4_crop_001_اخراجات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/4_crop_002_روزنامچہ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "روزنامچہ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/4_crop_004_سیف.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "سیف"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/4_crop_005_چاۓ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "چاۓ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/4_crop_006_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/4_crop_007_نے_نقد_لیۓ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نے نقد لیۓ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/4_crop_008_بذریعہ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بذریعہ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/4_crop_009_چاچا_احمد_عباس.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "چاچا احمد عباس"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/4_crop_010_ماما_طالب_حسین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماما طالب حسین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/4_crop_011_نقدی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقدی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/5_crop_001_ملک_سلطان_امیر_اینڈ_کمپنی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان امیر اینڈ کمپنی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/5_crop_002_بل_مونگ_پھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بل مونگ پھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/5_crop_003_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/5_crop_004_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/5_crop_005_بذریعہ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بذریعہ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/5_crop_006_خرچ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "خرچ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/5_crop_007_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/5_crop_008_آڑھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڑھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/5_crop_009_مونگ_پھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مونگ پھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/5_crop_010_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/5_crop_011_ملک_سلطان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/5_crop_012_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/6_crop_001_حاضر_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاضر کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/6_crop_002_وایس_کیۓ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "وایس کیۓ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/6_crop_003_خرچ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "خرچ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/6_crop_004_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/6_crop_005_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/6_crop_006_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/6_crop_007_حاضر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاضر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/6_crop_008_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/6_crop_009_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/6_crop_010_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/7_crop_001_محمد_حسین_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "محمد حسین ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/7_crop_002_بدست_بلال.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بدست بلال"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/7_crop_003_مسجد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مسجد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/7_crop_004_بدست.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بدست"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/7_crop_005_بلال.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بلال"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/7_crop_006_شفقت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "شفقت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/7_crop_007_منڈی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "منڈی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/7_crop_008_عدالت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عدالت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/7_crop_009_بھگٹال.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بھگٹال"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/7_crop_010_بذریعہ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بذریعہ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/7_crop_011_فتح_محمد_دودیال_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "فتح محمد دودیال ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/7_crop_012_مزدوری.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مزدوری"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/7_crop_013_شوکت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "شوکت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/7_crop_014_منڈی_کام_چھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "منڈی کام چھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/7_crop_015_حاجی_فتح_خان_اینڈ_سنز.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاجی فتح خان اینڈ  سنز"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/7_crop_016_بل_گندم.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بل گندم"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/7_crop_017_کام.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کام"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/8_crop_001_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/8_crop_002_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/8_crop_003_بذریعہ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بذریعہ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/8_crop_004_حاجی_خالد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاجی خالد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/8_crop_005_باردانہ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "باردانہ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/8_crop_006_خالد_حسین_ملک.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "خالد حسین ملک"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/14_crop_001_ملک_سلطان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/14_crop_002_زکات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/14_crop_003_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/14_crop_004_مونگ_پھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مونگ پھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/14_crop_005_عثمان_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عثمان کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/14_crop_006_حاجی_فتح_خان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاجی فتح خان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/14_crop_007_ملک_سلطان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_001_عثمان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عثمان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_002_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_003_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_004_نقد_دستی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد دستی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_005_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_006_زکات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_007_اخراجات_چاے.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات چاے"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_008_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_009_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_010_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_011_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_012_اخراجات_چاے.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات چاے"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_013_مونگ_پھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مونگ پھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_014_زکات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_015_161.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "161"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_016_روٹی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "روٹی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_017_زکات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_018_زکات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_019_کمی_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمی کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_020_نقد_خود.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد خود"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_021_عوامی_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عوامی کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_022_شاپ_بل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "شاپ بل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_023_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_024_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_025_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_026_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_027_مونگ_پھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مونگ پھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_028_مالک_سلطان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مالک سلطان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_029_اینڈ_کمپنی_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اینڈ کمپنی نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_030_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_031_اخراجات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_032_ٹیلی_فون.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ٹیلی فون"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_033_بجلی_بل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بجلی بل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_034_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_035_پنجاب_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "پنجاب کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/15_crop_036_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_001_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_002_عثمان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عثمان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_003_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_004_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_005_مونگ_پھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مونگ پھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_006_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_007_مونگ_پھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مونگ پھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_008_ما_ما_طالب_حسین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ما ما طالب حسین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_009_نقد_دستی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد دستی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_010_خرچ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "خرچ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_011_خرچ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "خرچ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_012_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_013_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_014_عثمان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عثمان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_015_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_016_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_017_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_018_مونگ_پھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مونگ پھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_019_اضافی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اضافی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_020_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_021_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_022_پنجاب_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "پنجاب کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/16_crop_023_ماسٹر_محمد_خان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماسٹر  محمد خان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_001_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_002_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_003_اخراجات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_004_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_005_بل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_006_عثمان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عثمان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_007_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_008_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_009_نقد_خود.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد  خود"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_010_ملک_سلطان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_011_مونگ_پھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مونگ پھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_012_کمی_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمی کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_013_زکات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_014_اخراجات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_015_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_016_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_017_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_018_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_019_گھر_کیلے.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "گھر کیلے"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_020_زکات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_021_ماسٹر_محمد_خان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماسٹر  محمد خان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_022_اخراجات_چاے.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات چاے"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_023_پنجاب_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "پنجاب کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_024_نقد_دستی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد دستی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_025_ملک_سلطان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/17_crop_026_مونگ_پھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مونگ پھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_001_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_002_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_003_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_004_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_005_مونگ_پھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مونگ پھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_006_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_007_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_008_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_009_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_010_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_011_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_012_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_013_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_014_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_015_اضافی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اضافی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_016_عثمان_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عثمان کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_017_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_018_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_019_ماما_بحاول.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماما بحاول"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/18_crop_020_عبد_القدوس.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد القدوس"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_001_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_002_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_003_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_004_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_005_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_006_اخراجات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_007_بجلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بجلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_008_فون.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "فون"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_009_زکات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_010_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_011_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_012_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_013_مونگ_پھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مونگ پھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_014_ماما.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماما"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_015_عبد_القدوس.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد القدوس"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_016_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_017_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_018_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_019_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_020_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_021_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_022_ما_ما_طالب_حسین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ما ما طالب حسین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_023_ملک_سلطان_امیر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان امیر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_024_ملک_سلطان_امیر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان امیر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_025_ملک_سلطان_امیر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان امیر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_026_ملک_سلطان_امیر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان امیر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_027_محمد_اقبال.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "محمد اقبال"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_028_بحاول.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بحاول"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_029_ملک_سلطان_امیر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان امیر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_030_ملک_سلطان_امیر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان امیر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_031_بلال.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بلال"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_032_ولد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ولد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_033_افتخار.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "افتخار"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_034_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/19_crop_035_حاجی_فتح_خان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاجی فتح خان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_001_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_002_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_003_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_004_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_005_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_006_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_007_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_008_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_009_حاجی_طالب_حسین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاجی  طالب حسین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_010_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_011_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_012_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_013_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_014_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_015_مدینہ_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مدینہ  کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_016_قاضی_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "قاضی  کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_017_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_018_حاجی_فتح_خان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاجی فتح خان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/20_crop_019_حاجی_امیر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاجی امیر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/21_crop_001_قاضی_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "قاضی  کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/21_crop_002_پنجاب_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "پنجاب کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/21_crop_003_اتحاد_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اتحاد  کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/21_crop_004_ملک_سلطان_امیر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان امیر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/21_crop_005_ملک_سلطان_امیر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان امیر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/21_crop_006_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/21_crop_007_زکات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/21_crop_008_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/21_crop_009_کمی_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمی کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/21_crop_010_اتحاد_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اتحاد  کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/21_crop_011_عبد_القدوس.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد القدوس"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/21_crop_012_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/21_crop_013_مدینہ_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مدینہ  کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/22_crop_001_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/22_crop_002_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/22_crop_003_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/22_crop_004_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/22_crop_005_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/22_crop_006_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/22_crop_007_ماما_افضل_حسین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماما افضل حسین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/22_crop_008_ماما_افضل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماما افضل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/22_crop_009_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/22_crop_010_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/22_crop_011_ملک_سلطان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/22_crop_012_قاضی_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "قاضی  کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/22_crop_013_بل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_001_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_002_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_003_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_004_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_005_ملک_سلطان_امیر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان امیر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_006_ملک_سلطان_امیر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان امیر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_007_ماما_طالب_حسین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماما طالب حسین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_008_حافظ_طارق.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حافظ طارق"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_009_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_010_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_011_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_012_ماسٹر_محمدخان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماسٹر محمدخان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_013_ماسٹر_محمدخان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماسٹر محمدخان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_014_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_015_زکات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_016_زکات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_017_زکات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_018_زکات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/23_crop_019_ملک_سلطان_امیر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان امیر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/24_crop_001_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/24_crop_002_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/24_crop_003_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/24_crop_004_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/24_crop_005_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/24_crop_006_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/24_crop_007_پنجاب_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "پنجاب کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/24_crop_008_آڈھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڈھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/24_crop_009_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/24_crop_010_ملک_سلطان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/24_crop_011_عثمان_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عثمان کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/25_crop_001_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/25_crop_002_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/25_crop_003_عثمان_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عثمان کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/25_crop_004_ماما_طالب_حسین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماما طالب حسین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/25_crop_005_اخراجات_چاے.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات چاے"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/25_crop_006_اخراجات_بل_بجلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات بل بجلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/25_crop_007_فون_بل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "فون بل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/25_crop_008_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/25_crop_009_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/25_crop_010_گندم.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "گندم"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/25_crop_011_گندم.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "گندم"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/25_crop_012_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/25_crop_013_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/25_crop_014_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/25_crop_015_ملک_سلطان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/25_crop_016_ملک_سلطان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/25_crop_017_اتحاد_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اتحاد  کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/25_crop_018_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/26_crop_001_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/26_crop_002_آڑصٹ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڑصٹ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/26_crop_003_امجد_بدھڑ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "امجد بدھڑ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/26_crop_004_عبد_المتین_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/26_crop_005_آڑصت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڑصت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/26_crop_006_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/26_crop_007_گندم.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "گندم"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/26_crop_008_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/26_crop_009_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/26_crop_010_آڑصت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڑصت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/27_crop_001_مدینہ_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مدینہ کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/27_crop_002_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/27_crop_003_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/27_crop_004_عاطف.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عاطف"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/27_crop_005_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/27_crop_006_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/27_crop_007_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/27_crop_008_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/27_crop_009_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/27_crop_010_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/27_crop_011_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/28_crop_001_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/28_crop_002_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/28_crop_003_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/28_crop_004_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/28_crop_005_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/28_crop_006_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/28_crop_007_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/29_crop_001_گرمی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "گرمی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/29_crop_002_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/29_crop_003_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/29_crop_004_ماماافضل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماماافضل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/29_crop_005_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/29_crop_006_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/29_crop_007_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/29_crop_008_ماماطالب_حسین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماماطالب حسین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/29_crop_009_ماماطالب_حسین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماماطالب حسین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/29_crop_010_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/29_crop_011_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/29_crop_012_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/29_crop_013_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/29_crop_014_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/30_crop_001_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/30_crop_002_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/30_crop_003_حاجی_صفی_الد_ین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاجی صفی الد ین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/30_crop_004_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/30_crop_005_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/30_crop_006_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/30_crop_007_پنجاب_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "پنجاب کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/30_crop_008_المدینہ_جر_نل_سٹو_ر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "المدینہ جر نل سٹو ر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/30_crop_009_چا_چا_احمد_عبا_سی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "چا چا احمد عبا سی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/30_crop_010_چا_چا_احمد_عبا_سی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "چا چا احمد عبا سی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/31_crop_001_گر_مہ_دکا_ن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "گر مہ دکا ن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/31_crop_002_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/31_crop_003_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/31_crop_004_ماما_طالب_حسین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماما طالب حسین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/31_crop_005_حاجی_صضی_الد_ین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاجی صضی الد ین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/31_crop_006_گند_م.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "گند م"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/31_crop_007_پنجاب_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "پنجاب کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/31_crop_008_المدینہ_جرنل_سٹور.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "المدینہ جرنل سٹور"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/31_crop_009_زاحد_سزو_کی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زاحد سزو کی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/31_crop_010_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/31_crop_011_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/31_crop_012_زاحد_سزو_کی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زاحد سزو کی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/31_crop_013_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/31_crop_014_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/31_crop_015_زکات_کا_ری_صا_حب.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکات کا ری صا حب"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/32_crop_001_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/32_crop_002_چاچااحمدعباسی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "چاچااحمدعباسی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/32_crop_003_آڑصت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڑصت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/32_crop_004_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/32_crop_005_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/33_crop_001_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/33_crop_002_ملک_سلطا_ن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطا ن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/33_crop_003_ملک_سلطا_ن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطا ن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/33_crop_004_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/33_crop_005_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/33_crop_006_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/33_crop_007_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/33_crop_008_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/33_crop_009_اخراجات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/33_crop_010_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/33_crop_011_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/34_crop_001_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/34_crop_002_شوکت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "شوکت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/34_crop_003_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/34_crop_004_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/34_crop_005_حاجی_شمس_ا_لحق.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاجی شمس ا لحق"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/34_crop_006_آڑصت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڑصت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/34_crop_007_عمر_چا_چا.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عمر چا چا"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/34_crop_008_عوامی_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عوامی کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/34_crop_009_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/34_crop_010_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/35_crop_001_ماما_طالب_حسین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماما طالب حسین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/35_crop_002_چاچااحمدعباسی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "چاچااحمدعباسی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/35_crop_003_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/35_crop_004_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/35_crop_005_شوکت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "شوکت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/35_crop_006_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/35_crop_007_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/35_crop_008_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/35_crop_009_عمر_چا_چا.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عمر چا چا"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/35_crop_010_پنجاب_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "پنجاب کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/35_crop_011_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/35_crop_012_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/35_crop_013_ملک_سلطا_ن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطا ن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/36_crop_001_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/36_crop_002_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/36_crop_003_چاچااحمدعباسی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "چاچااحمدعباسی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/36_crop_004_ملک_سلطا_ن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطا ن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/36_crop_005_آڑصت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڑصت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/36_crop_006_آڑصت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڑصت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/36_crop_007_چاچااحمدعباسی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "چاچااحمدعباسی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/36_crop_008_حاجی_اکرم.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاجی اکرم"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/36_crop_009_کرنل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کرنل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/36_crop_010_زکات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/37_crop_001_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/37_crop_002_ملک_سلطا_ن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطا ن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/37_crop_003_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/37_crop_004_قربانی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "قربانی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/37_crop_005_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/37_crop_006_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/37_crop_007_اخراجات_عیدی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات عیدی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/37_crop_008_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/38_crop_001_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/38_crop_002_چاچااحمدعباسی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "چاچااحمدعباسی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/38_crop_003_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/38_crop_004_چاچااحمدعباسی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "چاچااحمدعباسی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/38_crop_005_انصاف.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "انصاف"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/38_crop_006_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/38_crop_007_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/38_crop_008_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/38_crop_009_مدینہ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مدینہ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/38_crop_010_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/38_crop_011_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/38_crop_012_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/39_crop_001_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/39_crop_002_عثمان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عثمان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/39_crop_003_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/39_crop_004_چاچااحمدعباسی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "چاچااحمدعباسی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/39_crop_005_پنجاب_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "پنجاب کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/39_crop_006_زکات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/39_crop_007_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/39_crop_008_زکات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/40_crop_001_گندم.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "گندم"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/40_crop_002_ملک_سلطا_ن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطا ن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/40_crop_003_ماما_افضل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماما افضل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/40_crop_004_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/40_crop_005_عدالت_خان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عدالت خان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/40_crop_006_اخراجات_ہوٹل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات ہوٹل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/41_crop_001_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/41_crop_002_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/41_crop_003_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/42_crop_001_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/42_crop_002_حاجی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاجی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/42_crop_003_کرم_الٰہی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کرم الٰہی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/42_crop_004_اینڈ_سنز.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اینڈ سنز"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/42_crop_005_راجپوت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "راجپوت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/42_crop_006_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/42_crop_007_حاجی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاجی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/42_crop_008_فتح_خان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "فتح خان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/42_crop_009_اینڈ_سنز.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اینڈ سنز"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/42_crop_010_آڑھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڑھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/42_crop_011_آڑھت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "آڑھت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/42_crop_012_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/42_crop_013_خرچ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "خرچ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/42_crop_014_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/43_crop_001_شیر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "شیر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/43_crop_002_دار.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "دار"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/43_crop_003_چائے.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "چائے"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/43_crop_004_اخراجات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/43_crop_005_حاجی_فتح_خان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاجی فتح خان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/43_crop_006_بذریعہ_چیک_کیش.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بذریعہ چیک کیش"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/43_crop_007_اینڈ_سنز.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اینڈ سنز"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/43_crop_008_روٹی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "روٹی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/43_crop_009_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/43_crop_010_اخراجات_چائے.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات چائے"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/43_crop_011_عدالت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عدالت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/43_crop_012_بھگٹال.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بھگٹال"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/43_crop_013_اخراجات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/44_crop_001_فتح_محمد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "فتح محمد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/44_crop_002_بل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/44_crop_003_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/44_crop_004_عوامی_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عوامی کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/44_crop_005_حاجی_عبدالقیوم.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاجی عبدالقیوم"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/44_crop_006_اینڈ_کمپنی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اینڈ کمپنی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/44_crop_007_مونگ_پھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "مونگ پھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/44_crop_008_بذریعہ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بذریعہ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/44_crop_009_اویس_حسن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اویس حسن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/44_crop_010_زکوٰۃ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکوٰۃ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/44_crop_011_بذریعہ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بذریعہ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/44_crop_012_قاری_ظہیر_الدین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "قاری ظہیر الدین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/44_crop_013_دودیال.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "دودیال"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/44_crop_014_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/44_crop_015_نقدی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقدی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/44_crop_016_بذریعہ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بذریعہ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/44_crop_017_سکول.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "سکول"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/44_crop_018_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_001_دودیال_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "دودیال کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_002_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_003_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_004_فضل_کریم.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "فضل کریم"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_005_بدست.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بدست"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_006_جواد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "جواد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_007_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_008_بدست.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بدست"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_009_والدہ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "والدہ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_011_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_012_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_013_باجی_شہناز.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "باجی شہناز"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_014_زکوٰۃ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "زکوٰۃ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_015_ماما_افضل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماما افضل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_016_بذریعہ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بذریعہ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_018_عبدالحی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبدالحی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_019_بدست.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بدست"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_020_حصہ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حصہ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_021_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/46_crop_022_بذریعہ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بذریعہ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/47_crop_001_فتح_محمد_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "فتح محمد ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/47_crop_002_فتح_محمد_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "فتح محمد ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/47_crop_003_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/47_crop_004_بذریعہ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بذریعہ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/47_crop_006_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/47_crop_007_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/47_crop_008_چاچا_فضل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "چاچا فضل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/47_crop_009_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/47_crop_010_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/47_crop_011_بدست.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بدست"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/47_crop_012_شوکت_مستری.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "شوکت مستری"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/47_crop_013_اخراجات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/47_crop_015_اسٹیٹ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اسٹیٹ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/47_crop_016_چائے.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "چائے"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/48_crop_001_دھولر.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "دھولر"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/48_crop_002_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/48_crop_003_ملک_سلطان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ملک سلطان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/48_crop_004_پراچہ_کمیشن.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "پراچہ کمیشن"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/48_crop_005_حاجی_فتح_خان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاجی فتح خان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/48_crop_006_بل_گندم.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بل گندم"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/48_crop_007_اخراجات.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اخراجات"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/48_crop_008_اشتہار.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "اشتہار"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/48_crop_009_چائے.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "چائے"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/48_crop_010_عبد_المتین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عبد المتین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/48_crop_011_نقد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "نقد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/48_crop_012_بذریعہ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "بذریعہ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/48_crop_013_شفقت.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "شفقت"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/49_crop_001_انصاف_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "انصاف کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/49_crop_002_عثمان.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عثمان"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/49_crop_003_عوامی_کمیشن_شاپ.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "عوامی کمیشن شاپ"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/49_crop_004_حاجی_عبدالقیوم_اینڈ_کمپنی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حاجی عبدالقیوم اینڈ کمپنی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/49_crop_005_ماما_طالب_حسین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماما طالب حسین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/49_crop_006_ڈھلی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ڈھلی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/49_crop_007_ماما_بہاول.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماما بہاول"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/49_crop_008_ماما_خادم.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماما خادم"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/49_crop_009_ماما_فضل_حسین.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماما فضل حسین"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/49_crop_010_ماما_افضل.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "ماما افضل"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/49_crop_011_انکل_عبدالحئی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "انکل عبدالحئی"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/49_crop_012_انکل_عبدالقدوس.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "انکل عبدالقدوس"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/49_crop_013_انکل_عبدالصمد.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "انکل عبدالصمد"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/49_crop_014_چاچا_احمد_عباس.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "چاچا احمد عباس"
+      }
+    ]
+  },
+  {
+    "image": "dataset/word_crops/49_crop_015_حافظ_ارباز_علی.png",
+    "conversations": [
+      {
+        "role": "user",
+        "content": "<image>\nاس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+      },
+      {
+        "role": "assistant",
+        "content": "حافظ ارباز علی"
       }
     ]
   },

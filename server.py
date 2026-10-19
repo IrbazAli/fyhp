@@ -321,9 +321,13 @@ def process_sample():
 
 @app.route('/api/images', methods=['GET'])
 def get_dataset_images():
-    valid_exts = ('.jpeg', '.jpg', '.png', '.webp')
-    files = [f for f in sorted(os.listdir(DATASET_DIR)) if f.lower().endswith(valid_exts)]
+    valid_exts = ('.jpeg', '.jpg', '.png', '.webp', '.bmp')
+    def natural_key(text):
+        return [int(c) if c.isdigit() else c.lower() for c in re.split(r'(\d+)', text)]
+    files = [f for f in os.listdir(DATASET_DIR) if f.lower().endswith(valid_exts)]
+    files.sort(key=natural_key)
     return jsonify({"images": files})
+
 
 
 WORD_ANNOTATIONS_PATH = os.path.join(DATASET_DIR, "word_annotations.json")

@@ -74,6 +74,13 @@ def build_dataset(padding: int = 4):
                     ]
                 })
 
+    # Save words-only dataset
+    words_file = os.path.join(DATASET_DIR, "train_words.json")
+    with open(words_file, 'w', encoding='utf-8') as f:
+        json.dump(train_records, f, ensure_ascii=False, indent=2)
+
+    word_count = len(train_records)
+
     # 2. Add Full-Page Ledger Annotations
     if os.path.exists(PAGE_ANN_FILE):
         with open(PAGE_ANN_FILE, 'r', encoding='utf-8') as f:
@@ -90,8 +97,8 @@ def build_dataset(padding: int = 4):
         json.dump(train_records, f, ensure_ascii=False, indent=2)
 
     print(f"✅ Generated {len(train_records)} total training samples in '{TRAIN_FILE}'")
-    print(f"   - Word image crops: {len(train_records) - (len(page_annotations) if os.path.exists(PAGE_ANN_FILE) else 0)}")
-    print(f"   - Full-page samples: {len(page_annotations) if os.path.exists(PAGE_ANN_FILE) else 0}")
+    print(f"   - Word image crops: {word_count} (saved also to '{words_file}')")
+    print(f"   - Full-page samples: {len(train_records) - word_count}")
 
 
 if __name__ == "__main__":
