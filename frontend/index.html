@@ -30,6 +30,28 @@
         </header>
 
         <main>
+            <!-- Mode Switcher -->
+            <div class="mode-switch-wrapper">
+                <div class="mode-switch-container">
+                    <button type="button" class="mode-btn active" id="btn-mode-ledger" onclick="switchMode('ledger')">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                            <polyline points="14 2 14 8 20 8"></polyline>
+                            <line x1="16" y1="13" x2="8" y2="13"></line>
+                            <line x1="16" y1="17" x2="8" y2="17"></line>
+                        </svg>
+                        <span>Full Ledger Page (مکمل کھاتہ صفحہ)</span>
+                    </button>
+                    <button type="button" class="mode-btn" id="btn-mode-word" onclick="switchMode('word')">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 20h9"></path>
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                        </svg>
+                        <span>Single Line / Word Text (اکیلی سطر / لفظ)</span>
+                    </button>
+                </div>
+            </div>
+
             <!-- Upload Section -->
             <section class="upload-section" id="upload-section">
                 <div class="upload-card glass" id="drop-zone">
@@ -40,16 +62,23 @@
                             <path d="M12 3V15" stroke="#00FFA3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <h2>Upload Ledger Image</h2>
-                    <p>Drag & drop raw photograph or browse local files</p>
+                    <h2 id="upload-title">Upload Ledger Image</h2>
+                    <p id="upload-subtitle">Drag & drop raw photograph or browse local files</p>
                     <input type="file" id="file-input" accept="image/*" hidden>
                     <button class="btn-primary" onclick="document.getElementById('file-input').click()">Select Image</button>
 
                     <div class="sample-picker">
                         <span>Or test with sample:</span>
-                        <div class="sample-buttons">
+                        <!-- Ledger Page Samples -->
+                        <div class="sample-buttons" id="samples-ledger">
                             <button type="button" class="btn-sample" onclick="loadSample('2.jpeg')">Sample 2 (روزنامچہ)</button>
                             <button type="button" class="btn-sample" onclick="loadSample('1.jpeg')">Sample 1 (بل کھاتہ)</button>
+                        </div>
+                        <!-- Word / Line Crop Samples -->
+                        <div class="sample-buttons hidden" id="samples-word">
+                            <button type="button" class="btn-sample" onclick="loadSample('4_crop_010_ماما_طالب_حسین.png')">ماما طالب حسین</button>
+                            <button type="button" class="btn-sample" onclick="loadSample('15_crop_024_ڈھلی.png')">ڈھلی</button>
+                            <button type="button" class="btn-sample" onclick="loadSample('14_crop_005_عثمان_کمیشن_شاپ.png')">عثمان کمیشن شاپ</button>
                         </div>
                     </div>
                 </div>
@@ -58,29 +87,29 @@
             <!-- Progress Pipeline Section -->
             <section class="progress-section hidden" id="progress-section">
                 <div class="progress-card glass">
-                    <h2>Processing VLM Pipeline</h2>
+                    <h2 id="progress-title">Processing VLM Pipeline</h2>
                     <div class="steps-container">
                         <div class="step" id="step-1">
                             <div class="step-indicator">1</div>
                             <div class="step-content">
-                                <h3>Resolution Capping & Token Allocation</h3>
-                                <p>Capping visual grid tokens to prevent CUDA VRAM spikes</p>
+                                <h3 id="step-1-title">Resolution Capping & Token Allocation</h3>
+                                <p id="step-1-desc">Capping visual grid tokens to prevent CUDA VRAM spikes</p>
                             </div>
                             <div class="step-status">Pending</div>
                         </div>
                         <div class="step" id="step-2">
                             <div class="step-indicator">2</div>
                             <div class="step-content">
-                                <h3>Qwen2.5-VL-7B Forward Pass</h3>
-                                <p>Offline 4-bit multi-row spatial layout reasoning on RTX 3080</p>
+                                <h3 id="step-2-title">Qwen2.5-VL-7B Forward Pass</h3>
+                                <p id="step-2-desc">Offline 4-bit multi-row spatial layout reasoning on RTX 3080</p>
                             </div>
                             <div class="step-status">Pending</div>
                         </div>
                         <div class="step" id="step-3">
                             <div class="step-indicator">3</div>
                             <div class="step-content">
-                                <h3>Tabular Ledger Reconstruction</h3>
-                                <p>Extracting dynamic columns and cell records directly</p>
+                                <h3 id="step-3-title">Tabular Ledger Reconstruction</h3>
+                                <p id="step-3-desc">Extracting dynamic columns and cell records directly</p>
                             </div>
                             <div class="step-status">Pending</div>
                         </div>
@@ -92,11 +121,11 @@
             <section class="results-section hidden" id="results-section">
                 <div class="results-header">
                     <div>
-                        <h2>Extracted Ledger Table</h2>
+                        <h2 id="results-title">Extracted Ledger Table</h2>
                         <span id="detected-stats" class="detected-stats"></span>
                     </div>
                     <div class="action-buttons">
-                        <button class="btn-secondary" onclick="exportCSV()">Export CSV</button>
+                        <button id="btn-export-csv" class="btn-secondary" onclick="exportCSV()">Export CSV</button>
                         <button class="btn-secondary" onclick="resetApp()">Process Another</button>
                     </div>
                 </div>
@@ -104,14 +133,14 @@
                 <div class="results-content-grid">
                     <!-- Image Preview Card -->
                     <div class="preview-card glass">
-                        <h3>Original Photograph</h3>
+                        <h3 id="preview-title">Original Photograph</h3>
                         <div class="img-wrapper">
-                            <img id="image-display" src="" alt="Uploaded Ledger">
+                            <img id="image-display" src="" alt="Uploaded Input">
                         </div>
                     </div>
 
-                    <!-- Dynamic Table Card -->
-                    <div class="table-card glass">
+                    <!-- Dynamic Table Card (Full Ledger Page Mode) -->
+                    <div class="table-card glass" id="table-card-container">
                         <h3>Transcribed Table (Columns & Rows)</h3>
                         <div class="table-container">
                             <table id="results-table" class="urdu-table">
@@ -129,6 +158,22 @@
                             <pre id="raw-json-display" class="hidden"></pre>
                         </div>
                     </div>
+
+                    <!-- Single Word/Line Result Card (Single Line Urdu Text Mode) -->
+                    <div class="word-result-card glass hidden" id="word-card-container">
+                        <div class="word-badge-tag">
+                            <span>✨ Fine-Tuned Nastaliq Word-Level Adapter</span>
+                        </div>
+                        <h3 class="word-card-heading">Transcribed Urdu Text (پڑھا گیا اردو متن)</h3>
+                        <div class="word-display-box">
+                            <div id="word-display-text" class="word-display-text"></div>
+                        </div>
+                        <div class="word-meta-info" id="word-meta-info"></div>
+                        <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+                            <button id="btn-copy-word" class="btn-primary" onclick="copyRecognizedText()">📋 Copy Text (کاپی کریں)</button>
+                            <button class="btn-secondary" onclick="resetApp()">Process Another</button>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -139,6 +184,6 @@
             </div>
         </main>
     </div>
-    <script src="script.js?v=20261009_v5"></script>
+    <script src="script.js?v=20261022_v1"></script>
 </body>
 </html>

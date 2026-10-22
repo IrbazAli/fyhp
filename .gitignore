@@ -9,6 +9,8 @@ qwen2.5-vl-7b/
 *.bin
 *.pt
 local_adapter/
+local_adapter*/
+combined_adapter/
 aasaan_khata_adapter/
 
 # Uploads & Temporary files
@@ -21,3 +23,7 @@ __pycache__/
 .vscode/
 .idea/
 .DS_Store
+
+# Reproducible external dataset manifests and separate training experiments
+dataset/nust_uhwr/
+training_runs/

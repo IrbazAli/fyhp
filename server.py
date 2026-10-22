@@ -84,9 +84,15 @@ def get_vlm():
         if os.path.exists("./local_adapter/adapter_model.safetensors"):
             try:
                 from peft import PeftModel
-                print("Applying fine-tuned LoRA adapter from ./local_adapter...")
+                print("Applying combined fine-tuned LoRA adapter (627 ledger crops + 10,991 UHWR lines, rank=24)...")
                 vlm_model = PeftModel.from_pretrained(vlm_model, "./local_adapter")
-                print("LoRA adapter loaded successfully.")
+                print("Combined LoRA adapter loaded successfully.")
+                if os.path.exists("./local_adapter_627/adapter_model.safetensors"):
+                    try:
+                        vlm_model.load_adapter("./local_adapter_627", adapter_name="ledger_627")
+                        print("Also registered standalone 'ledger_627' adapter.")
+                    except Exception as e2:
+                        pass
             except Exception as e:
                 print(f"Warning: Failed to load local adapter: {e}")
         print("Model loaded successfully.")
@@ -253,6 +259,61 @@ def run_vlm_on_image(image_path: str):
     return standard_columns, table_rows, parsed_json
 
 
+def run_vlm_on_word_crop(image_path: str):
+    """
+    Runs Qwen2.5-VL forward pass for single line / word Urdu handwriting transcription.
+    Uses the exact training prompt format from dataset/train_words.json.
+    """
+    model, processor = get_vlm()
+
+    prompt = "اس تصویر میں لکھا ہوا اردو ہاتھ کا لکھا لفظ یا عدد پڑھ کر بتائیں۔"
+
+    messages = [
+        {
+            "role": "user",
+            "content": [
+                {
+                    "type": "image",
+                    "image": image_path,
+                    "max_pixels": 100352
+                },
+                {
+                    "type": "text",
+                    "text": prompt
+                }
+            ],
+        }
+    ]
+
+    text = processor.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
+    image_inputs, video_inputs = process_vision_info(messages)
+    inputs = processor(
+        text=[text],
+        images=image_inputs,
+        videos=video_inputs,
+        padding=True,
+        return_tensors="pt",
+    ).to("cuda")
+
+    with torch.inference_mode():
+        generated_ids = model.generate(**inputs, max_new_tokens=128)
+
+    generated_ids_trimmed = [
+        out_ids[len(in_ids):] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
+    ]
+    raw_output = processor.batch_decode(
+        generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
+    )[0].strip()
+
+    # Clean any surrounding markdown fences or quotes
+    cleaned_output = re.sub(r'^```[\w]*\s*', '', raw_output)
+    cleaned_output = re.sub(r'\s*```$', '', cleaned_output).strip()
+    if (cleaned_output.startswith('"') and cleaned_output.endswith('"')) or (cleaned_output.startswith("'") and cleaned_output.endswith("'")):
+        cleaned_output = cleaned_output[1:-1].strip()
+
+    return cleaned_output
+
+
 @app.route('/')
 def index():
     return send_from_directory('frontend', 'index.html')
@@ -277,17 +338,55 @@ def upload_file():
     if not file or file.filename == '':
         return jsonify({"error": "No file selected"}), 400
 
+    mode = request.form.get('mode', 'ledger').strip().lower()
+
     ext = os.path.splitext(file.filename)[1].lower() or ".jpg"
     filename = f"upload_{uuid.uuid4().hex[:8]}{ext}"
     dest_path = os.path.join(UPLOADS_DIR, filename)
     file.save(dest_path)
 
     try:
-        columns, table_rows, raw_json = run_vlm_on_image(dest_path)
+        if mode in ('word', 'single_line', 'line'):
+            recognized_text = run_vlm_on_word_crop(dest_path)
+            return jsonify({
+                "mode": "word",
+                "text": recognized_text,
+                "image_url": f"/temp_uploads/{filename}"
+            })
+        else:
+            columns, table_rows, raw_json = run_vlm_on_image(dest_path)
+            return jsonify({
+                "mode": "ledger",
+                "columns": columns,
+                "table": table_rows,
+                "raw_json": raw_json,
+                "image_url": f"/temp_uploads/{filename}"
+            })
+    except Exception as e:
+        import traceback
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
+
+
+@app.route('/api/predict_word', methods=['POST'])
+def predict_word():
+    if 'image' not in request.files:
+        return jsonify({"error": "No image attached"}), 400
+
+    file = request.files['image']
+    if not file or file.filename == '':
+        return jsonify({"error": "No file selected"}), 400
+
+    ext = os.path.splitext(file.filename)[1].lower() or ".png"
+    filename = f"crop_{uuid.uuid4().hex[:8]}{ext}"
+    dest_path = os.path.join(UPLOADS_DIR, filename)
+    file.save(dest_path)
+
+    try:
+        recognized_text = run_vlm_on_word_crop(dest_path)
         return jsonify({
-            "columns": columns,
-            "table": table_rows,
-            "raw_json": raw_json,
+            "mode": "word",
+            "text": recognized_text,
             "image_url": f"/temp_uploads/{filename}"
         })
     except Exception as e:
@@ -298,6 +397,32 @@ def upload_file():
 
 @app.route('/api/sample', methods=['GET'])
 def process_sample():
+    mode = request.args.get('mode', 'ledger').strip().lower()
+
+    if mode in ('word', 'single_line', 'line'):
+        sample_name = request.args.get('name', '4_crop_010_ماما_طالب_حسین.png')
+        safe_name = os.path.basename(sample_name).replace("..", "").strip()
+        sample_path = os.path.join(DATASET_DIR, "word_crops", safe_name)
+        image_url = f"/dataset/word_crops/{safe_name}"
+        if not os.path.exists(sample_path):
+            sample_path = os.path.join(DATASET_DIR, safe_name)
+            image_url = f"/dataset/{safe_name}"
+
+        if not os.path.exists(sample_path):
+            return jsonify({"error": f"Sample not found: {sample_name}"}), 404
+
+        try:
+            recognized_text = run_vlm_on_word_crop(sample_path)
+            return jsonify({
+                "mode": "word",
+                "text": recognized_text,
+                "image_url": image_url
+            })
+        except Exception as e:
+            import traceback
+            traceback.print_exc()
+            return jsonify({"error": str(e)}), 500
+
     sample_name = request.args.get('name', '2.jpeg')
     safe_name = secure_filename(sample_name)
     sample_path = os.path.join(DATASET_DIR, safe_name)
@@ -308,6 +433,7 @@ def process_sample():
     try:
         columns, table_rows, raw_json = run_vlm_on_image(sample_path)
         return jsonify({
+            "mode": "ledger",
             "columns": columns,
             "table": table_rows,
             "raw_json": raw_json,
