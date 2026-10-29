@@ -33,7 +33,7 @@
             <!-- Mode Switcher -->
             <div class="mode-switch-wrapper">
                 <div class="mode-switch-container">
-                    <button type="button" class="mode-btn active" id="btn-mode-ledger" onclick="switchMode('ledger')">
+                    <button type="button" class="mode-btn" id="btn-mode-ledger" onclick="switchMode('ledger')">
                         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                             <polyline points="14 2 14 8 20 8"></polyline>
@@ -49,6 +49,22 @@
                         </svg>
                         <span>Single Line / Word Text (اکیلی سطر / لفظ)</span>
                     </button>
+                    <button type="button" class="mode-btn active" id="btn-mode-pipeline" onclick="switchMode('pipeline')">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                            <line x1="3" y1="15" x2="21" y2="15"></line>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                        </svg>
+                        <span>ViT Patch Inspector — Testing (ویژن ٹرانسفارمر پیچز)</span>
+                    </button>
+                    <button type="button" class="mode-btn" id="btn-mode-kraken" onclick="switchMode('kraken')">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"></rect>
+                            <path d="M3 9h18M3 15h18M9 3v18"></path>
+                        </svg>
+                        <span>Segmentation Benchmark (سیگمنٹیشن بنچ مارک — 5 ماڈلز)</span>
+                    </button>
                 </div>
             </div>
 
@@ -62,15 +78,41 @@
                             <path d="M12 3V15" stroke="#00FFA3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
                     </div>
-                    <h2 id="upload-title">Upload Ledger Image</h2>
-                    <p id="upload-subtitle">Drag & drop raw photograph or browse local files</p>
+                    <h2 id="upload-title">Qwen2.5-VL Vision Transformer & Patch Merger Output</h2>
+                    <p id="upload-subtitle">Extract in-memory 14×14 ViT patches and 28×28 merged visual tokens (0 disk files)</p>
+
+                    <!-- Benchmark Engine Selection Bar (Visible in Benchmark Mode) -->
+                    <div class="benchmark-engine-select-wrap hidden" id="benchmark-engine-selector-box">
+                        <span class="benchmark-select-label">Select Segmentation Candidate to Benchmark:</span>
+                        <div class="benchmark-engine-pills" id="upload-engine-pills">
+                            <button type="button" class="btn-engine-pill active" data-engine="kraken" onclick="selectBenchmarkEngine('kraken')">
+                                🟢 Kraken BLLA (Baselines)
+                            </button>
+                            <button type="button" class="btn-engine-pill" data-engine="opencv_rulings" onclick="selectBenchmarkEngine('opencv_rulings')">
+                                📏 OpenCV Rulings
+                            </button>
+                            <button type="button" class="btn-engine-pill" data-engine="table_transformer" onclick="selectBenchmarkEngine('table_transformer')">
+                                📊 Table Transformer (TATR)
+                            </button>
+                            <button type="button" class="btn-engine-pill" data-engine="yolo" onclick="selectBenchmarkEngine('yolo')">
+                                🎯 YOLO Layout
+                            </button>
+                            <button type="button" class="btn-engine-pill" data-engine="paddleocr" onclick="selectBenchmarkEngine('paddleocr')">
+                                🔍 PaddleOCR DBNet
+                            </button>
+                            <button type="button" class="btn-engine-pill btn-pill-all" data-engine="all" onclick="selectBenchmarkEngine('all')">
+                                ⚡ Compare All 5 (Scorecard)
+                            </button>
+                        </div>
+                    </div>
+
                     <input type="file" id="file-input" accept="image/*" hidden>
                     <button class="btn-primary" onclick="document.getElementById('file-input').click()">Select Image</button>
 
                     <div class="sample-picker">
                         <span>Or test with sample:</span>
                         <!-- Ledger Page Samples -->
-                        <div class="sample-buttons" id="samples-ledger">
+                        <div class="sample-buttons hidden" id="samples-ledger">
                             <button type="button" class="btn-sample" onclick="loadSample('2.jpeg')">Sample 2 (روزنامچہ)</button>
                             <button type="button" class="btn-sample" onclick="loadSample('1.jpeg')">Sample 1 (بل کھاتہ)</button>
                         </div>
@@ -79,6 +121,16 @@
                             <button type="button" class="btn-sample" onclick="loadSample('4_crop_010_ماما_طالب_حسین.png')">ماما طالب حسین</button>
                             <button type="button" class="btn-sample" onclick="loadSample('15_crop_024_ڈھلی.png')">ڈھلی</button>
                             <button type="button" class="btn-sample" onclick="loadSample('14_crop_005_عثمان_کمیشن_شاپ.png')">عثمان کمیشن شاپ</button>
+                        </div>
+                        <!-- Qwen Row Pipeline Samples -->
+                        <div class="sample-buttons" id="samples-pipeline">
+                            <button type="button" class="btn-sample" onclick="loadSample('1.jpeg')">Sample 1 (1.jpeg — بل کھاتہ)</button>
+                            <button type="button" class="btn-sample" onclick="loadSample('2.jpeg')">Sample 2 (2.jpeg — روزنامچہ)</button>
+                        </div>
+                        <!-- Segmentation Benchmark Samples -->
+                        <div class="sample-buttons hidden" id="samples-kraken">
+                            <button type="button" class="btn-sample" onclick="loadSample('1.jpeg')">Sample 1 (1.jpeg — بل کھاتہ)</button>
+                            <button type="button" class="btn-sample" onclick="loadSample('2.jpeg')">Sample 2 (2.jpeg — روزنامچہ)</button>
                         </div>
                     </div>
                 </div>
@@ -92,24 +144,24 @@
                         <div class="step" id="step-1">
                             <div class="step-indicator">1</div>
                             <div class="step-content">
-                                <h3 id="step-1-title">Resolution Capping & Token Allocation</h3>
-                                <p id="step-1-desc">Capping visual grid tokens to prevent CUDA VRAM spikes</p>
+                                <h3 id="step-1-title">Resolution Scaling & Token Geometry</h3>
+                                <p id="step-1-desc">Computing factor-28 resolution & spatial grid boundaries</p>
                             </div>
                             <div class="step-status">Pending</div>
                         </div>
                         <div class="step" id="step-2">
                             <div class="step-indicator">2</div>
                             <div class="step-content">
-                                <h3 id="step-2-title">Qwen2.5-VL-7B Forward Pass</h3>
-                                <p id="step-2-desc">Offline 4-bit multi-row spatial layout reasoning on RTX 3080</p>
+                                <h3 id="step-2-title">Vision Transformer Preprocessor</h3>
+                                <p id="step-2-desc">Extracting base 14×14 patches & 28×28 spatial tokens in-memory</p>
                             </div>
                             <div class="step-status">Pending</div>
                         </div>
                         <div class="step" id="step-3">
                             <div class="step-indicator">3</div>
                             <div class="step-content">
-                                <h3 id="step-3-title">Tabular Ledger Reconstruction</h3>
-                                <p id="step-3-desc">Extracting dynamic columns and cell records directly</p>
+                                <h3 id="step-3-title">Patch Coordinate Mapping</h3>
+                                <p id="step-3-desc">Organizing grid tiles without saving any files to disk</p>
                             </div>
                             <div class="step-status">Pending</div>
                         </div>
@@ -117,7 +169,476 @@
                 </div>
             </section>
 
-            <!-- Results Section -->
+            <!-- Vision Transformer (ViT) Patch Inspector Section -->
+            <section class="pipeline-review-section hidden" id="pipeline-review-section">
+                <div class="pipeline-header glass">
+                    <div>
+                        <h2>Vision Transformer (ViT) Patch & Token Inspector</h2>
+                        <div class="pipeline-meta">
+                            <span id="patch-vit-dims" class="badge">ViT Base Patch: 14×14 px</span>
+                            <span id="patch-token-dims" class="badge">Merged Token: 28×28 px</span>
+                            <span id="patch-grid-badge" class="badge">Grid: 0 × 0 (0 patches)</span>
+                            <span id="patch-memory-badge" class="badge" style="border-color:#10b981; color:#10b981;">⚡ In-Memory (0 files on disk)</span>
+                        </div>
+                    </div>
+                    <div class="action-buttons" style="display:flex; align-items:center; gap:10px; flex-wrap:wrap;">
+                        <div class="patch-mode-pills">
+                            <button type="button" id="btn-mode-token-patch" class="btn-patch-mode active" onclick="setPatchMode('token')">Merged Tokens (28×28) — Post-Merger</button>
+                            <button type="button" id="btn-mode-base-patch" class="btn-patch-mode" onclick="setPatchMode('base')">Base Patches (14×14) — Pre-Merger</button>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:6px;">
+                            <label style="font-size:0.75rem; color:var(--text-muted);">Color:</label>
+                            <select id="select-grid-color" class="type-select" onchange="changeGridColor(this.value)" style="padding:3px 8px; font-size:0.8rem;">
+                                <option value="#00FFA3">Neon Green</option>
+                                <option value="#00E5FF" selected>Electric Cyan</option>
+                                <option value="#FFEA00">Neon Yellow</option>
+                                <option value="#FF007F">Hot Pink</option>
+                            </select>
+                        </div>
+                        <button id="btn-toggle-grid" class="btn-secondary" onclick="toggleGridLines()" style="padding:6px 12px; font-size:0.8rem;">Hide Grid</button>
+                        <button class="btn-secondary" onclick="resetApp()" style="padding:6px 12px; font-size:0.8rem;">Reset</button>
+                    </div>
+                </div>
+
+                <div class="review-grid">
+                    <!-- Left: Full Resized Input with Grid Overlays -->
+                    <div class="review-page-card glass">
+                        <div class="review-card-header">
+                            <h3>Resized Input Page with ViT Grid</h3>
+                            <span class="info-tag" id="patch-hover-coords">Hover to inspect tokens</span>
+                        </div>
+                        <div class="patch-canvas-container" id="patch-canvas-container">
+                            <canvas id="patch-main-canvas"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Right: Patch Inspector & Output Gallery -->
+                    <div class="review-rows-card glass">
+                        <div class="review-card-header">
+                            <h3 id="inspector-card-heading">Merged Visual Token (1 Single Image)</h3>
+                            <span class="info-tag" id="active-patch-title">Token #0 (28×28 px)</span>
+                        </div>
+
+                        <!-- Merged Token: 1 Single Image Box (Merged from 4 ViT Patches) -->
+                        <div class="merger-visual-container">
+                            <div class="merger-token-box">
+                                <span style="font-size:0.75rem; color:#00FFA3; font-weight:700;">Single Merged Image (28×28 px)</span>
+                                <div class="merger-token-canvas-wrapper single-image-wrapper">
+                                    <canvas id="patch-magnifier-canvas" width="28" height="28"></canvas>
+                                </div>
+                                <span id="merger-token-label" style="font-size:0.75rem; color:#00E5FF; font-family:monospace; font-weight:600;">Token #0 (1 Image)</span>
+                            </div>
+
+                            <div class="patch-meta-details">
+                                <div class="patch-meta-row">
+                                    <span class="patch-meta-label">Spatial Token ID:</span>
+                                    <span class="patch-meta-value" id="meta-token-id">#0 / 0</span>
+                                </div>
+                                <div class="patch-meta-row">
+                                    <span class="patch-meta-label">Merged Image Size:</span>
+                                    <span class="patch-meta-value" style="color:#00FFA3;">28 × 28 px (Unified Single Image)</span>
+                                </div>
+                                <div class="patch-meta-row">
+                                    <span class="patch-meta-label">Token Grid (Y, X):</span>
+                                    <span class="patch-meta-value" id="meta-grid-coords">Row 0, Col 0 (2D RoPE)</span>
+                                </div>
+                                <div class="patch-meta-row">
+                                    <span class="patch-meta-label">Pixel Box [x, y, w, h]:</span>
+                                    <span class="patch-meta-value" id="meta-pixel-box">[0, 0, 28, 28]</span>
+                                </div>
+                                <div class="patch-meta-row">
+                                    <span class="patch-meta-label">Merged from Patches:</span>
+                                    <span class="patch-meta-value" id="meta-base-patch-ids">#0, #1, #86, #87</span>
+                                </div>
+                                <div class="patch-meta-row">
+                                    <span class="patch-meta-label">MLP Projection:</span>
+                                    <span class="patch-meta-value" style="color:#00E5FF; font-size:0.75rem;">ViT 1280d × 4 ──▶ MLP ──▶ LLM 3584d</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- All Patches Output Browser -->
+                        <div class="patch-gallery-card">
+                            <div class="patch-gallery-controls">
+                                <div style="display:flex; align-items:center; gap:8px;">
+                                    <span style="font-size:0.85rem; font-weight:600; color:#fff;" id="gallery-output-title">Merged Tokens Output:</span>
+                                    <select id="patch-view-type-select" class="type-select" onchange="switchPatchViewType(this.value)" style="padding:3px 8px; font-size:0.8rem;">
+                                        <option value="row">Browse by Row</option>
+                                        <option value="batch">Sequential Batch</option>
+                                    </select>
+                                </div>
+                                <button id="btn-render-all-tiles" class="btn-ctrl" onclick="renderAllPatchesTiledCanvas()" style="font-size:0.75rem; color:#00FFA3; border-color:rgba(0,255,163,0.3);">
+                                    🖼️ Render All Merged Tokens Sheet
+                                </button>
+                            </div>
+
+                            <!-- Row Browser View -->
+                            <div id="patch-row-view-container">
+                                <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+                                    <label style="font-size:0.8rem; color:var(--text-muted);">Select Grid Row:</label>
+                                    <div style="display:flex; align-items:center; gap:6px;">
+                                        <button class="btn-ctrl" onclick="stepRow(-1)">◀ Prev</button>
+                                        <select id="patch-row-dropdown" class="type-select" onchange="selectRow(parseInt(this.value))" style="padding:2px 8px; font-size:0.8rem;"></select>
+                                        <button class="btn-ctrl" onclick="stepRow(1)">Next ▶</button>
+                                    </div>
+                                </div>
+                                <div class="patch-row-strip-wrapper" id="patch-row-strip"></div>
+                            </div>
+
+                            <!-- Batch Browser View -->
+                            <div id="patch-batch-view-container" class="hidden">
+                                <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+                                    <span id="patch-batch-label" style="font-size:0.8rem; color:var(--text-muted);">Batch 1 of 100</span>
+                                    <div style="display:flex; gap:6px;">
+                                        <button class="btn-ctrl" onclick="stepBatch(-1)">◀ Prev</button>
+                                        <button class="btn-ctrl" onclick="stepBatch(1)">Next ▶</button>
+                                    </div>
+                                </div>
+                                <div class="patch-batch-grid" id="patch-batch-grid"></div>
+                            </div>
+                        </div>
+
+                        <!-- Notice Box -->
+                        <div class="patch-notice-box">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                            <span><strong>Testing Mode:</strong> Downstream translation (Stage D) and structured post-processing (Stage E/F) are commented down. All patches are generated dynamically in-memory (0 files written to disk).</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 4: Multimodal Fusion Card (replacing <|image_pad|> tokens with visual vectors) -->
+                <div class="multimodal-fusion-card glass" id="multimodal-fusion-section">
+                    <div class="fusion-header">
+                        <div style="display:flex; align-items:center; gap:10px;">
+                            <span class="step-badge-pill">Step 4</span>
+                            <div>
+                                <h3 style="margin:0; font-size:1.1rem; color:#fff; font-weight:700;">Multimodal Fusion (replacing &lt;|image_pad|&gt; tokens with visual vectors)</h3>
+                                <p style="margin:2px 0 0 0; font-size:0.8rem; color:var(--text-muted);">
+                                    Text prompt embeddings + 2,451 merged visual token vectors spliced into one unified sequence for LLM Transformer layers
+                                </p>
+                            </div>
+                        </div>
+                        <span class="info-tag" id="fusion-sequence-summary">2,516 Total Tokens in Sequence</span>
+                    </div>
+
+                    <!-- Sequence Stream Architecture Bar -->
+                    <div class="fusion-stream-wrapper">
+                        <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-muted); margin-bottom:4px;">
+                            <span>Token #0 (Sequence Start)</span>
+                            <span id="fusion-stream-midpoint">Token #15..#2465 (Visual Vectors Span)</span>
+                            <span id="fusion-stream-endpoint">Token #2515 (Prompt End)</span>
+                        </div>
+                        <div class="fusion-stream-bar">
+                            <div class="fusion-stream-segment segment-prefix" id="stream-prefix-bar" title="15 Prefix Text Tokens">
+                                <span>Text Prefix (15 tokens)</span>
+                            </div>
+                            <div class="fusion-stream-segment segment-visual" id="stream-visual-bar" title="2,451 Visual Vectors (replacing <|image_pad|>)">
+                                <span id="stream-visual-label">2,451 Merged Visual Vectors (replacing &lt;|image_pad|&gt;)</span>
+                                <div id="stream-active-marker" class="stream-active-indicator"></div>
+                            </div>
+                            <div class="fusion-stream-segment segment-postfix" id="stream-postfix-bar" title="50 Postfix Urdu Text Prompt Tokens">
+                                <span>Urdu Prompt Postfix (50 tokens)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Side-by-Side Vector Replacement (Before & After Splicing) -->
+                    <div class="fusion-replacement-box">
+                        <!-- Before Splicing: Text Tokenizer <|image_pad|> -->
+                        <div class="replacement-col before-col">
+                            <div class="replacement-col-badge">1. BEFORE FUSION (Text Tokenizer)</div>
+                            <div class="replacement-card">
+                                <div class="token-name-tag">&lt;|image_pad|&gt;</div>
+                                <div class="token-attr-row">
+                                    <span class="token-attr-lbl">Special Token ID:</span>
+                                    <span class="token-attr-val" id="fusion-pad-id">151655</span>
+                                </div>
+                                <div class="token-attr-row">
+                                    <span class="token-attr-lbl">Sequence Position:</span>
+                                    <span class="token-attr-val" id="fusion-seq-slot">#15 of 2,516</span>
+                                </div>
+                                <div class="token-attr-row">
+                                    <span class="token-attr-lbl">Embedding Type:</span>
+                                    <span class="token-attr-val">Static Learned Placeholder (3584d)</span>
+                                </div>
+                                <div class="token-status-note">
+                                    Allocated by processor.apply_chat_template to reserve space in sequence
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Arrow Splicing Action -->
+                        <div class="fusion-arrow-box">
+                            <div class="arrow-pill-label">SPLICED & REPLACED</div>
+                            <div class="arrow-glyph">➔</div>
+                            <div class="arrow-subtext">inputs_embeds[mask] = visual_embeds</div>
+                        </div>
+
+                        <!-- After Splicing: Merged Visual Vector -->
+                        <div class="replacement-col after-col">
+                            <div class="replacement-col-badge active">2. AFTER FUSION (Continuous Visual Vector)</div>
+                            <div class="replacement-card active-visual-card">
+                                <div style="display:flex; align-items:center; gap:12px;">
+                                    <div class="fusion-mini-img-wrap">
+                                        <canvas id="fusion-slot-canvas" width="28" height="28"></canvas>
+                                    </div>
+                                    <div style="flex:1;">
+                                        <div class="token-name-tag active-tag" id="fusion-visual-tag">Visual Vector v_0</div>
+                                        <div class="token-attr-row">
+                                            <span class="token-attr-lbl">Single Merged Image:</span>
+                                            <span class="token-attr-val" style="color:#00FFA3;">28 × 28 px</span>
+                                        </div>
+                                        <div class="token-attr-row">
+                                            <span class="token-attr-lbl">3D MRoPE (T, H, W):</span>
+                                            <span class="token-attr-val" id="fusion-mrope-val" style="color:#00E5FF;">[0, 0, 0]</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="token-attr-row" style="margin-top:6px;">
+                                    <span class="token-attr-lbl">Vector Dimension:</span>
+                                    <span class="token-attr-val" style="color:#fff;">3,584 continuous floats (bfloat16)</span>
+                                </div>
+                                <div class="token-status-note active-note">
+                                    The LLM attention heads now attend to this single 28×28 image crop vector as if it were a high-dimensional concept token
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Token Sequence Stream Explorer -->
+                    <div class="fusion-explorer-container">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; flex-wrap:wrap; gap:8px;">
+                            <span style="font-size:0.85rem; font-weight:600; color:#fff;">Token Sequence Inspector (2,516 tokens):</span>
+                            <div style="display:flex; gap:6px;">
+                                <button type="button" class="btn-ctrl" onclick="jumpSequence('prefix')">⏮ Prefix Tokens (0..14)</button>
+                                <button type="button" class="btn-ctrl" onclick="jumpSequence('active')">🎯 Current Visual Vector</button>
+                                <button type="button" class="btn-ctrl" onclick="jumpSequence('postfix')">⏭ Urdu Prompt Postfix (2466..2515)</button>
+                            </div>
+                        </div>
+                        <div class="fusion-tokens-scroll" id="fusion-tokens-stream"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stage B: Two-Row Refinement Modal -->
+            <div id="stage-b-modal" class="modal-overlay hidden">
+                <div class="modal-card glass">
+                    <div class="modal-header">
+                        <h3 id="stage-b-modal-title">Stage B: Two-Row Context Refinement</h3>
+                        <button class="btn-close" onclick="closeStageBModal()">✕</button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modal-img-wrapper">
+                            <img id="stage-b-context-img" src="" alt="Context Crop">
+                        </div>
+                        <div class="modal-info-box" id="stage-b-notes"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn-secondary" onclick="closeStageBModal()">Close</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Document Segmentation Benchmark Section (All 5 Engines) -->
+            <section class="kraken-section hidden" id="kraken-section">
+                <!-- Top Engine Switcher Bar -->
+                <div class="benchmark-switcher-bar glass">
+                    <span class="switcher-bar-label">⚡ Benchmark Candidates:</span>
+                    <div class="benchmark-engine-pills header-pills" id="section-engine-pills">
+                        <button type="button" class="btn-engine-pill active" data-engine="kraken" onclick="switchBenchmarkEngine('kraken')">
+                            🟢 Kraken BLLA
+                        </button>
+                        <button type="button" class="btn-engine-pill" data-engine="opencv_rulings" onclick="switchBenchmarkEngine('opencv_rulings')">
+                            📏 OpenCV Rulings
+                        </button>
+                        <button type="button" class="btn-engine-pill" data-engine="table_transformer" onclick="switchBenchmarkEngine('table_transformer')">
+                            📊 Table Transformer (TATR)
+                        </button>
+                        <button type="button" class="btn-engine-pill" data-engine="yolo" onclick="switchBenchmarkEngine('yolo')">
+                            🎯 YOLO Layout
+                        </button>
+                        <button type="button" class="btn-engine-pill" data-engine="paddleocr" onclick="switchBenchmarkEngine('paddleocr')">
+                            🔍 PaddleOCR DBNet
+                        </button>
+                        <button type="button" class="btn-engine-pill btn-pill-all" data-engine="all" onclick="switchBenchmarkEngine('all')">
+                            ⚡ Compare All 5 (Scorecard)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Comparative Benchmark Scorecard Section -->
+                <div class="benchmark-scorecard-section glass hidden" id="benchmark-scorecard-section">
+                    <div class="scorecard-header">
+                        <div>
+                            <h2>Comparative Segmentation Benchmark Scorecard</h2>
+                            <p class="scorecard-subtitle">Side-by-side evaluation across all 5 candidate segmentation approaches on the current ledger image.</p>
+                        </div>
+                        <div class="pipeline-meta">
+                            <span id="scorecard-total-time" class="badge">Total Latency: 0.00s</span>
+                            <span class="badge" style="border-color:#10b981; color:#10b981;">⚡ 100% In-Memory (0 disk files)</span>
+                        </div>
+                    </div>
+                    <div class="table-container" style="margin-top:1rem;">
+                        <table class="scorecard-table">
+                            <thead>
+                                <tr>
+                                    <th>Candidate Engine</th>
+                                    <th>Your Objective</th>
+                                    <th>Output Type</th>
+                                    <th>Detected</th>
+                                    <th>Latency</th>
+                                    <th>Device</th>
+                                    <th>Nastaliq Assessment</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody id="benchmark-scorecard-tbody">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="pipeline-header glass" id="benchmark-single-header">
+                    <div>
+                        <h2 id="benchmark-engine-title">Kraken BLLA Neural Baseline & Layout Analysis</h2>
+                        <div class="pipeline-meta">
+                            <span id="kraken-model-badge" class="badge">Model: blla.mlmodel</span>
+                            <span id="kraken-lines-badge" class="badge" style="border-color:#00FFA3; color:#00FFA3;">Items: 0</span>
+                            <span id="kraken-device-badge" class="badge">Device: GPU (cuda:0)</span>
+                            <span id="kraken-latency-badge" class="badge">Latency: 0.00s</span>
+                            <span id="kraken-dir-badge" class="badge">Type: Baselines & Polygons</span>
+                            <span id="kraken-memory-badge" class="badge" style="border-color:#10b981; color:#10b981;">⚡ In-Memory (0 files on disk)</span>
+                        </div>
+                    </div>
+                    <div class="action-buttons" style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                        <button type="button" id="btn-toggle-baselines" class="btn-patch-mode active" onclick="toggleKrakenBaselines()">
+                            🟢 Baselines/Rulings: ON
+                        </button>
+                        <button type="button" id="btn-toggle-polygons" class="btn-patch-mode active" onclick="toggleKrakenPolygons()">
+                            🟣 Polygons/Masks: ON
+                        </button>
+                        <button type="button" id="btn-toggle-bboxes" class="btn-patch-mode active" onclick="toggleKrakenBBoxes()">
+                            🔵 BBoxes/Rows: ON
+                        </button>
+                        <button type="button" id="btn-toggle-labels" class="btn-patch-mode active" onclick="toggleKrakenLabels()">
+                            🏷️ Labels: ON
+                        </button>
+                        <button class="btn-secondary" onclick="resetApp()" style="padding:6px 14px; font-size:0.8rem;">Reset</button>
+                    </div>
+                </div>
+
+                <div class="review-grid kraken-review-grid" id="benchmark-review-grid">
+                    <!-- Left: Full Annotated Image Canvas -->
+                    <div class="review-page-card glass">
+                        <div class="review-card-header">
+                            <h3 id="benchmark-canvas-header">Segmented Document Page with Neural Overlays</h3>
+                            <span class="info-tag" id="kraken-hover-coords">Hover or click an item to inspect</span>
+                        </div>
+                        <div class="patch-canvas-container kraken-canvas-container" id="kraken-canvas-container">
+                            <canvas id="kraken-main-canvas"></canvas>
+                        </div>
+                    </div>
+
+                    <!-- Right: Active Item Inspector & Detected Items Gallery -->
+                    <div class="review-rows-card glass kraken-sidebar-card">
+                        <!-- Active Selected Item Card -->
+                        <div class="review-card-header">
+                            <h3 id="kraken-active-heading">Selected Item Crop</h3>
+                            <span class="info-tag" id="kraken-active-line-title">Item #1</span>
+                        </div>
+
+                        <div class="kraken-active-inspector">
+                            <div class="kraken-crop-display-box">
+                                <span class="kraken-subheading">In-Memory Crop (0 Files Saved to PC):</span>
+                                <div class="kraken-crop-wrapper">
+                                    <img id="kraken-active-crop" src="" alt="Cropped Item Preview">
+                                </div>
+                            </div>
+
+                            <div class="patch-meta-details kraken-meta-details">
+                                <div class="patch-meta-row">
+                                    <span class="patch-meta-label">Item Index & ID:</span>
+                                    <span class="patch-meta-value" id="kraken-meta-line-id">#1 (line_0)</span>
+                                </div>
+                                <div class="patch-meta-row">
+                                    <span class="patch-meta-label">Bounding Box (x, y, w, h):</span>
+                                    <span class="patch-meta-value" id="kraken-meta-bbox">[0, 0, 0 × 0 px]</span>
+                                </div>
+                                <div class="patch-meta-row">
+                                    <span class="patch-meta-label">Polyline / Ruling Coordinates:</span>
+                                    <span class="patch-meta-value" id="kraken-meta-baseline-pts">0 points</span>
+                                </div>
+                                <div class="patch-meta-row">
+                                    <span class="patch-meta-label">Boundary / Mask Vertices:</span>
+                                    <span class="patch-meta-value" id="kraken-meta-boundary-pts">0 points</span>
+                                </div>
+                                <div class="patch-meta-row">
+                                    <span class="patch-meta-label">Tags / Class Type:</span>
+                                    <span class="patch-meta-value" id="kraken-meta-tags">default</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Gallery of all detected items -->
+                        <div class="kraken-gallery-section">
+                            <div class="kraken-gallery-header">
+                                <h4 style="font-size:0.95rem; color:#fff; font-weight:600;">
+                                    All Segmented Items (<span id="kraken-gallery-count">0</span> Total)
+                                </h4>
+                                <span style="font-size:0.75rem; color:var(--text-muted);">Click any row to inspect</span>
+                            </div>
+                            <div class="kraken-lines-list" id="kraken-lines-list">
+                                <!-- Item cards populated dynamically -->
+                            </div>
+                        </div>
+
+                        <!-- Preprocessor Info Notice -->
+                        <div class="patch-notice-box" style="margin-top:1rem;">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="8" x2="12" y2="12"></line>
+                                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                            </svg>
+                            <span id="benchmark-engine-note"><strong>Kraken BLLA Segmentation:</strong> Uses neural baseline analysis (VGSL) to extract irregular line polygons and baselines. Notice how lines wrap closely around Nastaliq handwriting and descenders without rigid rectangular clipping. All crops are generated in-memory.</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stage F: Final Structured Results & Excel Export -->
+            <section class="pipeline-results-section hidden" id="pipeline-results-section">
+                <div class="results-header glass">
+                    <div>
+                        <h2>Stage F: Structured Ledger & Excel Output</h2>
+                        <span id="pipeline-results-stats" class="detected-stats"></span>
+                    </div>
+                    <div class="action-buttons">
+                        <a id="btn-download-xlsx" href="#" class="btn-primary" style="background:#059669; text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+                            📥 Download Genuine Excel (.xlsx)
+                        </a>
+                        <a id="btn-download-json" href="#" class="btn-secondary" style="text-decoration:none;">
+                            📄 Download JSON
+                        </a>
+                        <button class="btn-secondary" onclick="resetApp()">Process Another Page</button>
+                    </div>
+                </div>
+
+                <div class="pipeline-table-card glass">
+                    <div class="table-container">
+                        <table id="pipeline-results-table" class="urdu-table">
+                            <thead id="pipeline-thead"></thead>
+                            <tbody id="pipeline-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section (Legacy Modes) -->
             <section class="results-section hidden" id="results-section">
                 <div class="results-header">
                     <div>
@@ -184,6 +705,7 @@
             </div>
         </main>
     </div>
-    <script src="script.js?v=20261022_v1"></script>
+
+    <script src="script.js?v=20261027_kraken_v1"></script>
 </body>
 </html>

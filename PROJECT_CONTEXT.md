@@ -303,7 +303,149 @@ publication, dependency installation, or Git push was performed.
     - Ledger crop `15_crop_024_ڈھلی.png`: Target: *"ڈھلی"* $\rightarrow$ Model: *"ڈھلی"* (100% Exact Match ✅).
     - Zero catastrophic forgetting of ledger accounting terms.
   - Mathematically merged the 627-sample ledger LoRA ($r=8$) and the 10,991-sample UHWR LoRA ($r=16$) into a unified lossless combined adapter ($r=24, \alpha=48$) via [`merge_adapters.py`](file:///home/irbazali/Desktop/FYP/merge_adapters.py) (273 MB safetensors saved to `./combined_adapter/` and active in `./local_adapter/`). Preserved individual adapters in `./local_adapter_627/` and `./local_adapter_10991/`.
-  - Updated [`server.py`](file:///home/irbazali/Desktop/FYP/server.py) to load the combined adapter and register both on startup.
+  - Switched [`server.py`](file:///home/irbazali/Desktop/FYP/server.py) to exclusively load the new trained LoRA adapter ([`./local_adapter_10991`](file:///home/irbazali/Desktop/FYP/local_adapter_10991)) without the previous 627 adapter for isolation testing.
+
+## Authorized Changes (2026-10-23) — Qwen Row Pipeline Experiment
+
+Implemented the complete end-to-end Qwen-based row segmentation experiment (**Qwen Row Pipeline — Experimental**) with separate, inspectable stages:
+- **Architecture and Modules**:
+  - [`qwen_row_pipeline/geometry.py`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/geometry.py): EXIF orientation canonicalization (`make_canonical_image`), explicit factor-28 spatial grid scaling matching Qwen's 28x28 token patches (`compute_factor28_dimensions`), bidirectional coordinate mapping (`model input -> context crop -> canonical full page`), non-clamping boundary validation (`validate_row_bounds` flagging material out-of-bounds, overlaps, duplicate candidates, and tiny/huge bounds), full-resolution rectangular clean crop extraction (`extract_row_crop`).
+  - [`qwen_row_pipeline/prompts.py`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/prompts.py): Dedicated prompts for Stage A (whole-page layout proposals with exact user rules, strict JSON schema, and zero dummy names/amounts), Stage B (two-row context refinement with descent flourish preservation and conflict detection), Stage D (faithful verbatim row transcription preserving Urdu, English, numbers, and ditto marks `//`), and Stage E (positional & content-based field assignment with column guide evidence).
+  - [`qwen_row_pipeline/storage.py`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/storage.py): Isolated job workspace persistence under `results/qwen_row_pipeline/<job_id>/` (storing original image, canonical image, localization image, coordinate transforms, prompts, generation settings, raw decoded outputs before cleaning, manifests, crops, and multi-sheet genuine XLSX via `openpyxl` with RTL presentation, explicit text datatypes, and `Ledger`, `Review`, and `Provenance` sheets).
+  - [`qwen_row_pipeline/engine.py`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/engine.py): Single GPU model instance reuse via `get_shared_vlm`, serialization of all GPU calls across threads through `GPU_GENERATION_LOCK`, deterministic greedy decoding (`do_sample=False`, `repetition_penalty=1.15`), truncation detection, robust JSON extraction supporting both object and array formats with partial-recovery, and full lifecycle orchestration.
+  - [`qwen_row_pipeline/routes.py`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/routes.py): Flask Blueprint exposing `/api/qwen_pipeline/upload`, `/api/qwen_pipeline/job/<job_id>`, `/crop_edit`, `/restore_proposal`, `/refine_pair`, `/transcribe`, artifact serving, and `/export/xlsx` / `/export/json`.
+  - Registered blueprint in [`server.py`](file:///home/irbazali/Desktop/FYP/server.py) and wrapped legacy modes with the shared `GPU_GENERATION_LOCK`.
+- **Frontend & Stage C Review Interface**:
+  - Added third mode tab in [`frontend/index.html`](file:///home/irbazali/Desktop/FYP/frontend/index.html): **"Qwen Row Pipeline — Experimental"**.
+  - Built **Stage C Crop Review Interface**: Dual-panel layout with canonical page SVG boundary overlays on the left and a scrollable list of row cards on the right. Controls include numeric boundary inputs (`Top`, `Bottom`), "Save Bounds", "Restore Original", "Refine with Next Row (Stage B)", and type dropdowns.
+  - Built **Stage B Refinement Modal**: Displays clean two-row context crop, separation notes, ambiguity flags, and conflict warnings.
+  - Built **Stage F Structured Results View**: Dynamic table displaying discovered columns, raw Qwen transcription beside structured values, review flags, clean crop links, and genuine `.xlsx` / JSON downloads.
+  - Added CSS glassmorphic dark-theme styles in [`frontend/style.css`](file:///home/irbazali/Desktop/FYP/frontend/style.css).
+- **Verified Testing**:
+  - [`tests/test_qwen_pipeline.py`](file:///home/irbazali/Desktop/FYP/tests/test_qwen_pipeline.py): 7 unit tests passed 100% (factor-28 sizing, coordinate mapping, non-clamping validation, two-row context roundtrip, JSON truncation recovery, genuine XLSX export, stable row identity, and stale-result invalidation upon crop edits).
+  - [`tests/smoke_test_real_pipeline.py`](file:///home/irbazali/Desktop/FYP/tests/smoke_test_real_pipeline.py): Live end-to-end smoke test executed against local server on `dataset/2.jpeg`.
+    - Stage A proposed row candidates.
+    - Stage C manual edit saved boundary adjustments (`[-18, 809]` to `[-16, 811]`), re-cropped image, and flagged downstream as stale.
+    - Stage B refined row_001 and row_002 with two-row context crop (`"The flourish on the number '4' in کیش extends into the next line."`).
+    - Stage D faithfully transcribed crops verbatim: Row 1 `"تفصیل آمان"`, Row 2 `"11-03-018"`, Row 3 `"مونگ پھلی 75-410"`, Row 4 `"12420 82 کمیشن"`, Row 5 & 6 `"عبد المتین ڈھلی"` (0% hallucination of full-page prompt boilerplate).
+- **Adapter Configuration and GPU Loading**:
+  - Confirmed active adapter is [`./combined_adapter`](file:///home/irbazali/Desktop/FYP/combined_adapter) (the mathematically fused $r=24, \alpha=48$ LoRA combining the user's 627 ledger words and the 10,991 NUST UHWR dataset).
+  - Resolved `ValueError: Some modules are dispatched on the CPU or the disk`: Added `llm_int8_enable_fp32_cpu_offload=True` to `BitsAndBytesConfig` in [`qwen_row_pipeline/engine.py`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/engine.py) and verified GPU VRAM is completely clear (15 MiB used) for the user to run `server.py` directly.
+- **Row Detection and Crop Normalization Fix**:
+  - Identified and fixed bug where model output wrapped in `[ { "coordinate_space": ..., "rows": [...] } ]` was parsed as a single dummy row with `top: 0, bottom: 0` (clamped to a 1px crop at the very top of the image).
+  - Enhanced [`parse_json_from_model_output`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/engine.py#L234-L260) and [`map_stage_a_coordinates`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/geometry.py#L105-L115) to normalize array-wrapped dictionaries and nested row structures.
+  - Added explicit prompt constraint in [`STAGE_A_SYSTEM_RULES`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/prompts.py#L16-L28) ensuring row 1 starts where handwritten text actually begins rather than the top image margin. Verified all 11 rows in `job_20261023_115325_201421` now map accurately (Row 1 starts at $y=179$ px where handwritten ink begins).
+- **Dense Ledger Token Limit & Truncation Recovery Fix (job_20261023_145546_87f6fb)**:
+  - Identified failure cause on dense ledger pages: Stage A `max_new_tokens` (1536) was reached after generating 28 rows, cutting off the JSON mid-token (`{"top":630`). The previous truncation recovery was unable to resolve deeply nested bracket/brace stacks (`[ { ... "rows": [ ...`).
+  - Doubled Stage A token budget in [`qwen_row_pipeline/engine.py`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/engine.py#L371) to `max_new_tokens: 3072`.
+  - Implemented stack-based closing delimiter calculation (`compute_closing_suffix`) in [`parse_json_from_model_output`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/engine.py#L265-L315) which determines the exact sequence of closing brackets/braces (e.g. `]}]`).
+  - Verified on `job_20261023_145546_87f6fb`: successfully recovered all 28 completed rows without data loss. Added unit test case 7 to [`tests/test_qwen_pipeline.py`](file:///home/irbazali/Desktop/FYP/tests/test_qwen_pipeline.py).
+- **Hyphenated & String Coordinate Sanitization Fix (job_20261026_131441_9c08ae)**:
+  - Fixed crash `could not convert string to float: '281-'` caused when model emitted hyphenated coordinates, ledger amounts, or non-numeric tokens (`'281-'`, `'50000/-'`, `'N/'`) in `top`/`bottom`.
+  - Created [`parse_coordinate_float`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/geometry.py#L15-L55) to safely clean trailing slashes, dashes, currency markers, and non-numeric artifacts into valid floats without crashing.
+  - Reinforced [`STAGE_A_SYSTEM_RULES`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/prompts.py#L16-L32) and [`STAGE_A_SCHEMA`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/prompts.py#L35-L60) to explicitly require integer vertical Y pixel coordinates between $0$ and $H$, warning the model never to output page amounts or trailing dashes into `top`/`bottom`.
+  - Added unit test 8 to [`tests/test_qwen_pipeline.py`](file:///home/irbazali/Desktop/FYP/tests/test_qwen_pipeline.py) (8/8 tests passing).
+
+## Authorized Changes (2026-10-27) — Vision Transformer (ViT) Patch & Token Inspector Mode
+
+- **Purpose & Scope**:
+  - The user requested testing Qwen2.5-VL's vision preprocessor (Vision Transformer) image decomposition:
+    - Return patches in whatever dimensions the preprocessor cuts (base ViT patches: $14 \times 14$ px; merged spatial 2D-RoPE tokens: $28 \times 28$ px via `merge_size=2`).
+    - Show all patches as output in the interface.
+    - Strictly do NOT save patch files to disk / PC (all processing and visualization done in memory via HTML5 canvas).
+    - Comment down downstream translation (Stage D) and structured post-processing (Stage E/F) for this testing phase.
+- **Backend Implementation**:
+  - Added [`extract_vision_patches`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/engine.py#L336-L425) in `QwenRowPipelineRunner`:
+    - Runs canonical orientation transpose via `ImageOps.exif_transpose`.
+    - Queries `processor.image_processor` for exact `smart_resize` factor-28 dimensions ($1204 \times 1596$), `patch_size=14`, `merge_size=2`, `temporal_patch_size=2`.
+    - Produces grid geometry: $114 \times 86 = 9,804$ base patches and $57 \times 43 = 2,451$ merged tokens.
+    - Generates in-memory Base64 Data URL; zero patch files are saved to the filesystem.
+    - Commented down downstream translation (`transcribe_and_assign_reviewed_crops`) and post-processing for this test.
+  - Connected [`/api/qwen_pipeline/upload`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/routes.py#L25-L65) to run `extract_vision_patches`.
+- **Post-Merger Token Visualization (Unified Single Image)**:
+  - Updated merged token visualization based on user guidance ("these four tokens merged should show as one img not as different patches"):
+    - Removed disjoint 4-subpatch cards from the inspector; now renders the merged entity as **ONE single continuous image** ($28 \times 28$ px) at high-magnification ($140 \times 140$ px crisp display).
+    - Removed internal 14px dashed lines and sub-patch highlights on the main canvas; now draws only clean solid factor-28 token borders and highlights the full unified $28 \times 28$ rectangle.
+- **Step 4: Multimodal Fusion (replacing `<|image_pad|>` tokens with visual vectors)**:
+  - Implemented token sequence analysis in [`extract_vision_patches`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/engine.py#L398-L450):
+    - Generates full chat template input IDs using `processor.apply_chat_template` and `processor.tokenizer`.
+    - Total sequence length: 2,516 tokens, composed of:
+      1. *Prefix*: 15 text tokens (`<|im_start|>system...<|vision_start|>`).
+      2. *Visual Span*: Exactly 2,451 `<|image_pad|>` placeholder tokens (ID 151655) spanning indices $[15..2465]$.
+      3. *Postfix*: 50 Urdu prompt text tokens (`<|vision_end|>` followed by prompt and `<|im_start|>assistant`).
+  - Built interactive **Step 4: Multimodal Fusion** dashboard card in [`frontend/index.html`](file:///home/irbazali/Desktop/FYP/frontend/index.html), [`frontend/script.js`](file:///home/irbazali/Desktop/FYP/frontend/script.js), and [`frontend/style.css`](file:///home/irbazali/Desktop/FYP/frontend/style.css):
+    - *Sequence Stream Bar*: Tri-color visual architecture bar (blue prefix, emerald visual vectors, purple Urdu prompt) with dynamic cursor marker tracking active visual token.
+    - *Side-by-Side Splicing Inspector*: Shows before-and-after vector replacement:
+      - Before: `<|image_pad|>` (ID: 151655) at Sequence Position `#15 + i` (static learned placeholder in $\mathbb{R}^{3584}$).
+      - Splicing Action: `inputs_embeds[image_mask] = visual_embeds`.
+      - After: Visual Vector $v_i$ ($\mathbb{R}^{3584}$) spliced from the single $28 \times 28$ image crop with 3D MRoPE coordinate $[T=0, H=tr, W=tc]$.
+    - *Token Sequence Stream Explorer*: Interactive chip strip showing actual tokens, IDs, decoded Urdu characters, and jump controls (Prefix, Active Visual, Urdu Prompt).
+- **Verification & Testing**:
+  - Added unit test 9 `test_vision_preprocessor_patch_extraction` in [`tests/test_qwen_pipeline.py`](file:///home/irbazali/Desktop/FYP/tests/test_qwen_pipeline.py).
+  - All 9 unit tests pass in 0.69s (`python -m unittest tests/test_qwen_pipeline.py`).
+  - Verified Flask test client on `1.jpeg`: HTTP 200, returns full `multimodal_fusion` payload (2,516 tokens, 2,451 visual vectors, 0 disk writes).
+
+### Kraken BLLA Preprocessor & Neural Layout Segmentation (October 2026)
+- **Motivation & Role**:
+  - The user requested using Kraken BLLA (Baseline and Layout Analysis) as an image preprocessor and displaying its segmentation results directly in the web app.
+  - Unlike axis-aligned rectangular crop assumptions (which suffer from clipping diacritics, dots, and skewed Nastaliq text in handwritten ledgers), Kraken BLLA predicts continuous neural baseline polylines and tight boundary polygons using VGSL models.
+- **Backend Implementation**:
+  - [`qwen_row_pipeline/kraken_engine.py`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/kraken_engine.py):
+    - Added compatibility shim for PyTorch 2.5.1 / transformers (`torch.accelerator`).
+    - Loads and caches the bundled `blla.mlmodel` on GPU (`cuda:0`).
+    - Executes `blla.segment(canonical, text_direction="horizontal-rl", model=model, device="cuda:0")`.
+    - Extracts baseline polyline coordinates, boundary polygon coordinates, bounding boxes, and generates in-memory Base64 JPEG line crops (0 files written to disk).
+  - [`qwen_row_pipeline/routes.py`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/routes.py):
+    - Added `/api/qwen_pipeline/kraken_segment` POST endpoint accepting an uploaded image (`image`) or dataset sample name (`sample_name`).
+- **Frontend Interactive Visualizer**:
+  - Added 4th mode tab in [`frontend/index.html`](file:///home/irbazali/Desktop/FYP/frontend/index.html): `Kraken BLLA Segmenter (کریکن بیس لائن اور لے آؤٹ تجزیہ)`.
+  - Added sample buttons (`1.jpeg` and `2.jpeg`).
+  - Interactive canvas in [`frontend/script.js`](file:///home/irbazali/Desktop/FYP/frontend/script.js) with toggle controls:
+    - 🟢 Neural Baselines (`#00FFA3` polylines with anchor vertex circles).
+    - 🟣 Boundary Polygons (`rgba(168, 85, 247, 0.2)` fill with purple borders).
+    - 🔵 Bounding Boxes (dashed cyan boxes).
+    - 🏷️ Line Index Badges (`#1`, `#2`, ...).
+    - Active Line Inspector: displays the high-resolution in-memory crop, bounding box `[x, y, w, h]`, baseline vertex count, boundary vertex count, and tags.
+    - All Segmented Lines Gallery: scrollable cards with line thumbnails, dimensions, and baseline stats; clicking any card centers and inspects that line.
+  - Added responsive styling in [`frontend/style.css`](file:///home/irbazali/Desktop/FYP/frontend/style.css).
+- **Measured Results**:
+  - `dataset/1.jpeg` (Bill Khata): 16 lines detected in ~6.16s on `cuda:0`.
+  - `dataset/2.jpeg` (Roznamcha): 35 lines detected in ~6.86s on `cuda:0`.
+  - 10/10 unit tests pass in 7.75s (`python -m unittest tests/test_qwen_pipeline.py`).
+  - 0 files saved to disk (strictly in-memory base64).
+
+### Document Segmentation Benchmark Suite & Comparative Scorecard (October 2026)
+- **Motivation & Objectives**:
+  - The user evaluated 5 architectural alternatives before training a custom Vision Transformer:
+    1. **Kraken BLLA**: Neural handwriting-aware baseline & polygonal line envelopes (`blla.mlmodel`).
+    2. **OpenCV Morphological Rulings**: Horizontal ruled line detection & inter-rule row band slicing.
+    3. **Microsoft Table Transformer (TATR)**: Deep table structure recognition for rows, columns, and headers (`microsoft/table-transformer-structure-recognition`).
+    4. **Ultralytics YOLO Layout**: Rectangular document layout & table block object detection (`neuralshift/doc-layout-yolov8n`).
+    5. **PaddleOCR DBNet**: Differentiable binarization text region boundary polygons (`PP-OCRv4_server_det`).
+  - Core instruction: Implement each candidate engine separately so the user can test all 5 candidates individually and view a side-by-side comparative scorecard matrix.
+- **Backend Architecture & Packages**:
+  - [`segmentation_benchmark/opencv_ruling_engine.py`](file:///home/irbazali/Desktop/FYP/segmentation_benchmark/opencv_ruling_engine.py): Adaptive binarization + horizontal morphology kernel `(W//30, 1)`. Detects horizontal rulings, deduplicates lines within 12px, slices row bounding boxes, and generates in-memory base64 crops.
+  - [`segmentation_benchmark/table_transformer_engine.py`](file:///home/irbazali/Desktop/FYP/segmentation_benchmark/table_transformer_engine.py): GPU-accelerated (`cuda:0`) DETR-based table structure recognition extracting table bounds, rows, columns, and headers with category tags and confidence scores.
+  - [`segmentation_benchmark/yolo_engine.py`](file:///home/irbazali/Desktop/FYP/segmentation_benchmark/yolo_engine.py): Ultralytics YOLOv8n document layout detector on GPU (`cuda:0`) providing rectangular bounding boxes.
+  - [`segmentation_benchmark/paddle_det_engine.py`](file:///home/irbazali/Desktop/FYP/segmentation_benchmark/paddle_det_engine.py): Paddle static inference running `PP-OCRv4_server_det` on CPU with `disable_mkldnn()` to bypass Python 3.12 Linux OneDNN PIR attribute bugs. Extracts DBNet text probability contours.
+  - [`segmentation_benchmark/benchmark_runner.py`](file:///home/irbazali/Desktop/FYP/segmentation_benchmark/benchmark_runner.py): Unified runner exposing `run_single_engine(engine_key)` and `run_comparative_benchmark()`.
+  - Added CUDA OOM CPU fallback in [`qwen_row_pipeline/kraken_engine.py`](file:///home/irbazali/Desktop/FYP/qwen_row_pipeline/kraken_engine.py) when GPU memory is heavily shared with Qwen.
+  - Exposes endpoints:
+    - `POST /api/qwen_pipeline/benchmark_segment`: Accepts `engine` (`kraken`, `opencv_rulings`, `table_transformer`, `yolo`, `paddleocr`, or `all`).
+    - `GET /api/qwen_pipeline/benchmark_meta`: Returns metadata on all 5 candidates.
+- **Frontend Interactive Visualizer & Scorecard Matrix**:
+  - Mode Switcher: `Segmentation Benchmark (سیگمنٹیشن بنچ مارک — 5 ماڈلز)`.
+  - Engine Selection Bar: 6 interactive pills allowing instant 1-click execution or cached inspection across candidates.
+  - Comparative Scorecard: Responsive table comparing objective, output geometry, items detected, latency, hardware device, and handwritten ledger suitability.
+  - Canvas Overlays: Dynamic rendering for polylines (Kraken), horizontal rules & row bands (OpenCV), rows/cols/headers (TATR), bounding boxes (YOLO), and text polygons (PaddleOCR).
+  - 100% In-Memory: All crops are generated in memory and served as Base64 data URLs without writing any files to disk.
+- **Verified Benchmark Measurements (`dataset/1.jpeg`)**:
+  - Kraken BLLA: 16 lines (5.4s on GPU / 11.8s on CPU fallback).
+  - OpenCV Rulings: 22 row bands, 23 rulings (0.032s on CPU).
+  - Table Transformer: 14 rows, 6 columns, 1 table boundary (1.17s on GPU).
+  - YOLO Layout: 1 document region (0.195s on GPU).
+  - PaddleOCR DBNet: 16 text polygon regions (6.77s on CPU).
+  - All 15 unit tests pass in 29.5s (`python -m unittest tests/test_qwen_pipeline.py`).
 
 ## Useful commands for a future authorized task
 
@@ -311,6 +453,8 @@ Run from the project root:
 
 ```bash
 ./venv/bin/python server.py
+./venv/bin/python -m unittest tests/test_qwen_pipeline.py
+./venv/bin/python tests/smoke_test_real_pipeline.py
 ./venv/bin/streamlit run app.py
 ./venv/bin/python run_pipeline.py --image dataset/1.jpeg
 ./venv/bin/python build_training_data.py
@@ -319,3 +463,4 @@ Run from the project root:
 
 The last two commands regenerate data and overwrite training outputs
 respectively; they are reference commands, not instructions to run on startup.
+

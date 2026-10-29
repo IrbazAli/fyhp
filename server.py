@@ -22,8 +22,12 @@ import torch
 from transformers import Qwen2_5_VLForConditionalGeneration, AutoProcessor, BitsAndBytesConfig
 from qwen_vl_utils import process_vision_info
 
+from qwen_row_pipeline.engine import get_shared_vlm, GPU_GENERATION_LOCK
+from qwen_row_pipeline.routes import pipeline_bp
+
 app = Flask(__name__, static_folder='frontend', static_url_path='')
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50 MB max upload
+app.register_blueprint(pipeline_bp)
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MODEL_PATH = os.path.join(BASE_DIR, "qwen2.5-vl-7b")
@@ -65,38 +69,10 @@ def internal_error(e):
 
 
 def get_vlm():
-    """Lazy loader for Qwen2.5-VL-7B 4-bit model."""
-    global vlm_model, vlm_processor
-    if vlm_model is None or vlm_processor is None:
-        print(f"Loading Qwen2.5-VL-7B into 4-bit memory from {MODEL_PATH}...")
-        bnb_config = BitsAndBytesConfig(
-            load_in_4bit=True,
-            bnb_4bit_quant_type="nf4",
-            bnb_4bit_compute_dtype=torch.bfloat16
-        )
-        vlm_model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
-            MODEL_PATH,
-            torch_dtype=torch.bfloat16,
-            quantization_config=bnb_config,
-            device_map="auto"
-        )
-        vlm_processor = AutoProcessor.from_pretrained(MODEL_PATH)
-        if os.path.exists("./local_adapter/adapter_model.safetensors"):
-            try:
-                from peft import PeftModel
-                print("Applying combined fine-tuned LoRA adapter (627 ledger crops + 10,991 UHWR lines, rank=24)...")
-                vlm_model = PeftModel.from_pretrained(vlm_model, "./local_adapter")
-                print("Combined LoRA adapter loaded successfully.")
-                if os.path.exists("./local_adapter_627/adapter_model.safetensors"):
-                    try:
-                        vlm_model.load_adapter("./local_adapter_627", adapter_name="ledger_627")
-                        print("Also registered standalone 'ledger_627' adapter.")
-                    except Exception as e2:
-                        pass
-            except Exception as e:
-                print(f"Warning: Failed to load local adapter: {e}")
-        print("Model loaded successfully.")
-    return vlm_model, vlm_processor
+    """Lazy loader for Qwen2.5-VL-7B 4-bit model via shared engine."""
+    m, p, _ = get_shared_vlm(MODEL_PATH)
+    return m, p
+
 
 
 def run_vlm_on_image(image_path: str):
@@ -123,7 +99,7 @@ def run_vlm_on_image(image_path: str):
         "    },\n"
         "    {\n"
         "      \"تاریخ (Date)\": \"7-03-018\",\n"
-        "      \"تفصیل آمدن (Description / Particulars)\": \"ملک سلطان امیر اینڈ کو بل ڈنڈل\",\n"
+        "      \"تفصیل آمدن (Description / Particulars)\": \"ملک سلطان امیر اینڈ کو بل \",\n"
         "      \"صفحہ (Folio)\": \"11\",\n"
         "      \"رقم روپیہ (Amount Rs)\": \"22377/-\"\n"
         "    },\n"
@@ -183,8 +159,9 @@ def run_vlm_on_image(image_path: str):
         return_tensors="pt",
     ).to("cuda")
 
-    with torch.inference_mode():
-        generated_ids = model.generate(**inputs, max_new_tokens=1536)
+    with GPU_GENERATION_LOCK:
+        with torch.inference_mode():
+            generated_ids = model.generate(**inputs, max_new_tokens=1536, do_sample=False)
 
     generated_ids_trimmed = [
         out_ids[len(in_ids):] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
@@ -295,8 +272,9 @@ def run_vlm_on_word_crop(image_path: str):
         return_tensors="pt",
     ).to("cuda")
 
-    with torch.inference_mode():
-        generated_ids = model.generate(**inputs, max_new_tokens=128)
+    with GPU_GENERATION_LOCK:
+        with torch.inference_mode():
+            generated_ids = model.generate(**inputs, max_new_tokens=128, do_sample=False)
 
     generated_ids_trimmed = [
         out_ids[len(in_ids):] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
