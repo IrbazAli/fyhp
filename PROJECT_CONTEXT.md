@@ -447,6 +447,17 @@ Implemented the complete end-to-end Qwen-based row segmentation experiment (**Qw
   - PaddleOCR DBNet: 16 text polygon regions (6.77s on CPU).
   - All 15 unit tests pass in 29.5s (`python -m unittest tests/test_qwen_pipeline.py`).
 
+### PC Migration, Backup & Full Conversation Archive (October 2026)
+- **Git Remote & Synchronization**:
+  - Latest changes pushed to `https://github.com/IrbazAli/fyhp.git` (`main` branch).
+  - Added new benchmark dependencies (`Flask`, `kraken`, `ultralytics`, `paddlepaddle`, `paddleocr`, `timm`, `openpyxl`, `kagglehub`, `python-docx`) to `requirements.txt`.
+- **Google Drive Backup Checklist**:
+  - Uploaded by user: `combined_adapter/` (284 MB).
+  - Additional files requiring backup (ignored by git): `local_adapter_627/` (~31 MB), `local_adapter_10991/` (~193 MB), `dataset/nust_uhwr/` (~5 MB).
+- **Conversation History Export**:
+  - Generated `conversation.md` (340 KB, 99 user turns) encompassing all turns across Part 1 (`74342d71`) and Part 2 (`cf986ea1`), including ViT patches, multimodal fusion, Kraken BLLA, 5-engine segmentation benchmark, Google Drive backup audit, and export execution.
+  - Synchronized `complete_conversation_history.md` and `complete_conversation_history.docx`.
+
 ## Useful commands for a future authorized task
 
 Run from the project root:
@@ -457,10 +468,7 @@ Run from the project root:
 ./venv/bin/python tests/smoke_test_real_pipeline.py
 ./venv/bin/streamlit run app.py
 ./venv/bin/python run_pipeline.py --image dataset/1.jpeg
-./venv/bin/python build_training_data.py
-./venv/bin/python train_local.py --train_json dataset/train_words.json --epochs 5
+./venv/bin/python export_all_conversations.py
 ```
 
-The last two commands regenerate data and overwrite training outputs
-respectively; they are reference commands, not instructions to run on startup.
 

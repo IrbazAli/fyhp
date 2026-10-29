@@ -91,3 +91,4 @@ timm==1.0.30
 kagglehub==1.0.3
 paddlepaddle==3.3.1
 paddleocr==3.7.0
+python-docx==1.2.0
